@@ -1,0 +1,122 @@
+@import "@SASS/variable.scss";
+
+.btn {
+    font-size: 1.1rem; // Mobile-first base font size
+    font-weight: 500;
+    color: $white;
+    background-color: $lightblue;
+    border-style: solid;
+    border-width: 0.125rem;
+    border-color: $lightblue;
+    border-radius: 1.875rem;
+    padding: 0.65rem 1.775rem; // Mobile-first padding
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: $lightblue;
+        background-color: $white;
+        border-color: $lightblue;
+    }
+}
+
+
+
+
+.box {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 80px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+
+    .item {
+        display: flex;
+        gap: 20px;
+        flex-basis: calc(33.33% - 40px);
+        margin-bottom: 20px;
+
+        .check {
+            width: 140px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $lightblue;
+            color: $white;
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            width: 276%;
+
+            h2 {
+                color: #172345;
+                font-size: 28px;
+                font-weight: bold;
+                line-height: 30px;
+                letter-spacing: -1px;
+                margin-bottom: 15px;
+            }
+
+            p {
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .box {
+        margin-top: 70px;
+    }
+
+    .item {
+        flex-basis: calc(50% - 20px) !important;
+
+        /* Tablet: 2 boxes per row */
+        h2 {
+            font-size: 22px !important;
+            margin-bottom: 10px !important;
+        }
+
+        p {
+            font-size: 18px !important;
+        }
+    }
+}
+
+@media (max-width: 808px) {
+    .box {
+        margin-top: 50px;
+    }
+
+    .item {
+        flex-basis: 450px !important;
+
+        /* Mobile: 1 box per row */
+        h2 {
+            font-size: 20px !important;
+            margin-bottom: 8px !important;
+
+        }
+
+        p {
+            font-size: 16px !important;
+        }
+
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .btn {
+        font-size: 1.125rem;
+        padding: 0.75rem 1.875rem;
+    }
+}

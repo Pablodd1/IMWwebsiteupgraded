@@ -1,0 +1,98 @@
+@import "@SASS/variable.scss";
+
+// Mobile-first default behavior
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 50px 0;
+    gap: 20px;
+
+    .inner {
+        margin-block-end: 20px;
+        text-align: center;
+        padding: 0 15px;
+
+        img {
+            height: auto;
+            max-width: 100%;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 24px;
+            transition: transform .3s ease-out;
+
+            &:hover {
+                transform: translateY(-8px);
+            }
+        }
+
+        h2 {
+            font-size: 23px;
+            font-weight: bold;
+            line-height: 24px;
+            color: $darkblue;
+            margin-top: 0;
+            text-align: center !important;
+        }
+
+        p {
+            padding: 0 15px;
+            width: 100%;
+            margin-top: 18px;
+            color: $text_color;
+        }
+    }
+
+    .cardBtn {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        margin-top: 33px;
+        margin-bottom: -15px;
+    }
+
+    // Media query for tablets and larger screens
+    @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 0 100px 0;
+
+        .inner {
+            width: calc(50% - 20px);
+            margin: 0 auto;
+
+            h2 {
+                font-size: 24px;
+                line-height: 28px;
+                text-align: left;
+            }
+
+            p {
+                width: auto;
+                padding: 0 8px;
+                font-size: 16px;
+            }
+        }
+
+        .cardBtn {
+            width: 400px;
+            margin-bottom: 0;
+        }
+    }
+
+    // Media query for larger screens (home screen with 3 items per row)
+    @media (min-width: 1024px) {
+        .inner {
+            width: calc(33.333% - 20px);
+
+            h2 {
+                font-size: 25px;
+                margin-left: 21px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}

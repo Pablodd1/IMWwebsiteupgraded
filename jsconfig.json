@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/utils/*": ["./*"]
+      "@SEGMENT/*": ["./segments/*"],
+      "@JSON/*": ["./json/*"],
+      "@ELEMENT/*": ["./elements/*"],
+      "@SASS/*": ["./style-config/*"],
+      "@IMAGE/*": ["./images/*"],
     }
   }
 }
