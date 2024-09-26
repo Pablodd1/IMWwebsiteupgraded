@@ -3,12 +3,15 @@ import { Suspense } from "react";
 import About from "@SEGMENT/About";
 import Card from "@SEGMENT/Card";
 import HealthAbout from "@SEGMENT/HealthAbout";
-import Footer from "@SEGMENT/Footer";
+import styles from './page.module.scss'
+import Departs from "@SEGMENT/departs";
 
 export default function Home() {
   return (
    <main >
+<section className={styles.heroSec} >
 
+</section>
     <Suspense >
       <About />
     </Suspense>
@@ -16,10 +19,10 @@ export default function Home() {
       <Card />
     </Suspense>
     <Suspense >
-      <HealthAbout />
+      <Departs />
     </Suspense>
     <Suspense >
-      <Footer />
+      <HealthAbout />
     </Suspense>
    </main>
   );

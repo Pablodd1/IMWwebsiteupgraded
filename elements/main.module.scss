@@ -1,21 +1,21 @@
-@import "@SASS/variable.scss";
+@import "@SASS/variables.scss";
 
 .btn {
     font-size: 1.1rem; // Mobile-first base font size
     font-weight: 500;
     color: $white;
-    background-color: $lightblue;
+    background-color: $light_1;
     border-style: solid;
     border-width: 0.125rem;
-    border-color: $lightblue;
+    border-color: $light_1;
     border-radius: 1.875rem;
     padding: 0.65rem 1.775rem; // Mobile-first padding
     transition: all 0.3s ease-in-out;
 
     &:hover {
-        color: $lightblue;
+        color: $light_1;
         background-color: $white;
-        border-color: $lightblue;
+        border-color: $light_1;
     }
 }
 
@@ -39,7 +39,7 @@
             width: 140px;
             height: 40px;
             border-radius: 50%;
-            background-color: $lightblue;
+            background-color: $light_1;
             color: $white;
             font-size: 20px;
             line-height: 30px;

@@ -1,4 +1,4 @@
-@import "@SASS/variable.scss";
+@import "@SASS/variables.scss";
 
 // Mobile-first default behavior
 .cardWrapper {
@@ -30,7 +30,7 @@
             font-size: 23px;
             font-weight: bold;
             line-height: 24px;
-            color: $darkblue;
+            color: $theme_color;
             margin-top: 0;
             text-align: center !important;
         }

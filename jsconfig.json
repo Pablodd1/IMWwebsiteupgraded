@@ -6,6 +6,7 @@
       "@ELEMENT/*": ["./elements/*"],
       "@SASS/*": ["./style-config/*"],
       "@IMAGE/*": ["./images/*"],
+      "@HOOK/*": ["./hooks/*"],
     }
   }
 }
