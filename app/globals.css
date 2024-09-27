@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'SUSE,Roboto';
+  font-family: 'SUSE','Roboto';
   font-size: 16px;
 }
 
@@ -16,4 +16,31 @@ a {
 
 ul {
   list-style-type: none;
+}
+html {
+  font-size: 16px; 
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
 }

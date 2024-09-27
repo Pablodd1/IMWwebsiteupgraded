@@ -2,88 +2,57 @@
 
 // Mobile-first default behavior
 .cardWrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 0 0 50px 0;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    padding: 4rem 2.5rem;
+    background-color: $theme_light;
 
     .inner {
-        margin-block-end: 20px;
+        width: auto;
+        max-width: 450px;
+        margin: 1rem auto;
         text-align: center;
-        padding: 0 15px;
-
+        border-radius: 25px;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        
         img {
-            height: auto;
+            height: 17rem;
             max-width: 100%;
+            object-fit: cover;
             border: none;
             border-radius: 0;
             box-shadow: none;
-            padding: 24px;
             transition: transform .3s ease-out;
-
-            &:hover {
-                transform: translateY(-8px);
-            }
         }
 
-        h2 {
-            font-size: 23px;
-            font-weight: bold;
-            line-height: 24px;
-            color: $theme_color;
-            margin-top: 0;
-            text-align: center !important;
-        }
-
-        p {
-            padding: 0 15px;
-            width: 100%;
-            margin-top: 18px;
-            color: $text_color;
-        }
-    }
-
-    .cardBtn {
-        display: flex;
-        justify-content: center;
-        width: auto;
-        margin-top: 33px;
-        margin-bottom: -15px;
-    }
-
-    // Media query for tablets and larger screens
-    @media (min-width: 768px) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 0 0 100px 0;
-
-        .inner {
-            width: calc(50% - 20px);
-            margin: 0 auto;
+        figcaption {
+            margin: 1rem;
 
             h2 {
-                font-size: 24px;
-                line-height: 28px;
-                text-align: left;
+                color: $theme_color;
             }
 
             p {
-                width: auto;
-                padding: 0 8px;
-                font-size: 16px;
+                color: $text_color;
             }
-        }
 
-        .cardBtn {
-            width: 400px;
-            margin-bottom: 0;
         }
     }
 
-    // Media query for larger screens (home screen with 3 items per row)
-    @media (min-width: 1024px) {
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(3,1fr);
+        row-gap: 0;
+        column-gap: 3rem;
+        padding: 6rem 2.5rem;
+
         .inner {
-            width: calc(33.333% - 20px);
+            img {
+                height: 12rem;
+            }
 
             h2 {
                 font-size: 25px;
@@ -92,6 +61,14 @@
 
             p {
                 font-size: 16px;
+            }
+        }
+    }
+    @media (min-width: 1200px) {
+
+        .inner {
+            img {
+                height: 15rem;
             }
         }
     }
