@@ -1,3 +1,5 @@
+@import "@SASS/variables.scss";
+
 .type--A {
     --line_color: #555555;
     --back_color: #FFECF6;
@@ -20,7 +22,7 @@
     height: 56px;
     text-decoration: none;
     font-size: 1rem;
-    font-family: "SUSE", 'sans-serif' !important;
+    font-family: $font_primary;
     font-weight: bold;
     color: var(--line_color);
     letter-spacing: 2px;

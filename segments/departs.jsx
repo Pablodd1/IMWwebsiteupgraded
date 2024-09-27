@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from './departs.module.scss'
-import './fancyCard.css';
+import './fancyCard.scss';
 
 const expertise = [
   {
@@ -43,7 +43,7 @@ const Departs = () => {
     <section className={styles.wrap} >
       <section className={styles.section1} >
         <h2 className={styles.h2}  >
-          {"Expertise"}
+          {"Deprtments"}
         </h2>
         <p className={styles.desc}  >
           {"It does not matter if one of the property values is missing, as long as the other ones are in this order. Note that we do not use the background-attachment property in the examples above, as it does not have a value.It does not matter if one of the property values is missing, as long as the other ones are in this order. Note that we do not use the background-attachment property in the examples above, as it does not have a value.It does not matter if one of the property values is missing, as long as the other ones are in this order. Note that we do not use the background-attachment property in the examples above, as it does not have a value."}

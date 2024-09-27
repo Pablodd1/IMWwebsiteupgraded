@@ -1,3 +1,4 @@
+@import "@SASS/variables.scss";
 
 .loader-hero2 span {
     position: absolute;
@@ -37,7 +38,7 @@
   .wrap {
 
     --brand-color: #32cd32;
-    --black: hsl(0, 0%, 0%);
+    $black: hsl(0, 0%, 0%);
     --white: hsl(0, 0%, 100%);
     /* Fonts */
     --font-title: "Montserrat", sans-serif;
@@ -45,16 +46,16 @@
 }
 
 .expert-h2 {
-    font-family: var(--font-title);
-    color: var(--white);
+    font-family: $font_secondary;
+    color: $white;
     line-height: 1.1;
 }
 
 .expert-p {
-    font-family: var(--font-text);
+    font-family: $font_primary;
     font-size: 1rem;
     line-height: 1.5;
-    color: var(--white);
+    color: $white;
 }
 
 .flow>*+* {
@@ -117,7 +118,7 @@
     width: calc(100% + 1.25rem);
     bottom: calc((1.25rem - 0.5rem) * -1);
     left: -1.25rem;
-    background-color: var(--brand-color);
+    background-color:$theme_color;
 }
 
 .card__button {
@@ -128,10 +129,10 @@
     font-weight: 400;
     border-radius: 0.45em;
     border: none;
-    background-color: var(--brand-color);
-    font-family: var(--font-title);
+    background-color: $theme_color;
+    font-family: $font_primary;
     font-size: 1.125rem;
-    color: var(--black);
+    color: $black;
 }
 
 .card__button:focus {

@@ -5,8 +5,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'SUSE','Roboto';
-  font-size: 16px;
 }
 
 a {
@@ -18,12 +16,13 @@ ul {
   list-style-type: none;
 }
 html {
-  font-size: 16px; 
+  font-family: 'SUSE','Roboto';
+  font-size: 17px; 
 }
 
 @media (max-width: 1200px) {
   html {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
