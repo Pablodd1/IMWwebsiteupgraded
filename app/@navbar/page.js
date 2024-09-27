@@ -23,16 +23,16 @@ const renderMenuItem = ({ label, link, submenu }) => (
         <Link href={link} className={styles.menuLink}>
             <span>{label}</span>
             {submenu && <Angle />}
-            {submenu ? (
-                <ul className={`${styles.submenu} ${label === 'New Arrival' ? styles.shrink : ''}`}>
-                    <Suspense fallback={'Loading...'}>
-                        {submenu.map(x => <li key={x} className={styles.li} ><Link href={x.replace(' ', '-')}>{x}</Link> </li>)}
-                    </Suspense>
-                </ul>
-            )
-                : ''
-            }
         </Link>
+        {submenu ? (
+            <ul className={`${styles.submenu} ${label === 'New Arrival' ? styles.shrink : ''}`}>
+                <Suspense fallback={'Loading...'}>
+                    {submenu.map(x => <li key={x} className={styles.li} ><Link href={x.replace(' ', '-')}>{x}</Link> </li>)}
+                </Suspense>
+            </ul>
+        )
+            : ''
+        }
 
     </li>
 );
