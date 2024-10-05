@@ -1,6 +1,7 @@
 export const health_data = [
     {
-        "heading": "Our Mission - Compassionate and Comprehensive Healthcare At Your Door!",
+        "heading": "Our Mission",
+        "subTitle":"- Compassionate and Comprehensive Healthcare At Your Door!",
         "paragraphs": "Innovative Medical Wellness brings the forefront of medical care directly to you. Our House Calls service is a testament to our dedication to providing personalized, high-quality healthcare in the comfort and privacy of your own home.",
         right_side_video: "https://innovativemedicalwellness.com/wp-content/uploads/2023/08/Innovative-Medical-Wellness.mp4",
     }

@@ -12,15 +12,15 @@ export const metadata = {
 };
 
 const iconItems = [
-  { label: 'Call', icon: <PhoneIcon key={0} />, onClick: () => { } },
-  { label: 'Mail', icon: <ContactUS key={1} />, onClick: () => { } },
+  { label: 'Call', icon: <PhoneIcon key={0} />, href: 'tel:' },
+  { label: 'Mail', icon: <ContactUS key={1} />, href: 'mailto:' },
 ];
-const renderIconButton = ({ label, icon, onClick }) => (
-  <button key={label} onClick={'onClick'} aria-label={label}>
+const renderIconButton = ({ label, icon, href }) => (
+  <Link key={label} href={href} aria-label={label}>
     {icon}
-  </button>
+  </Link>
 );
-export default function RootLayout({ children, navbar }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body >
@@ -29,9 +29,7 @@ export default function RootLayout({ children, navbar }) {
             <Logo />
             <h1>Medical <br />Innovative Wellness</h1>
           </Link>
-          {navbar || 'N'}
           <nav className={styles.shortMenu}>{iconItems.map(renderIconButton)}</nav>
-          <UseScrollEffect navbarId="navbar" activeClass={styles.scrolled} threshold={10} />
         </header>
         {children}
         <Suspense >

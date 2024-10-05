@@ -6,8 +6,9 @@
     justify-content: center;
     align-items: center;
     width: calc(100% - 4rem);
-    margin: 3rem auto;
+    margin: 0 auto 3rem;
     height: fit-content;
+
 
 
     .left_side {
@@ -102,7 +103,7 @@
     }
     @media (min-width: 1280px) {
         max-width: 80%;
-        margin: 7rem auto;
+        margin: 2rem auto 7rem;
 
     }
 }

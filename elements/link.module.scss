@@ -1,18 +1,19 @@
 @import "@SASS/variables.scss";
 
-.type--A {
-    --line_color: #555555;
-    --back_color: #FFECF6;
+.darkRed {
+    --line_color: #5C0013; /* Dark Red */
+    --back_color: #F9D4D4; /* Light Red */
 }
 
-.type--B {
-    --line_color: #1b1919;
-    --back_color: #E9ECFF
+.darkGreen {
+    --line_color: #004400; /* Dark Green */
+    --back_color: #D4F9D4; /* Light Green */
 }
 
 .darkBlue {
-    --line_color: #00135C;
-    --back_color: #D4F1F9
+    --line_color: #024950;
+    // --line_color: #00135C;
+    --back_color: #D4F1F9;
 }
 
 .button {

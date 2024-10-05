@@ -49,7 +49,7 @@ export default async function NavBar(props) {
     return (
         searchParams?.viewport !== ('mobile' || 'tablet')
             ? <ul className={styles.menu}>{menuItems.map(renderMenuItem)}</ul>
-            : <p >Mobile</p>
+            : <p ></p>
     );
 };
 

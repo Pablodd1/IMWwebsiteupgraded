@@ -1,24 +1,22 @@
 @import '@SASS/variables';
 
 .nav {
-    display: block;
+    background-color: $white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    align-items: center;
+    display: flex;
     z-index: 50;
-    padding: 2rem 1rem 2rem 0;
     width: 100%;
     max-width: calc(100vw - 1rem);
     position: fixed;
     top: 0;
-    background-color: transparent;
-    display: flex;
-    align-items: flex-end;
     justify-content: flex-start;
     column-gap: 2rem;
     transition: all 0.7s ease;
-    color: $white;
 
     @media screen and (min-width:992px) {
         justify-content: flex-start;
-        padding: 2rem 1rem;
+        padding: 1rem 1rem;
         width: calc(100% - 2rem);
     }
 
@@ -52,107 +50,88 @@
         align-self: flex-end;
         display: flex;
         justify-content: center;
+        column-gap: 25px;
 
         svg {
             height: 35px;
-            align-self: center;
+            align-self: flex-end;
+
+            path {
+                fill: $black;
+            }
         }
     }
 
     .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 35px;
+        align-self: center;
         will-change: auto;
         margin: 0;
         padding: 0 0.5rem;
 
         h1 {
-            display: none;
+            display: block;
+            font-size: 1rem;
+            font-weight: 300;
+            width: 165px;
+            color: $theme_color;
+            font-family: 'Roboto';
+
+            &::first-line {
+                font-family: "Bruno Ace SC", 'sans-serif' !important;
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                font-weight: bolder;
+                font-weight: 400;
+                font-style: normal;
+                letter-spacing: 2px;
+            }
         }
 
         svg {
             padding: 0;
             width: auto;
-            height: 55px;
             margin: 0;
+            height: 45px;
+
+            path,
+            rect {
+                fill: $dark_1;
+            }
         }
 
 
     }
 
-    &.scrolled {
-        background-color: $white;
-        padding: 0.4rem 1rem;
-        color: $black !important;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-        align-items: center;
+    // &.scrolled {
 
-        .menuLink {
-            font-size: 0.8;
-            padding: 0;
+    .menuLink {
+        font-size: 0.8;
+        padding: 0;
 
-            svg {
-                path {
-                    fill: $black !important;
-                }
-            }
-
-            &:after {
-                background-color: $black;
-            }
-
-            &::first-letter {
-                font-size: 1rem;
+        svg {
+            path {
+                fill: $black !important;
             }
         }
 
-        &:before {
-            display: none;
+        &:after {
+            background-color: $black;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            height: 35px;
-            align-self: center;
-
-            h1 {
-                display: block;
-                font-size: 1rem;
-                font-weight: 300;
-                width: 145px;
-                color: $theme_color;
-                font-family: 'Roboto';
-                &::first-line{
-                    font-family: "Bruno Ace SC", 'sans-serif' !important;
-                    font-size: 1.5rem;
-                    text-transform: uppercase;
-                    font-weight:bolder;
-                    font-weight: 400;
-                    font-style: normal;
-                    letter-spacing: 2px;
-                }
-            }
-
-            svg {
-                height: 45px;
-
-                path,
-                rect {
-                    fill: $dark_1;
-                }
-            }
-        }
-
-        .shortMenu {
-            column-gap: 25px;
-
-            svg {
-                align-self: flex-end;
-
-                path {
-                    fill: $black;
-                }
-            }
+        &::first-letter {
+            font-size: 1rem;
         }
     }
+
+    &:before {
+        display: none;
+    }
+
+   
 }
+
+// }

@@ -40,7 +40,6 @@ const spans = Array.from({ length: 4 }, (_, index) => <span key={index} />);
 const Departs = () => {
 
   return (
-    <section className={styles.wrap} >
       <section className={styles.section1} >
         <h2 className={styles.h2}  >
           {"Deprtments"}
@@ -62,7 +61,7 @@ const Departs = () => {
                   />
                   <div className="card__content | flow">
                     <div className="card__content--container | flow">
-                      <h2 className="card__title expert-h2 text-2xl md:text-4xl ">{x.label}</h2>
+                      <h3 className="card__title expert-h2 text-2xl md:text-4xl ">{x.label}</h3>
                       <p className="card__description expert-p">
                         {truncateDescription(x.description, 105)}
                       </p>
@@ -75,7 +74,6 @@ const Departs = () => {
           }
         </ul>
       </section>
-    </section>
   )
 }
 

@@ -24,6 +24,17 @@
         .logo {
             height: 100%;
             margin: auto;
+            padding: 1rem;
+            svg {
+                max-height: 15rem;
+                @media (min-width: 1024px) {
+                    max-height: 10rem;
+                }
+                @media (min-width: 1200px) {
+                    max-height: 12rem;
+                    padding: 0;
+                }
+            }
         }
 
         .nav {
