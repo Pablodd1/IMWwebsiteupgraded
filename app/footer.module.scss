@@ -59,7 +59,7 @@
                     font-size: 1rem;
                     margin: 1.25rem 0;
                     font-weight: bold;
-                    color: $dark_1;
+                    color: $theme_color;
                     letter-spacing: 1px;
                 }
 
@@ -71,7 +71,7 @@
                     align-items: flex-start;
                     gap: .75rem;
                     font-size: 0.875rem;
-                    color: $dark_2;
+                    color: $theme_color;
                     letter-spacing: 1px;
                     // color: #4a5568;
                     margin: 0 .75rem;
@@ -84,7 +84,7 @@
 
 
     .bottom {
-        background-color: $dark_1;
+        background-color: $theme_color;
         padding:0 1rem;
 
         .footer {

@@ -19,11 +19,7 @@
           "label": "Wellness"
         },
         {
-          "href": "/office-interior",
-          "label": "Office"
-        },
-        {
-          "href": "/Anti-Aging",
+          "href": "/anti-aging",
           "label": "anti-aging"
         }
       ]
@@ -36,7 +32,7 @@
       },
       "nav": [
         {
-          "href": "/Hair Restoration",
+          "href": "/hair Restoration",
           "label": "Hair Restoration "
         },
         {

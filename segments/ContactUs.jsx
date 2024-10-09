@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './contact.module.scss';
 import {  LocationIcon, Mail, PhoneIcon } from '@ELEMENT/svgIcons';
 import Link from 'next/link';
-import AnimatedLink from '@ELEMENT/Link';
+import AnimatedAction from '@ELEMENT/Action';
 
 const ContactUs = () => {
     return (
@@ -44,7 +44,7 @@ const ContactUs = () => {
                         <span>Type your Message...</span>
                     </div>
                      
-                        <AnimatedLink
+                        <AnimatedAction
                             href={``}
                             label={'Send Message'}
                             icon="emailSend-white"

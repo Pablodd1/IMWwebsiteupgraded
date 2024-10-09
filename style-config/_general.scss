@@ -1,0 +1,26 @@
+@import './variables.scss';
+
+.Wrap {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $theme_light;
+    color:$text_color;
+
+    h2 {
+        margin: 1.5rem auto;
+        font-size: 3rem;
+    }
+    p {
+        color:$text_color;
+        margin: 0.25rem auto 1.75rem ;
+        font-size: 1rem;
+    }
+    a:visited,
+    a {
+        color:$text_color;
+    }
+}

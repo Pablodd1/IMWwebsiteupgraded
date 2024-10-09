@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './card.module.scss';
 import Image from 'next/image';
 import cardData from '@JSON/card_data'
-import AnimatedLink from '@ELEMENT/Link';
+import AnimatedAction from '@ELEMENT/Action';
 
 const Card = () => {
     return (
@@ -13,7 +13,7 @@ const Card = () => {
                     <figcaption className={styles.cardBtn}>
                         <h3>{item.heading}</h3>
                         <p>{item.desc}</p>
-                        <AnimatedLink
+                        <AnimatedAction
                             href={``}
                             label={item.title}
                             icon="emailSend-white"
