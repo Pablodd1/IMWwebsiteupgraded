@@ -1,0 +1,66 @@
+{
+    "heroSection": {
+        "h1": "Medicina Antienvejecimiento",
+        "p": "Desbloquea tu máximo potencial y retrocede el reloj con soluciones antienvejecimiento y de longevidad personalizadas y de vanguardia diseñadas para mejorar la vitalidad y el bienestar."
+    },
+    "story": {
+        "h2": "Historias de Éxito",
+        "ul": [
+            "¡Nunca me he sentido mejor! El equipo realmente me ayudó a recuperar mi energía y equilibrio. - Sarah J.",
+            "El mejor programa de bienestar que he experimentado. ¡Lo recomiendo mucho! - Mark T.",
+            "Era escéptica al principio, pero después de algunas sesiones, ¡me siento como una nueva persona! - Emily R.",
+            "Las terapias antienvejecimiento realmente marcaron una diferencia en mi salud general. - David P."
+        ]
+    },
+    "cta": {
+        "h2": "¿Listo para dar el siguiente paso?",
+        "btn": "Comienza hoy",
+        "link": "/contact"
+    },
+    "meta": {
+        "title": "Soluciones Antienvejecimiento - Restaura Vitalidad y Bienestar",
+        "desc": "Descubre tratamientos antienvejecimiento avanzados como la terapia de reemplazo hormonal, la terapia NAD+ y más para revitalizar tu cuerpo y mente."
+    },
+    "services": [
+        {
+            "image": "Hormone Replacement",
+            "heading": "Terapia de Reemplazo Hormonal (TRH)",
+            "summary": "Equilibra hormonas, aumenta energía y mejora la calidad de vida.",
+            "desc": [
+                "La Terapia de Reemplazo Hormonal (TRH) es un tratamiento personalizado diseñado para restaurar los niveles hormonales, mejorar la energía y aumentar la vitalidad. Se centra en identificar deficiencias hormonales e implementar un régimen adaptado a las necesidades individuales.",
+                "Al restaurar el equilibrio hormonal, las personas pueden experimentar un aumento de energía, una mejora del estado de ánimo y una mejor calidad de vida en general. Se ha demostrado que la TRH impacta positivamente en el sueño, la libido y la función cognitiva, convirtiéndola en un enfoque integral del envejecimiento."
+            ],
+            "title": "Leer más"
+        },
+        {
+            "image": "Testosterone Therapy",
+            "heading": "Terapia de Testosterona para Hombres",
+            "summary": "Recupera tu fuerza y vitalidad con la optimización de testosterona.",
+            "desc": [
+                "La Terapia de Testosterona para Hombres está dirigida a abordar niveles bajos de testosterona, que pueden conducir a fatiga, reducción de masa muscular y cambios de humor. Esta terapia implica una evaluación exhaustiva de los niveles de testosterona para personalizar el tratamiento.",
+                "Con niveles óptimos de testosterona, los hombres pueden recuperar su vitalidad, mejorar su rendimiento físico y aumentar su bienestar general. El monitoreo regular asegura que la terapia sea efectiva y segura."
+            ],
+            "title": "Leer más"
+        },
+        {
+            "image": "NAD+ cellular health",
+            "heading": "Terapia NAD+",
+            "summary": "Mejora la salud celular y promueve la longevidad con la Terapia NAD+.",
+            "desc": [
+                "La Terapia NAD+ es un enfoque innovador que se centra en aumentar los niveles de nicotinamida adenina dinucleótido (NAD+), una coenzima esencial para la función celular. Esta terapia ayuda en la regeneración celular y la producción de energía.",
+                "Los pacientes a menudo informan mejoras en la claridad mental, los niveles de energía y la vitalidad general. Como resultado, la Terapia NAD+ está ganando popularidad como una herramienta poderosa contra los efectos del envejecimiento."
+            ],
+            "title": "Leer más"
+        },
+        {
+            "image": "biohacking-self-care",
+            "heading": "Protocolos de Biohacking",
+            "summary": "Toma el control de tu salud y optimiza tu rendimiento.",
+            "desc": [
+                "Los Protocolos de Biohacking empoderan a las personas para hacerse cargo de su salud a través de estrategias personalizadas que mejoran las funciones naturales del cuerpo. Esto puede incluir optimización de la nutrición, regímenes de ejercicio y técnicas de mejora cognitiva.",
+                "Estos protocolos están diseñados para mejorar el rendimiento, aumentar la longevidad y fomentar una comprensión más profunda de la propia salud. Los planes personalizados garantizan que cada individuo pueda alcanzar sus objetivos de salud y bienestar de manera efectiva."
+            ],
+            "title": "Leer más"
+        }
+    ]
+}

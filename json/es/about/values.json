@@ -1,0 +1,22 @@
+{
+    "h2": "Nuestros Valores",
+    "ul": [
+      {
+        "h3": "Innovación",
+        "p": "Buscamos continuamente nuevas formas de mejorar y evolucionar, adoptando las últimas tendencias y tecnologías."
+      },
+      {
+        "h3": "Integridad",
+        "p": "Nuestro negocio está basado en la confianza. Creemos en la transparencia, la equidad y en hacer siempre lo correcto."
+      },
+      {
+        "h3": "Comunidad",
+        "p": "Estamos comprometidos con retribuir y fomentar un fuerte sentido de pertenencia en todo lo que hacemos."
+      },
+      {
+        "h3": "Excelencia",
+        "p": "Nos esforzamos por superar las expectativas, ofreciendo siempre servicios y productos de la más alta calidad."
+      }
+    ]
+  }
+  

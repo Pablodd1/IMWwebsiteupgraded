@@ -1,0 +1,62 @@
+{
+    "heroSection": {
+        "h1": "IV Therapy",
+        "p": "Unlock your full health potential with personalized, cutting-edge wellness solutions designed to rejuvenate your mind and body."
+    },
+    "story": {
+        "h2": "Success Stories",
+        "ul": [
+            "I've never felt better! The team really helped me regain my energy and balance. - Sarah J.",
+            "The best wellness program I have experienced. Highly recommend it! - Mark T.",
+            "Thanks to their personalized approach, I feel like I've regained my youth! - Emily R.",
+            "The staff was attentive and knowledgeable, making my journey enjoyable and effective. - James W."
+        ]
+    },
+    "cta": {
+        "h2": "Ready to Take the Next Step?",
+        "btn": "Start Today",
+        "link": "/contact"
+    },
+    "meta": {
+        "title": "IV Therapy - Innovative Medical Wellness",
+        "desc": "Explore our innovative medical wellness services that help you achieve optimal health and well-being through personalized approaches."
+    },
+    "services": [
+        {
+            "image": "IV Micronutrient",
+            "heading": "IV Micronutrient Therapy",
+            "summary": "Elevate Your Health with IV Micronutrients",
+            "blog": [
+                "IV Micronutrient Therapy is a transformative experience that delivers essential vitamins and minerals directly into your bloodstream. This method ensures rapid and effective support for energy, immunity, and overall health. Tailored specifically to your unique needs, this therapy addresses any deficiencies you may have while enhancing your wellness journey. As you embrace this innovative approach, you will notice a revitalization in your body and a significant boost in your daily vitality. Our specialized IV treatments are designed not just to meet but exceed your expectations for optimal health."
+            ],
+            "title": "Read More"
+        },
+        {
+            "image": "Rejuvenate Your Body",
+            "heading": "NAD+ IV Therapy",
+            "summary": "Rejuvenate Your Body at the Cellular Level",
+            "blog": [
+                "NAD+ IV Therapy is an essential service for those seeking to enhance their cellular health and energy production. This innovative treatment plays a crucial role in recovery from fatigue and improving mental clarity, making it an indispensable part of your wellness routine. With our carefully administered NAD+ IV treatments, you can boost cognitive functions and actively support your body’s natural rejuvenation processes. Imagine feeling more energetic and clear-headed, ready to take on whatever the day throws at you."
+            ],
+            "title": "Read More"
+        },
+        {
+            "image": "Mineral & Amino Blends",
+            "heading": "Custom Blends (Mineral & Amino Blends)",
+            "summary": "Tailored Nutritional Support for Optimal Health",
+            "blog": [
+                "Our Custom Blends offer personalized combinations of minerals and amino acids crafted specifically for your health needs. Whether you aim to improve athletic performance, enhance recovery, or simply maintain your best self, these tailored blends provide the nutritional support you require. Our experts work with you to create a mix that complements your lifestyle, ensuring you enjoy the benefits of customized nutrition. With our service, you are not just receiving supplements; you are investing in your health."
+            ],
+            "title": "Read More"
+        },
+        {
+            "image": "booster",
+            "heading": "Performance Booster IVs",
+            "summary": "Maximize Your Potential with Performance Boosters",
+            "blog": [
+                "Performance Booster IVs are specifically designed to enhance your physical and mental performance, ideal for athletes and anyone with an active lifestyle. Packed with essential nutrients, these IVs help elevate hydration, stamina, and recovery, ensuring you are always at the top of your game. By unlocking your potential with our targeted performance IV therapies, you are investing in your athletic journey. Experience the difference as you train harder, recover faster, and achieve your personal best."
+            ],
+            "title": "Read More"
+        }
+    ]
+}

@@ -1,94 +1,69 @@
 [
-    {
-      "label": "Quick Links",
-      "cover":{
-        "src":"interior",
-        "alt":""
-      },
-      "nav": [
-        {
-          "href": "/chiropractic",
-          "label": "Chiropractic"
-        },
-        {
-          "href": "/regenerative-medicine",
-          "label": "Regenerative Medicine"
-        },
-        {
-          "href": "/wellness",
-          "label": "Wellness"
-        },
-        {
-          "href": "/anti-aging",
-          "label": "anti-aging"
-        }
-      ]
+  {
+    "label": "Quick Links",
+    "cover": {
+      "src": "interior",
+      "alt": ""
     },
-    {
-      "label": "Regenerative Medicine",
-      "cover":{
-        "src":"construct",
-        "alt":""
+    "nav": [
+      {
+        "href": "/chiropractic-and-physical-therapy",
+        "label": "Chiropractic & Physical Therapy"
       },
-      "nav": [
-        {
-          "href": "/hair Restoration",
-          "label": "Hair Restoration "
-        },
-        {
-          "href": "/Joint Rejuvenation",
-          "label": "Joint Rejuvenation"
-        },
-        {
-          "href": "/Brain Restoration",
-          "label": "Brain Restoration"
-        }
-      ]
-    },
-    {
-      "label": "Anti-Aging",
-      "cover":{
-        "src":"supply",
-        "alt":""
+      {
+        "href": "/regenerative-medicine",
+        "label": "Regenerative Medicine"
       },
-      "nav": [
-        {
-          "href": "/Hormone replacement",
-          "label": "Hormone replacement"
-        },
-        {
-          "href": "/Facial Rejuvenation",
-          "label": "Facial Rejuvenation"
-        },
-        {
-          "href": "/Peptide Therapy",
-          "label": "Peptide Therapy"
-        },
-        {
-          "href": "/IV therapy",
-          "label": "IV therapy"
-        }
-      ]
-    },
-    {
-      "label": "Company",
-      "nav": [
-        {
-          "href": "/about",
-          "label": "About"
-        },
-        {
-          "href": "/support",
-          "label": "Support"
-        },
-        {
-          "href": "/faqs",
-          "label": "FAQs"
-        },
-        {
-          "href": "/contact",
-          "label": "Contact"
-        }  
-      ]
-    }
-  ]
+      {
+        "href": "/iv-therapy",
+        "label": "IV Therapy"
+      },
+      {
+        "href": "/anti-aging-medicine",
+        "label": "Anti Aging  Medicine"
+      },
+      {
+        "href": "/aesthetic-treatments",
+        "label": "Aesthetic Treatments"
+      }
+    ]
+  },
+  {
+    "label": "",
+    "nav": [
+      {
+        "href": "/brain-Health",
+        "label": "Brain Health"
+      },
+      {
+        "href": "/personal-Injury",
+        "label": "Personal Injury"
+      },
+      {
+        "href": "/weight-loss-programs",
+        "label": "Weight Loss Programs"
+      },
+      {
+        "href": "/biohacking-and-optimization",
+        "label": "Biohacking & Optimization"
+      }
+    ]
+  },
+  {
+    "label": "Company",
+    "nav": [
+      {
+        "href": "/about",
+        "label": "About"
+      },
+      {
+        "href": "/support",
+        "label": "Support"
+      },
+      {
+        "href": "/contact",
+        "label": "Contact"
+      }
+    ]
+  }
+]

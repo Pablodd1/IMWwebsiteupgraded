@@ -1,6 +1,7 @@
 import styles from './page.module.scss';
 import GetSVG from '@SEGMENT/getSVG';
 import Card from '@SEGMENT/Card';
+import EmblaCarousel from '@SEGMENT/carousel/carousel';
 import Specialist from '@SEGMENT/Specialist';
 import AnimatedAction from '@ELEMENT/Action';
 import NotFound from '../not-found';
@@ -31,7 +32,7 @@ const Page = async ({ params }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <section className={styles.hero} style={{ backgroundImage: `url('/raster/Innovative Medical Wellness - ${PAGE}.jpg')` }} >
+            <section className={styles.hero} style={{ backgroundImage: `url('/raster/departs/${PAGE}/Innovative Medical Wellness - ${PAGE}.webp')` }} >
                 <GetSVG num={5} />
                 <div className={styles.heroContent}>
                     <h1>{data.heroSection.h1}</h1>
@@ -39,12 +40,14 @@ const Page = async ({ params }) => {
                 </div>
                 <GetSVG num={2} />
             </section>
-            <Card />
-            <Specialist LANG={LANG} />
+            <Card PAGE={PAGE} data={data.services}/>
+            <Specialist LANG={LANG}  />
             <section className={styles.testimonials}>
                 <h2>{data.story.h2}</h2>
-                <p>{data.story.ul[0]}</p>
-                <p>{data.story.ul[1]}</p>
+                <EmblaCarousel slides={data.story?.ul} />
+                {/* {
+                    data.story?.ul?.map(x=><p key={x} >{x}</p>)
+                } */}
             </section>
 
             <section className={styles.cta}>

@@ -1,22 +1,70 @@
 {
     "heroSection": {
         "h1": "Regenerative Medicine",
-        "p": "Unlock your full health potential with personalized, cutting-edge wellness solutions."
+        "p": "Unlock your full health potential with personalized, cutting-edge wellness solutions that help restore and rejuvenate your body."
     },
     "story": {
         "h2": "Success Stories",
         "ul": [
             "I've never felt better! The team really helped me regain my energy and balance. - Sarah J.",
-            "The best wellness program I have experienced. Highly recommend it! - Mark T."
+            "The best wellness program I have experienced. Highly recommend it! - Mark T.",
+            "Regenerative medicine has changed my life. I feel younger and more active! - Lisa P.",
+            "I was skeptical, but the results speak for themselves. I am pain-free! - John D."
         ]
     },
     "cta": {
         "h2": "Ready to Take the Next Step?",
-        "btn":"Start Today",
-        "link":"/contact"
+        "btn": "Start Today",
+        "link": "/contact"
     },
     "meta": {
-        "title": "Wellness - Innovative Medical Wellness",
-        "desc": "Explore our innovative medical wellness services that help you achieve optimal health and well-being."
-    }
+        "title": "Regenerative Medicine - Innovative Medical Wellness",
+        "desc": "Discover our regenerative medicine services designed to help you unlock your body's full potential for healing and vitality."
+    },
+    "services": [
+        {
+            "image": "PRP & Stem Cell Therapy",
+            "heading": "PRP & Stem Cell Therapy",
+            "summary": "Rejuvenate and Repair",
+            "blog": [
+                "Harness the power of your body's own healing mechanisms with PRP and stem cell therapy. These innovative treatments utilize growth factors and cells to stimulate tissue repair and regeneration. Experience a significant reduction in pain and an increase in mobility, empowering you to reclaim your active lifestyle.",
+                "PRP (Platelet-Rich Plasma) therapy involves drawing a small amount of your blood, processing it to concentrate the platelets, and injecting it back into the body at the site of injury. This natural approach enhances your body's ability to heal itself, promoting rejuvenation from within.",
+                "Stem cell therapy taps into the body’s reservoir of stem cells, helping to rebuild damaged tissues. These therapies are especially beneficial for sports injuries, joint pain, and chronic conditions, allowing you to enjoy a higher quality of life."
+            ],
+            "title": "Read More"
+        },
+        {
+            "image": "Exosome Therapy",
+            "heading": "Exosome Therapy",
+            "summary": "Next-Gen Healing",
+            "blog": [
+                "Exosome therapy represents the forefront of regenerative medicine, providing targeted healing through cellular communication. These nano-sized vesicles derived from stem cells facilitate tissue repair and reduce inflammation.",
+                "By harnessing the power of exosomes, patients can experience accelerated recovery times and enhanced cellular function. This therapy not only helps in healing existing injuries but also works to prevent future issues.",
+                "If you're looking for a modern approach to healing that utilizes your body’s natural processes, exosome therapy might be the solution for you. Discover how this innovative technique can promote optimal health and well-being."
+            ],
+            "title": "Read More"
+        },
+        {
+            "image": "Musculoskeletal",
+            "heading": "Joint & Musculoskeletal Injections",
+            "summary": "Pain Relief & Restoration",
+            "blog": [
+                "Our joint and musculoskeletal injection therapies are designed to alleviate pain and restore function. Utilizing advanced techniques, we deliver anti-inflammatory and regenerative substances directly to the affected areas.",
+                "This targeted approach allows for effective relief from chronic pain, enhancing mobility and improving your overall quality of life. Whether it's due to arthritis, injury, or overuse, our treatments aim to help you regain the freedom of movement.",
+                "We believe in a patient-centered approach, tailoring each treatment to the individual’s needs, ensuring the best possible outcomes for pain management and functional restoration."
+            ],
+            "title": "Read More"
+        },
+        {
+            "image": "Tissue Engineering Therapies",
+            "heading": "Tissue Engineering Therapies",
+            "summary": "Advanced Regeneration",
+            "blog": [
+                "Tissue engineering therapies involve the use of biological materials to repair or replace damaged tissues. Our cutting-edge techniques support the body's natural healing processes.",
+                "By employing innovative methods, we help restore function and improve outcomes for various conditions. Our team is dedicated to pioneering the future of healing through advanced tissue engineering solutions.",
+                "Whether you’re dealing with injuries or degenerative conditions, our therapies can significantly enhance your recovery process, helping you to return to your everyday activities with renewed strength and vitality."
+            ],
+            "title": "Read More"
+        }
+    ]
 }

@@ -2,6 +2,7 @@ import styles from './footer.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from '@ELEMENT/svgIcons';
+import ToggleLanguage from '@ELEMENT/switchLang';
 import { getDictionary } from '@JSON/index'
 
 const Footer = async ({ LANG }) => {
@@ -38,6 +39,7 @@ const Footer = async ({ LANG }) => {
                         <p>© All Rights Reserved.</p>
                         <Link href={"/tasamem-express-terms-of-service"}>Terms</Link>
                         <Link href={"/tasamem-express-privacy-statement"}>Privacy</Link>
+                        <ToggleLanguage lang={LANG} />
                     </section>
                     <ul className={styles.socialLinks}>
                         {socialLinks.map((y, j) => (

@@ -1,0 +1,66 @@
+{
+    "heroSection": {
+        "h1": "Salud Cerebral",
+        "p": "Desbloquea todo tu potencial de salud con soluciones de bienestar personalizadas y de vanguardia."
+    },
+    "story": {
+        "h2": "Historias de Éxito",
+        "ul": [
+            "¡Nunca me he sentido mejor! El equipo realmente me ayudó a recuperar mi energía y equilibrio. - Sarah J.",
+            "El mejor programa de bienestar que he experimentado. ¡Lo recomiendo mucho! - Mark T.",
+            "¡Experiencia transformadora! Ahora estoy más activa y enérgica que nunca. - Jessica R.",
+            "Su apoyo marcó una diferencia significativa en mi proceso de recuperación. ¡Gracias! - Mike L."
+        ]
+    },
+    "cta": {
+        "h2": "¿Listo para dar el siguiente paso?",
+        "btn": "Comienza Hoy",
+        "link": "/contact"
+    },
+    "meta": {
+        "title": "Salud Cerebral - Bienestar Médico Innovador",
+        "desc": "Explora nuestros innovadores servicios de bienestar médico que te ayudan a lograr una salud y bienestar óptimos."
+    },
+    "services": [
+        {
+            "image": "Neurofeedback",
+            "heading": "Neurofeedback Directo de Claridad",
+            "summary": "Mejora tu claridad mental y bienestar emocional.",
+            "blog": [
+                "El Neurofeedback Directo de Claridad es un enfoque revolucionario para el bienestar mental que permite a las personas mejorar su función cognitiva y estabilidad emocional. Este tratamiento no invasivo promueve la relajación, reduce la ansiedad y mejora la claridad mental, lo que lo convierte en una opción ideal para quienes buscan elevar su salud mental. A través de sesiones personalizadas adaptadas a las necesidades individuales, los clientes pueden desbloquear su potencial para un mayor bienestar.",
+                "Experimenta los beneficios del Neurofeedback Directo de Claridad mientras nuestro equipo de expertos te guía a través de un programa personalizado. Cada sesión está diseñada para ayudarte a lograr objetivos específicos, ya sea reducir los niveles de ansiedad o mejorar la retención de memoria. Al participar en este enfoque holístico, los clientes a menudo se sienten más equilibrados, enfocados y en control de su salud mental. Comienza tu camino hacia una mayor claridad y estabilidad emocional hoy mismo."
+            ],
+            "title": "Leer Más"
+        },
+        {
+            "image": "wellbeing",
+            "heading": "Terapia PEMF",
+            "summary": "Rejuvenece tu cuerpo con técnicas avanzadas de sanación.",
+            "blog": [
+                "La Terapia PEMF, o Terapia de Campo Electromagnético Pulsado, representa un avance revolucionario en las prácticas de salud holística. Esta terapia utiliza campos electromagnéticos para estimular la reparación celular, mejorando significativamente la salud en general. Es particularmente efectiva para aliviar el dolor y la recuperación de lesiones, mejorando la circulación sanguínea y reduciendo la inflamación a nivel celular. Las personas que se someten a la Terapia PEMF a menudo informan sentirse rejuvenecidas y experimentar tiempos de recuperación más rápidos de diversas dolencias.",
+                "Al adoptar esta técnica avanzada de sanación, los clientes pueden experimentar un nuevo estándar de bienestar. Con cada sesión adaptada a las necesidades de salud individuales, la Terapia PEMF promueve una sanación profunda que va más allá de los tratamientos superficiales. Al abordar las causas raíz del malestar y fomentar el rejuvenecimiento celular, los clientes pueden lograr mejoras duraderas en su salud. Descubre los efectos transformadores de la Terapia PEMF y da un paso proactivo hacia la salud óptima."
+            ],
+            "title": "Leer Más"
+        },
+        {
+            "image": "Reclaim Cognitive Recovery",
+            "heading": "Programas de Recuperación Cognitiva",
+            "summary": "Recupera tu función cognitiva y mejora tu calidad de vida.",
+            "blog": [
+                "Nuestros Programas de Recuperación Cognitiva están diseñados meticulosamente para individuos que buscan mejorar su función mental y recuperarse de deterioros cognitivos. Combinando terapias específicas con apoyo personalizado, estos programas tienen como objetivo restaurar las habilidades cognitivas y mejorar la salud cerebral en general. Ya sea que te estés recuperando de una lesión o enfrentando un deterioro cognitivo, nuestro enfoque holístico proporciona un camino para recuperar la claridad y la confianza en la vida diaria.",
+                "Con un enfoque en las necesidades individuales, cada programa incorpora técnicas especializadas que abordan los desafíos específicos que enfrentan los participantes. Esto puede incluir ejercicios cognitivos, prácticas de atención plena y orientación nutricional, todo destinado a rejuvenecer la función cerebral. Nuestro equipo dedicado está comprometido a ayudar a las personas a redescubrir su potencial cognitivo y mejorar su calidad de vida a través de estos innovadores programas de recuperación. ¡Comienza tu camino hacia la restauración cognitiva y el empoderamiento hoy!"
+            ],
+            "title": "Leer Más"
+        },
+        {
+            "image": "Post-Concussion Syndrome",
+            "heading": "Tratamiento del Síndrome Post-Conmoción",
+            "summary": "Cuidado especializado para la recuperación de conmociones.",
+            "blog": [
+                "El Tratamiento del Síndrome Post-Conmoción está diseñado para individuos que experimentan síntomas persistentes después de una conmoción. Nuestro enfoque especializado integra varias técnicas terapéuticas para centrarse en la gestión de síntomas y la recuperación general. A través de evaluaciones completas y atención dedicada, nos esforzamos por aliviar el malestar y ayudar a las personas a recuperar una sensación de normalidad en su vida diaria.",
+                "Este protocolo de tratamiento incluye sesiones de terapia personalizadas diseñadas para abordar los desafíos únicos que enfrenta cada individuo. Desde la rehabilitación física hasta la terapia cognitiva, nuestro objetivo es garantizar un proceso de recuperación fluido. Entendemos el impacto que los síntomas de conmoción pueden tener en las actividades diarias, y estamos comprometidos a proporcionar el apoyo necesario para una curación efectiva. No dejes que los síntomas de conmoción te retengan: da el primer paso hacia la recuperación hoy y redescubre tu vitalidad."
+            ],
+            "title": "Leer Más"
+        }
+    ]
+}

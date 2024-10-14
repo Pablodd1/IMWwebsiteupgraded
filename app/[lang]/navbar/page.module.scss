@@ -24,7 +24,6 @@
         position: absolute;
         overflow: hidden;
         background-color: $white;
-        color: $dark_1;
         transition: height 0.5s ease;
         top: calc(100% + 5px);
         left: 0;
@@ -117,7 +116,7 @@
     &:hover {
         svg {
             path {
-                fill: $dark_1;
+                // fill: $dark_1;
             }
         }
     }

@@ -1,0 +1,28 @@
+.history {
+    padding: 2rem 0;
+    
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    p {
+        text-align: center;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 700px;
+      margin: 0 auto;
+      
+      li {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        
+        strong {
+          color: #2c3e50;
+        }
+      }
+    }
+  }
+  

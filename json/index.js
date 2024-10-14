@@ -7,6 +7,11 @@ const dictionaries = {
       socialLinks: () => import('./en/general/socialLinks.json'),
       contactUS: () => import('./en/general/contactUS.json'),
     },
+    about: {
+      intro: () => import('./en/about/intro.json'),
+      values: () => import('./en/about/values.json'),
+      history: () => import('./en/about/history.json'),
+    },
     homepage: {
       intro: () => import('./en/homepage/intro.json'),
       about: () => import('./en/homepage/about.json'),
@@ -16,27 +21,46 @@ const dictionaries = {
       health: () => import('./en/homepage/health.json'),
     },
     subtypes: {
-      'anti-aging': () => import('./en/subtypes/anti-aging.json'),
-      chiropractic: () => import('./en/subtypes/chiropractic.json'),
-      wellness: () => import('./en/subtypes/wellness.json'),
+      'anti-aging-medicine': () => import('./en/subtypes/anti-aging-medicine.json'),
+      'chiropractic-and-physical-therapy': () => import('./en/subtypes/chiropractic-and-physical-therapy.json'),
+      'iv-therapy': () => import('./en/subtypes/iv-therapy.json'),
       'regenerative-medicine': () => import('./en/subtypes/regenerative-medicine.json'),
+      'brain-Health': () => import('./en/subtypes/brain-Health.json'),
+      'aesthetic-treatments': () => import('./en/subtypes/aesthetic-treatments.json'),
+      'personal-Injury': () => import('./en/subtypes/personal-Injury.json'),
+      'weight-loss-programs': () => import('./en/subtypes/weight-loss-programs.json'),
+      'biohacking-and-optimization': () => import('./en/subtypes/biohacking-and-optimization.json')
     },
   },
   es: {
     general: {
       navs: () => import('./es/general/navs.json'),
       socialLinks: () => import('./es/general/socialLinks.json'),
+      contactUS: () => import('./es/general/contactUS.json'),
+    },
+    about: {
+      intro: () => import('./es/about/intro.json'),
+      values: () => import('./es/about/values.json'),
+      history: () => import('./es/about/history.json'),
     },
     homepage: {
+      intro: () => import('./es/homepage/intro.json'),
       about: () => import('./es/homepage/about.json'),
       cards: () => import('./es/homepage/cards.json'),
       specialist: () => import('./es/homepage/specialist.json'),
+      departs: () => import('./es/homepage/departs.json'),
+      health: () => import('./es/homepage/health.json'),
     },
     subtypes: {
-      'anti-aging': () => import('./es/subtypes/anti-aging.json'),
-      chiropractic: () => import('./es/subtypes/chiropractic.json'),
-      wellness: () => import('./es/subtypes/wellness.json'),
+      'anti-aging-medicine': () => import('./es/subtypes/anti-aging-medicine.json'),
+      'chiropractic-and-physical-therapy': () => import('./es/subtypes/chiropractic-and-physical-therapy.json'),
+      'iv-therapy': () => import('./es/subtypes/iv-therapy.json'),
       'regenerative-medicine': () => import('./es/subtypes/regenerative-medicine.json'),
+      'brain-Health': () => import('./es/subtypes/brain-Health.json'),
+      'aesthetic-treatments': () => import('./es/subtypes/aesthetic-treatments.json'),
+      'personal-Injury': () => import('./es/subtypes/personal-Injury.json'),
+      'weight-loss-programs': () => import('./es/subtypes/weight-loss-programs.json'),
+      'biohacking-and-optimization': () => import('./es/subtypes/biohacking-and-optimization.json')
     },
   },
 };

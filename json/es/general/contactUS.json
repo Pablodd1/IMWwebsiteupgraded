@@ -1,0 +1,16 @@
+{
+    "details": {
+      "h2": "Detalles de Contacto",
+      "address": "1899 NE 164th St, North Miami Beach, FL 33162",
+      "phone": "(305)864-1373",
+      "email": "info@innovativemedicalwellness.com"
+    },
+    "form": {
+      "h2": "Formulario de Contacto",
+      "fullname": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "msg": "Escribe tu mensaje...",
+      "btn": "Enviar Mensaje"
+    }
+  }
+  

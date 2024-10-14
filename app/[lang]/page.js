@@ -24,9 +24,9 @@ export default async function Home({ params }) {
       <Suspense >
         <About LANG={LANG} />
       </Suspense>
-      <Suspense >
+      {/* <Suspense >
         <Card LANG={LANG} />
-      </Suspense>
+      </Suspense> */}
       <Suspense >
         <HealthAbout LANG={LANG} />
       </Suspense>

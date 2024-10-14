@@ -1,0 +1,42 @@
+@import "@SASS/variables";
+
+.team {
+    padding: 2rem 0;
+  
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .grid {
+      display: flex;
+      gap: 3.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 85rem;
+      margin: auto;
+  
+      .teamMember {
+        text-align: center;
+        flex: 1;
+        max-width: 250px;
+        img {
+          border-radius: 50%;
+          margin-bottom: 1rem;
+          border: 3px solid $green_dark;
+          padding: 5px;
+        }
+        
+        h3 {
+          font-size: 1.25rem;
+        }
+        
+        p {
+          font-size: 1rem;
+          color: #7f8c8d;
+        }
+      }
+    }
+  }
+  

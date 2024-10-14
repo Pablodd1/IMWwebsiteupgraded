@@ -1,0 +1,26 @@
+[
+  {
+    "label": "MEDICINA REGENERATIVA",
+    "image": {
+      "src": "prostate-cancer-sexual-dysfunction-in-a-clinic-room-female-doctor-appointment-at-the-desk-1024x577.jpg",
+      "alt": ""
+    },
+    "description": "Desbloquea el potencial de tu cuerpo para sanar con nuestros avanzados tratamientos de medicina regenerativa. Adaptados para promover la recuperación natural y el bienestar a largo plazo, nuestro enfoque apunta a las causas profundas de tus problemas de salud para obtener resultados óptimos."
+  },
+  {
+    "label": "Rendimiento Ejecutivo (CEO)",
+    "image": {
+      "src": "african-american-ceo-analyzing-business-reports-with-his-team-during-a-briefing-in-the-office--1024x682.jpg",
+      "alt": ""
+    },
+    "description": "Mejora el rendimiento del CEO con nuestro Programa de Terapia IV y Modificación del Estilo de Vida Personalizado. En nuestra clínica, nos especializamos en optimizar la salud y el rendimiento de los ejecutivos a través de tratamientos IV personalizados y estrategias integrales de estilo de vida. Experimenta una mayor función cognitiva, más energía y mejor resistencia al estrés, todo diseñado para ayudarte a rendir al máximo en la sala de juntas y más allá."
+  },
+  {
+    "label": "BIENESTAR SEXUAL",
+    "image": {
+      "src": "pablo-heimplatz-EAvS-4KnGrk-unsplash-1024x683-1.webp",
+      "alt": ""
+    },
+    "description": "Revitaliza tu salud íntima con nuestros servicios integrales de bienestar sexual. Nuestros tratamientos personalizados y orientación experta están diseñados para mejorar tu vitalidad sexual, confianza y bienestar general."
+  }
+]

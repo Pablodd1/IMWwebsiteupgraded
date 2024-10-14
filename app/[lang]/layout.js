@@ -1,7 +1,7 @@
 import UseScrollEffect from "@HOOK/monitorScroll";
 import "./globals.css";
 import Link from "next/link";
-import { ContactUS, Logo, PhoneIcon } from "@ELEMENT/svgIcons";
+import { ContactUS, Mail,Logo, PhoneIcon } from "@ELEMENT/svgIcons";
 import styles from './layout.module.scss';
 import Footer from "./Footer";
 import { Suspense } from "react";
@@ -12,11 +12,12 @@ export const metadata = {
 };
 
 const iconItems = [
-  { label: 'Call', icon: <PhoneIcon key={0} />, href: 'tel:' },
-  { label: 'Mail', icon: <ContactUS key={1} />, href: 'mailto:' },
+  { label: 'Call', icon: <PhoneIcon key={0} />, href: 'tel:(305)864-1373' },
+  { label: 'Mail', icon: <Mail key={1} />, href: 'mailto:info@innovativemedicalwellness.com' },
+  { label: 'Contact', icon: <ContactUS key={2} />, href: '/contact' },
 ];
 const renderIconButton = ({ label, icon, href }) => (
-  <Link key={label} href={href} aria-label={label}>
+  <Link key={label} title={label} href={href} aria-label={label}>
     {icon}
   </Link>
 );

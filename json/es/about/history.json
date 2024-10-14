@@ -1,0 +1,22 @@
+{
+    "h2": "Our Journey",
+    "p":"Here’s a quick look at how we grew from a startup to a global leader in just a few years.",
+    "ul": [
+        {
+            "pre": "2010:",
+            "p": " Company founded with the vision of providing innovative tech solutions."
+        },
+        {
+            "pre": "2012:",
+            "p": " Expanded into international markets, serving clients across Europe."
+        },
+        {
+            "pre": "2016:",
+            "p": " Achieved key milestones in product development and customer success."
+        },
+        {
+            "pre": "2020:",
+            "p": " Launched a new line of services focused on sustainability and community growth."
+        }
+    ]
+}

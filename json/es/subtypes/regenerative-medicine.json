@@ -1,22 +1,70 @@
 {
     "heroSection": {
-        "h1": "Regenerative Medicine",
-        "p": "Unlock your full health potential with personalized, cutting-edge wellness solutions."
+        "h1": "Medicina Regenerativa",
+        "p": "Desbloquea todo tu potencial de salud con soluciones de bienestar personalizadas y de vanguardia que ayudan a restaurar y rejuvenecer tu cuerpo."
     },
     "story": {
-        "h2": "Success Stories",
+        "h2": "Historias de Éxito",
         "ul": [
-            "I've never felt better! The team really helped me regain my energy and balance. - Sarah J.",
-            "The best wellness program I have experienced. Highly recommend it! - Mark T."
+            "¡Nunca me he sentido mejor! El equipo realmente me ayudó a recuperar mi energía y equilibrio. - Sarah J.",
+            "El mejor programa de bienestar que he experimentado. ¡Lo recomiendo mucho! - Mark T.",
+            "La medicina regenerativa ha cambiado mi vida. ¡Me siento más joven y activa! - Lisa P.",
+            "Era escéptico, pero los resultados hablan por sí mismos. ¡Estoy libre de dolor! - John D."
         ]
     },
     "cta": {
-        "h2": "Ready to Take the Next Step?",
-        "btn":"Start Today",
-        "link":"/contact"
+        "h2": "¿Listo para dar el siguiente paso?",
+        "btn": "Comienza hoy",
+        "link": "/contacto"
     },
     "meta": {
-        "title": "Wellness - Innovative Medical Wellness",
-        "desc": "Explore our innovative medical wellness services that help you achieve optimal health and well-being."
-    }
+        "title": "Medicina Regenerativa - Bienestar Médico Innovador",
+        "desc": "Descubre nuestros servicios de medicina regenerativa diseñados para ayudarte a desbloquear el pleno potencial de sanación y vitalidad de tu cuerpo."
+    },
+    "services": [
+        {
+            "image": "PRP & Stem Cell Therapy",
+            "heading": "Terapia PRP y Células Madre",
+            "summary": "Rejuvenecer y Reparar",
+            "blog": [
+                "Aprovecha el poder de los propios mecanismos de sanación de tu cuerpo con la terapia PRP y células madre. Estos tratamientos innovadores utilizan factores de crecimiento y células para estimular la reparación y regeneración de tejidos.",
+                "La terapia PRP (Plasma Rico en Plaquetas) implica extraer una pequeña cantidad de tu sangre, procesarla para concentrar las plaquetas y reinjectarla en el cuerpo en el sitio de la lesión. Este enfoque natural mejora la capacidad de tu cuerpo para sanarse a sí mismo.",
+                "La terapia con células madre aprovecha el reservorio de células madre del cuerpo, ayudando a reconstruir tejidos dañados. Estas terapias son especialmente beneficiosas para lesiones deportivas, dolor en las articulaciones y condiciones crónicas, permitiéndote disfrutar de una mejor calidad de vida."
+            ],
+            "title": "Leer Más"
+        },
+        {
+            "image": "Exosome Therapy",
+            "heading": "Terapia de Exosomas",
+            "summary": "Curación de Nueva Generación",
+            "blog": [
+                "La terapia de exosomas representa la vanguardia de la medicina regenerativa, proporcionando curación dirigida a través de la comunicación celular. Estos vesículos de tamaño nano derivados de células madre facilitan la reparación de tejidos y reducen la inflamación.",
+                "Al aprovechar el poder de los exosomas, los pacientes pueden experimentar tiempos de recuperación acelerados y una función celular mejorada. Esta terapia no solo ayuda en la curación de lesiones existentes, sino que también trabaja para prevenir futuros problemas.",
+                "Si buscas un enfoque moderno para la curación que utilice los procesos naturales de tu cuerpo, la terapia de exosomas podría ser la solución para ti. Descubre cómo esta técnica innovadora puede promover la salud y el bienestar óptimos."
+            ],
+            "title": "Leer Más"
+        },
+        {
+            "image": "Musculoskeletal",
+            "heading": "Inyecciones de Articulaciones y Musculoesqueléticas",
+            "summary": "Alivio del Dolor y Restauración",
+            "blog": [
+                "Nuestras terapias de inyección para articulaciones y musculoesqueléticas están diseñadas para aliviar el dolor y restaurar la función. Utilizando técnicas avanzadas, entregamos sustancias antiinflamatorias y regenerativas directamente a las áreas afectadas.",
+                "Este enfoque dirigido permite un alivio efectivo del dolor crónico, mejorando la movilidad y mejorando tu calidad de vida en general. Ya sea debido a artritis, lesiones o sobreuso, nuestros tratamientos tienen como objetivo ayudarte a recuperar la libertad de movimiento.",
+                "Creemos en un enfoque centrado en el paciente, adaptando cada tratamiento a las necesidades individuales, asegurando los mejores resultados posibles para el manejo del dolor y la restauración funcional."
+            ],
+            "title": "Leer Más"
+        },
+        {
+            "image": "Tissue Engineering Therapies",
+            "heading": "Terapias de Ingeniería de Tejidos",
+            "summary": "Regeneración Avanzada",
+            "blog": [
+                "Las terapias de ingeniería de tejidos implican el uso de materiales biológicos para reparar o reemplazar tejidos dañados. Nuestras técnicas de vanguardia apoyan los procesos de sanación naturales del cuerpo.",
+                "Mediante el empleo de métodos innovadores, ayudamos a restaurar la función y mejorar los resultados para diversas condiciones. Nuestro equipo está dedicado a liderar el futuro de la curación a través de soluciones avanzadas de ingeniería de tejidos.",
+                "Ya sea que estés lidiando con lesiones o condiciones degenerativas, nuestras terapias pueden mejorar significativamente tu proceso de recuperación, ayudándote a regresar a tus actividades diarias con renovada fuerza y vitalidad."
+            ],
+            "title": "Leer Más"
+        }
+    ]
 }

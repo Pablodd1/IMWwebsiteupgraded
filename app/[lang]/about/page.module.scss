@@ -1,0 +1,41 @@
+.about {
+    padding: 6rem 2rem 2rem;
+    line-height: 1.6;
+    
+    .hero {
+      background-image: url('/raster/Innovative Medical Wellness - about.webp');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25px;
+  
+      .heroContent {
+        color: white;
+        text-align: center;
+        h1 {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  
+    .section {
+      padding: 2rem 0;
+      margin: 8.5rem auto;
+      max-width: 85rem;
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        max-width: 700px;
+      }
+    }
+  }
+  

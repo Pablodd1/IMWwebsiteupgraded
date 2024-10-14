@@ -18,5 +18,25 @@
     "meta": {
         "title": "Wellness - Innovative Medical Wellness",
         "desc": "Explore our innovative medical wellness services that help you achieve optimal health and well-being."
-    }
+    },
+    "services": [
+        {
+            "image": "c1",
+            "heading": "Personalized Weight Loss Care",
+            "desc": "Customized weight management strategies combining dietary guidance, exercise plans, and medical support.",
+            "title": "Read More"
+        },
+        {
+            "image": "c2",
+            "heading": "Personal Injury Care",
+            "desc": "Expert medical services for injury recovery, focusing on pain relief, healing, and restoring function after an accident.",
+            "title": "Read More"
+        },
+        {
+            "image": "c3",
+            "heading": "Holistic Lung Therapy",
+            "desc": "Cutting-edge medical service focused on restoring lung health and function, promoting improved breathing and vitality.",
+            "title": "Read More"
+        }
+    ]
 }
