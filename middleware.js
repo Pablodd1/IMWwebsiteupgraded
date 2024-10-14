@@ -1,16 +1,35 @@
-import { NextResponse, userAgent } from 'next/server';
+import { NextResponse } from "next/server";
+import { match } from '@formatjs/intl-localematcher'
+import Negotiator from 'negotiator'
+let locales = ['en', 'es']
 
-export function middleware(request) {
-  const url = request.nextUrl.clone();
-  const { device, isBot } = userAgent(request);
-  const viewport = device.type === 'mobile' ? 'mobile' : 'desktop';
-  url.searchParams.set('viewport', viewport);
+// Get the preferred locale, similar to the above or using a library
+function getLocale(request) {
+    let headers = { 'accept-language': 'en-US,en;q=0.5' }
+    let languages = new Negotiator({ headers }).languages()
+    let defaultLocale = 'ar'
 
-  return NextResponse.rewrite(url);
+    return match(languages, locales, defaultLocale)
 }
 
+export function middleware(request) {
+    const { pathname } = request.nextUrl
+    const pathnameHasLocale = locales.some(
+        (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    )
+
+    if (pathnameHasLocale) return
+
+    // Redirect if there is no locale
+    const locale = getLocale(request)
+    request.nextUrl.pathname = `/${locale}${pathname}`
+    // e.g. incoming request is /products
+    // The new URL is now /en-US/products
+    return NextResponse.redirect(request.nextUrl)
+}
 export const config = {
-  matcher: [
-    '/((?!_next/static|_next/image|svg|raster|videos).*)',
-  ],
-};
+    matcher: [
+      // Add your matcher patterns here
+      '/((?!_next/static|_next/image|svg|raster).*)',
+    ],
+  };

@@ -1,0 +1,15 @@
+{
+    "details":{
+        "h2":"Contact Details",
+        "address":"470 Lucy Forks, Patriciafurt, YC7B 3UT",
+        "phone":"(123) 123-7891",
+        "email":"mail@demolink.org"
+    },
+    "form":{
+        "h2":"Contact Form",
+        "fullname":"Full Name",
+        "email":"Email",
+        "msg":"Type your Message...",
+        "btn":"Send Message"
+    }
+}

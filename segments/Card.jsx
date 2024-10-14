@@ -1,15 +1,20 @@
 import React from 'react';
 import styles from './card.module.scss';
 import Image from 'next/image';
-import cardData from '@JSON/card_data'
 import AnimatedAction from '@ELEMENT/Action';
+import { getDictionary } from '@JSON/index'
 
-const Card = () => {
+const Card = async ({LANG}) => {
+    const cardData = await getDictionary(LANG || 'en', `homepage.cards`);
     return (
         <section className={styles.cardWrapper}>
             {cardData.map((item, i) => (
                 <figure className={styles.inner} key={i}>
-                    <Image src={item.image} alt={item.heading} />
+                    <Image 
+                    src={`/raster/cards/${item.image}.jpg`} 
+                    alt={item.heading} 
+                    width={448} height={348}
+                    />
                     <figcaption className={styles.cardBtn}>
                         <h3>{item.heading}</h3>
                         <p>{item.desc}</p>

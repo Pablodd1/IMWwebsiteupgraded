@@ -20,7 +20,7 @@ const renderIconButton = ({ label, icon, href }) => (
     {icon}
   </Link>
 );
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, params }) {console.log(params)
   return (
     <html lang="en">
       <body >
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         </header>
         {children}
         <Suspense >
-          <Footer />
+          <Footer LANG={params.lang || 'en'} />
         </Suspense>
       </body>
     </html>

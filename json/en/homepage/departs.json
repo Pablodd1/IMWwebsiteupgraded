@@ -1,0 +1,26 @@
+[
+    {
+      "label": "REGENERATIVE MEDICINE",
+      "image": {
+        "src": "prostate-cancer-sexual-dysfunction-in-a-clinic-room-female-doctor-appointment-at-the-desk-1024x577.jpg",
+        "alt": ""
+      },
+      "description": "Unlock your body’s potential for healing with our advanced regenerative medicine treatments. Tailored to promote natural recovery and long-term wellness, our approach targets the root causes of your health issues for optimal results."
+    },
+    {
+      "label": "Executive Performance (CEO)",
+      "image": {
+        "src": "african-american-ceo-analyzing-business-reports-with-his-team-during-a-briefing-in-the-office--1024x682.jpg",
+        "alt": ""
+      },
+      "description": "Elevate CEO Performance with Our Tailored IV Therapy and Lifestyle Modification Program. At our clinic, we specialize in optimizing the health and performance of top executives through personalized IV treatments and comprehensive lifestyle strategies. Experience enhanced cognitive function, increased energy, and improved stress resilience, all designed to help you perform at your peak in the boardroom and beyond."
+    },
+    {
+      "label": "SEXUAL WELLNESS",
+      "image": {
+        "src": "pablo-heimplatz-EAvS-4KnGrk-unsplash-1024x683-1.webp",
+        "alt": ""
+      },
+      "description": "Revitalize your intimate health with our comprehensive sexual wellness services. Our personalized treatments and expert guidance aim to improve your sexual vitality, confidence, and overall well-being."
+    }
+  ]

@@ -7,30 +7,35 @@ import styles from './page.module.scss'
 import Departs from "@SEGMENT/departs";
 import ContactUs from "@SEGMENT/ContactUs";
 import GetSVG from "@SEGMENT/getSVG";
+import { getDictionary } from '@JSON/index'
 
-export default function Home() {
+export default async function Home({ params }) {
+  const LANG = params.lang
+  const intro = await getDictionary(LANG || 'en', `homepage.intro`);
   return (
     <main >
       <section className={styles.heroSec} >
         <header className={styles.header}>
-            <h1>Innovative <br/> Medical Wellness</h1>
-            <p>The Best Health and Wellness Center in Miami – focusing on integrated holistic medicine.  Serving the community since 1982.</p>
+          <h1>Innovative <br /> Medical Wellness</h1>
+          <p>{intro.p}</p>
         </header>
-       <GetSVG num={4} />
+        <GetSVG num={4} />
       </section>
       <Suspense >
-        <About />
+        <About LANG={LANG} />
       </Suspense>
       <Suspense >
-        <Card />
+        <Card LANG={LANG} />
       </Suspense>
       <Suspense >
-        <HealthAbout />
+        <HealthAbout LANG={LANG} />
       </Suspense>
       <Suspense >
-        <Departs />
+        <Departs LANG={LANG} />
       </Suspense>
-      <ContactUs />
+      <Suspense >
+        <ContactUs LANG={LANG} />
+      </Suspense>
     </main>
   );
 }

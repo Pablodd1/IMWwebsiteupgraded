@@ -3,53 +3,56 @@ import styles from './contact.module.scss';
 import {  LocationIcon, Mail, PhoneIcon } from '@ELEMENT/svgIcons';
 import Link from 'next/link';
 import AnimatedAction from '@ELEMENT/Action';
+import { getDictionary } from '@JSON/index'
 
-const ContactUs = () => {
+const ContactUs = async ({LANG}) => {
+  const contactUS = await getDictionary(LANG || 'en', `general.contactUS`);
+
     return (
         <section className={styles.wrap}>
         <section className={styles.container}>
             <article className={styles.contact_details}>
-                <h2>Contact Details</h2>
+                <h2>{contactUS.details.h2}</h2>
                 <aside className={styles.aside} >
                 <Link href={''}>
                     <LocationIcon color='#004166' />
-                    470 Lucy Forks, Patriciafurt, YC7B 3UT
+                    {contactUS.details.address}
                 </Link>
-                <Link href={`tel:(123) 123-7891'}`}>
+                <Link href={`tel:${contactUS.details.phone}`}>
                     <PhoneIcon color='#004166' />
-                    (123) 123-7891
+                    {contactUS.details.phone}
                 </Link>
-                <Link href={`mailto:mail@demolink.org`}>
+                <Link href={`mailto:${contactUS.details.email}`}>
                     <Mail color='#004166' />
-                    mail@demolink.org
+                    {contactUS.details.email}
                 </Link>
                 </aside>
             </article>
 
             <article className={styles.contact_form}>
-                <h2>Contact Form</h2>
+                <h2>{contactUS.form.h2}</h2>
                 <form action="" className={styles['contact-form']}>
                     <div className={styles.input_box}>
                         <input type="text" required={true} />
-                        <span>Full Name</span>
+                        <span>{contactUS.form.fullname}</span>
                     </div>
 
                     <div className={styles.input_box}>
                         <input type="email" required={true} />
-                        <span>Email</span>
+                        <span>{contactUS.form.email}</span>
                     </div>
 
                     <div className={styles.input_box}>
                         <textarea required={true}></textarea>
-                        <span>Type your Message...</span>
+                        <span>{contactUS.form.msg}</span>
                     </div>
                      
                         <AnimatedAction
                             href={``}
-                            label={'Send Message'}
+                            label={contactUS.form.btn}
                             icon="emailSend-white"
                             hoverIcon={"emailSend-black"}
-                            iconAlt="arrow right"
+                            iconAlt={contactUS.form.btn}
                             iconSize="17"
                             iconClass=""
                             btnclass={["btnSm","darkBlue"]}

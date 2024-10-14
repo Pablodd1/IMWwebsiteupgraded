@@ -2,9 +2,11 @@ import React from 'react'
 import styles from "./specialist.module.scss";
 import Image from 'next/image';
 import { FacebookIcon, LinkedinIcon, PinterestIcon, YoutubeIcon } from '@ELEMENT/svgIcons';
-import profile from '@JSON/specialist';
 import Link from 'next/link';
-const Specialist = () => {
+import { getDictionary } from '@JSON/index'
+const Specialist = async ({LANG}) => {
+  const profile = await getDictionary(LANG || 'en', `homepage.specialist`);
+
     return (
         <div className={styles.container}>
             <h2 className={styles.heading}>Meet our certified specialist</h2>
@@ -37,12 +39,6 @@ const Specialist = () => {
                 ))}
             </ul>
         </div>
-
-
-
-
-
-
     )
 }
 

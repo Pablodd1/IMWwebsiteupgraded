@@ -1,11 +1,14 @@
 import styles from './footer.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
-import footerNav from '@JSON/navs.json';
-import socialLinks from '@JSON/socialLinks.json';
 import { Logo } from '@ELEMENT/svgIcons';
+import { getDictionary } from '@JSON/index'
 
-const Footer = () => {
+const Footer = async ({ LANG }) => {
+    let footerNav, socialLinks;
+    footerNav = await getDictionary(LANG || 'en', `general.navs`); 
+    socialLinks = await getDictionary(LANG || 'en', `general.socialLinks`); 
+
     return (
         <footer className={styles.footer}>
             <section className={styles.container}>
@@ -52,7 +55,7 @@ const Footer = () => {
                         ))}
                     </ul>
                 </footer>
-                </section>
+            </section>
         </footer>
     );
 };

@@ -4,21 +4,26 @@ import Card from '@SEGMENT/Card';
 import Specialist from '@SEGMENT/Specialist';
 import AnimatedAction from '@ELEMENT/Action';
 import NotFound from '../not-found';
-
+import { getDictionary } from '@JSON/index'
 export async function generateMetadata({ params, searchParams }, parent) {
     const PAGE = params.Service;
-    const data = PAGE&&await import(`@JSON/subtypes/${PAGE}.json`);
-   
+    const LANG = params.lang;
+    // const t = await getDictionary(LANG)
+    let data;
+    data = PAGE && await getDictionary(LANG || 'en', `subtypes.${PAGE}`);
+
     return {
         title: data?.meta?.title,
         description: data?.meta?.desc,
     }
-  }
-const Page = async ({params}) => {
+}
+const Page = async ({ params }) => {
     let PAGE = params.Service;
-    if(!PAGE)
+    const LANG = params.lang;
+    let data; 
+    if (!PAGE)
         <NotFound />;
-    const data = PAGE&&await import(`@JSON/subtypes/${PAGE}.json`);
+    data = PAGE && await getDictionary(LANG || 'en', `subtypes.${PAGE}`); 
     return (
         <main
             className={styles.Page}
@@ -28,14 +33,14 @@ const Page = async ({params}) => {
         >
             <section className={styles.hero} style={{ backgroundImage: `url('/raster/Innovative Medical Wellness - ${PAGE}.jpg')` }} >
                 <GetSVG num={5} />
-                 <div className={styles.heroContent}>
+                <div className={styles.heroContent}>
                     <h1>{data.heroSection.h1}</h1>
                     <p>{data.heroSection.p}</p>
                 </div>
                 <GetSVG num={2} />
             </section>
             <Card />
-            <Specialist />
+            <Specialist LANG={LANG} />
             <section className={styles.testimonials}>
                 <h2>{data.story.h2}</h2>
                 <p>{data.story.ul[0]}</p>
