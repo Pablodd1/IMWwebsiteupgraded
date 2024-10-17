@@ -45,7 +45,7 @@
         background-color: rgba(255, 255, 255, 0.9);
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
         
-        img {
+        .img {
             height: 17rem;
             max-width: 100%;
             object-fit: cover;
@@ -114,8 +114,18 @@
     }
 
     &.reading {
-
         z-index: 50;
+        // position: fixed;
+        top: 0;
+        left: 0;
+        gap: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        figure {
+            display:none ;
+        }
 
         .overlay {
             position: fixed;
@@ -123,20 +133,20 @@
             z-index: 6;
         }
         .active {
-            width: 90vw;
+            display: block;
+            width: 90vw ;
             max-width: 90vw;
             height: 90vh;
             margin: 0;
-            position: fixed;
-            top: 5vh;
-            left: 5vw;
-            z-index: 10;
+            // top: 5vh;
+            // left: 5vw;
+            z-index: 60;
             background-color: #ffffff;
             .close {
                 position: fixed;
                 display: block;
                 float: right;
-                z-index: 12;
+                z-index: 50;
                 top: 1rem;
                 right: 1rem;
                 height: 3rem;
@@ -144,11 +154,10 @@
                 cursor: pointer;
             }
 
-            img {
+            .img {
                 width: 100%;
-                height: 25vh;
+                height: 15vh;
             }
-
             figcaption {
                 max-width: 65rem;
                 margin: 2rem auto;

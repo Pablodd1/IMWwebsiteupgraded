@@ -5,12 +5,12 @@
       "label": "X"
     },
     {
-      "href": "/",
+      "href": "https://www.facebook.com/home.php",
       "icon": "facebook-innovative-medical-wellness-social-media-contact",
       "label": "Facebook"
     },
     {
-      "href": "/",
+      "href": "https://www.instagram.com/imwelness/?igsh=MTcya2psamx2NmVkbg%3D%3D",
       "icon": "instagram-innovative-medical-wellness-social-media-contact",
       "label": "Instagram"
     },
@@ -20,7 +20,12 @@
       "label": "LinkedIn"
     },
     {
-      "href": "/",
+      "href": "https://www.tiktok.com/@imedicalwellness",
+      "icon": "tiktok-innovative-medical-wellness-social-media-contact",
+      "label": "Tiktok"
+    },
+    {
+      "href": "https://www.youtube.com/@imedicalw",
       "icon": "youtube-innovative-medical-wellness-social-media-contact",
       "label": "Youtube"
     }

@@ -82,13 +82,6 @@ export const BagIcon = ({ size = 24, color = "#fff" }) => (
     </svg>
 );
 
-export const PhoneAltIcon = ({ color = "#fff" }) => {
-    return (
-        <svg width="22" height="22" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '1.375rem', height: '1.375rem' }}>
-            <path d="M1.91211 17.5L7.02148 15.2969C7.63086 15.0625 8.33398 15.2031 8.70898 15.7188L10.7715 18.25C14.0527 16.6562 16.6777 14.0312 18.2715 10.75L15.7402 8.6875C15.2246 8.3125 15.084 7.60938 15.3184 7L17.5215 1.89062C17.8027 1.28125 18.5059 0.90625 19.1621 1.04688L23.8965 2.17188C24.5996 2.3125 25.0215 2.875 25.0215 3.57812C25.0215 15.3906 15.4121 25.0469 3.59961 25.0469C2.89648 25.0469 2.33398 24.5781 2.19336 23.875L1.06836 19.1875C0.927734 18.4844 1.30273 17.7812 1.91211 17.5Z" fill={color} />
-        </svg>
-    );
-}
 export const SearchIcon = ({ size = '1.063rem', color = 'white', ...props }) => {
     return (
         <svg width={size} height={size} viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" {...props} style={{ aspectRatio: '1/1' }} >

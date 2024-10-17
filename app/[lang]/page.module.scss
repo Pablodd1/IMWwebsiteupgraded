@@ -4,7 +4,7 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background-image: url('/raster/fcp3.jpg');
+  background-image: url('/raster/Innovative Medical Wellness - cover.webp');
   // background-image: url('/raster/Innovative Medical Wellness.jpg');
   background-attachment: fixed;
   background-size: cover;
@@ -21,25 +21,30 @@
     gap: 0;
     padding: 3rem;
     color: $white;
+    border-radius: 25px;
     margin-bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.75);
-
+    // top: 0;
+    left: 5%;
+    // right: 0;
+    bottom: 35%;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(8px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     h1 {
-      color: #d3d3d3;
+      color: #222222;
+      // color: #d3d3d3;
       font-weight: 300;
       font-size: 1.35rem;
       letter-spacing: 6px;
       margin-bottom: 0;
-      width: 25rem;
+      width: 45rem;
       text-transform: uppercase;
       padding-bottom: 0.75rem;
 
       &::first-line {
-        color: #ffffff;
+        color: #000000;
+        // color: #ffffff;
         font-family: $font_secondary;
         letter-spacing: 5px;
         text-align: justify;
@@ -52,8 +57,8 @@
     }
 
     p {
-      border-top: 3px solid $light_2;
-      color: $theme_light;
+      border-top: 3px solid #252525;
+      color: #252525;
       font-size: 1rem;
       letter-spacing: 1px;
       text-align: justify !important;
@@ -81,7 +86,73 @@
     // transform: translateZ(-1px) scale(2);
   }
 
-  svg {
+  .cta_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .5rem;
+    --black: #000000;
+* {  
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+    .phone {
+      background-color: var(--black);
+      border: 2px solid var(--black);
+      padding: .35rem .65rem;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      column-gap: .5rem;
+      color: white;
+
+      svg {
+        path {
+          fill: white;
+        }
+      }
+      &:hover {
+        color: var(--black);
+        background-color: white;
+        border-color: white;
+        svg {
+          path {
+            fill: var(--black);
+          }
+        }
+      }
+    }
+
+    .email {
+      display: flex;
+      align-items: center;
+      background-color: var(--black);
+      border-radius: 25px;
+      padding: .25rem;
+
+      svg {
+        height: 2rem;
+
+        path {
+          stroke: var(--black);
+          fill: white;
+          stroke-width: 1.75px;
+        }
+      }
+      &:hover {
+        color: var(--black);
+        background-color: white;
+        border-color: white;
+        svg {
+          path {
+            fill: var(--black);
+            stroke: white;
+          }
+        }
+      }
+    }
+  }
+
+  .svg_bottom {
     bottom: 0;
     left: 0;
     height: 33vh;

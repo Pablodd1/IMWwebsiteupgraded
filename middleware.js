@@ -20,16 +20,12 @@ export function middleware(request) {
 
     if (pathnameHasLocale) return
 
-    // Redirect if there is no locale
     const locale = getLocale(request)
     request.nextUrl.pathname = `/${locale}${pathname}`
-    // e.g. incoming request is /products
-    // The new URL is now /en-US/products
     return NextResponse.redirect(request.nextUrl)
 }
 export const config = {
     matcher: [
-      // Add your matcher patterns here
-      '/((?!_next/static|_next/image|svg|raster).*)',
+        '/((?!_next/static|_next/image|favicon.ico|logo.png|robots.txt|sitemap.xml|manifest.json|svg|raster).*)',
     ],
   };

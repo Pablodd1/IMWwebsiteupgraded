@@ -120,7 +120,8 @@
     }
 
     .testimonials {
-        background-color: #024a50f6;
+        background-color: #0e0e0e;
+        // background-color: #024a50;
         padding: 5rem 2rem;
         margin: 5rem 0 0;
         text-align: center;
@@ -144,7 +145,7 @@
     .cta {
         text-align: center;
         padding: 2rem;
-        background-color: $theme_light;
+        background-color: rgb(32, 32, 32);
         color: white;
 
         h2 {

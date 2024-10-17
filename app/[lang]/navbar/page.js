@@ -45,7 +45,7 @@ const renderIconButton = ({ label, icon, onClick }) => (
 
 export default async function NavBar(props) {
     const { params, searchParams } = props
-    console.log(searchParams, props);
+    
     return (
         searchParams?.viewport !== ('mobile' || 'tablet')
             ? <ul className={styles.menu}>{menuItems.map(renderMenuItem)}</ul>

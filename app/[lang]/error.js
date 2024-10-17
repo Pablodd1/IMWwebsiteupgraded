@@ -3,7 +3,6 @@ import AnimatedAction from '@ELEMENT/Action';
 import styles from './error.module.scss';
  
 export default function Error({ error, reset ,...rest}) {
- console.log(rest)
   
   return (
     <div  className={styles.Wrap}>

@@ -24,10 +24,10 @@ const Specialist = async ({LANG}) => {
                                 className={styles.img}
                             />
                             <h2>{item.name}</h2>
-                            <p>{item.title}</p>
                         </header>
                         <section className={styles.content}>
                             <nav className={styles.social_link}>
+                            <p>{item.position}</p>
                                 <Link key={1} href=""><FacebookIcon /></Link>
                                 <Link key={2} href=""><PinterestIcon /></Link>
                                 <Link key={3} href=""><LinkedinIcon /></Link>

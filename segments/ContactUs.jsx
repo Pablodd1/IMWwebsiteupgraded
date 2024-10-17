@@ -15,15 +15,15 @@ const ContactUs = async ({LANG}) => {
                 <h2>{contactUS.details.h2}</h2>
                 <aside className={styles.aside} >
                 <Link href={''}>
-                    <LocationIcon color='#004166' />
+                    <LocationIcon color='#38b6ff' />
                     {contactUS.details.address}
                 </Link>
                 <Link href={`tel:${contactUS.details.phone}`}>
-                    <PhoneIcon color='#004166' />
+                    <PhoneIcon color='#38b6ff' />
                     {contactUS.details.phone}
                 </Link>
                 <Link href={`mailto:${contactUS.details.email}`}>
-                    <Mail color='#004166' />
+                    <Mail color='#38b6ff' />
                     {contactUS.details.email}
                 </Link>
                 </aside>

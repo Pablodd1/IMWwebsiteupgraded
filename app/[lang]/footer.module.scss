@@ -25,16 +25,31 @@
             height: 100%;
             margin: auto;
             padding: 1rem;
-            svg {
+
+            img {
                 max-height: 15rem;
+                width: auto;
+
                 @media (min-width: 1024px) {
                     max-height: 10rem;
                 }
+
                 @media (min-width: 1200px) {
                     max-height: 12rem;
                     padding: 0;
                 }
             }
+
+            // svg {
+            //     max-height: 15rem;
+            //     @media (min-width: 1024px) {
+            //         max-height: 10rem;
+            //     }
+            //     @media (min-width: 1200px) {
+            //         max-height: 12rem;
+            //         padding: 0;
+            //     }
+            // }
         }
 
         .nav {
@@ -59,7 +74,8 @@
                     font-size: 1rem;
                     margin: 1.25rem 0;
                     font-weight: bold;
-                    color: $theme_color;
+                    // color: $theme_color;
+                    color: black;
                     letter-spacing: 1px;
                     height: 1.25rem;
                 }
@@ -72,7 +88,8 @@
                     align-items: flex-start;
                     gap: .75rem;
                     font-size: 0.875rem;
-                    color: $theme_color;
+                    // color: $theme_color;
+                    color: rgb(26, 26, 26);
                     letter-spacing: 1px;
                     // color: #4a5568;
                     margin: 0 .75rem;
@@ -86,7 +103,7 @@
 
     .bottom {
         background-color: $theme_color;
-        padding:0 1rem;
+        padding: 0 1rem;
 
         .footer {
             display: flex;
@@ -99,7 +116,6 @@
             padding: 0;
             margin: 0s;
             background-color: transparent;
-            color: $white;
 
             @media (min-width: 640px) {
                 flex-direction: row;

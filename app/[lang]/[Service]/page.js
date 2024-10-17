@@ -24,7 +24,7 @@ const Page = async ({ params }) => {
     let data; 
     if (!PAGE)
         <NotFound />;
-    data = PAGE && await getDictionary(LANG || 'en', `subtypes.${PAGE}`); 
+    data = PAGE && await getDictionary(LANG || 'en', `subtypes.${PAGE}`);
     return (
         <main
             className={styles.Page}

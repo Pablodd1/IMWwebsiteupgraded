@@ -2,14 +2,14 @@
 
 import { useCallback } from 'react';
 import AnimatedAction from '@ELEMENT/Action';
-const OpenBlog = ({ id, btn, classN }) => {
+const OpenBlog = ({ idx, btn, classN,active }) => {
     const handleClick = useCallback(() => {
         const blogSection = document.getElementById('blogSection');
         if (blogSection) blogSection.classList.add(classN);
         
-        const element = document.getElementById(id);
-        if (element) element.classList.add('active');
-    }, [id]);
+        const element = document.getElementById(idx);
+        if (element) element.classList.add(active);
+    }, [idx]);
 
     return (
         <AnimatedAction

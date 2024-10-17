@@ -32,7 +32,7 @@ const Body = ({ label, icon, hoverIcon, iconSize, iconAlt, iconClass, }) => (
 const AnimatedAction = ({ href,onClick, type, btnclass, wrapperClass, ...rest }) => {
     const wc = `${wrapperClass ? wrapperClass.map(cls => styles[cls]).join(' ') : undefined}`;
     const bc = `${btnclass ? btnclass.map(cls => styles[cls]).join(' ') : undefined}`;
-console.log(type)
+    
     return (
         <section className={styles.btnWrap} >
             {

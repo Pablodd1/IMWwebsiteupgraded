@@ -7,14 +7,19 @@ import { getDictionary } from '@JSON/index'
 
 const Footer = async ({ LANG }) => {
     let footerNav, socialLinks;
-    footerNav = await getDictionary(LANG || 'en', `general.navs`); 
-    socialLinks = await getDictionary(LANG || 'en', `general.socialLinks`); 
-
+    footerNav = await getDictionary(LANG || 'en', `general.navs`);
+    socialLinks = await getDictionary(LANG || 'en', `general.socialLinks`);
+ 
     return (
         <footer className={styles.footer}>
             <section className={styles.container}>
                 <Link href="/" className={styles.logo}>
-                    <Logo size={250} />
+                    {/* <Logo size={250} /> */}
+                    <Image
+                        src={`/raster/logo-512.webp`}
+                        alt={'Innovative Medical Wellness - Logo'}
+                        width={512} height={256}
+                    />
                 </Link>
                 <nav className={styles.nav}>
                     {footerNav.map((x, i) => {

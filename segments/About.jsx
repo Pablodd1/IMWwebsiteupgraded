@@ -2,10 +2,12 @@ import React from 'react';
 import styles from "./about.module.scss"; // Importing the CSS module
 import Image from 'next/image';
 import { getDictionary } from '@JSON/index'
+import Link from 'next/link';
 
 
 const About = async ({LANG}) => {
     const about = await getDictionary(LANG || 'en', `homepage.about`);
+    const socialLinks = await getDictionary(LANG || 'en', `general.socialLinks`);
 
     return (
         <article className={styles.about}>
@@ -14,11 +16,26 @@ const About = async ({LANG}) => {
                 {about.paragraphs.map((para, paraIndex) => (
                     <p key={paraIndex}>{para}</p>
                 ))}
+                <ul className={styles.socialLinks}>
+                        {socialLinks.map((y, j) => (
+                            <li key={j}>
+                                <Link href={y.href}>
+                                    <Image
+                                        className=""
+                                        src={`/svg/${y.icon}.svg`}
+                                        width={50}
+                                        height={50}
+                                        alt={y.label}
+                                    />
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
             </section>
             <figure className={styles.right_side}>
                 <Image
                     className={styles.img}
-                    src={`/raster/about/${about.image}.png`}
+                    src={`/raster/about/${about.image}.webp`}
                     alt="About Image"
                     width={1024} height={1024}
                 />

@@ -69,8 +69,8 @@
                 object-fit: cover;
                 overflow: hidden;
                 border-radius: 50%;
-                border: 3px solid $green_dark;
-                padding: 5px;
+                border: 1.5px solid $theme_color;
+                padding: 2px;
                 @media (min-width: 768px) {
                     width: 7.5rem;
                     height: 7.5rem;
@@ -87,14 +87,6 @@
                 text-align: center;
             }
 
-            p {
-                font-weight: 400;
-                font-style: italic;
-                font-family: $font_primary;
-                font-size: .875rem;
-                margin: .25rem 0;
-                text-align: center;
-            }
         }
 
 
@@ -116,12 +108,22 @@
                 align-items: center;
                 justify-content: flex-end;
                 width: 100%;
-                border-bottom: 2px solid $green_dark;
-                padding: .25rem;
+                border-bottom: 2px solid $theme_color;
+                padding: .25rem .25rem .25rem 0 ;
                 transition: all 0.3s ease-in-out;
                 gap: .75rem;
-                margin: .5rem .25rem;
+                margin: .5rem .25rem .5rem 0;
                 font-size: 1.5rem;
+
+                p {
+                    justify-self: flex-start;
+                    font-weight: 400;
+                    font-family: $font_primary;
+                    font-size: .875rem;
+                    color: $theme_color;
+                    margin: .25rem auto 0 0;
+                    text-align: center;
+                }
 
                 a {
                     display: flex;

@@ -9,8 +9,8 @@ const paths = [
     <path fill="rgba(255, 255, 255, .8)" d="M0,32L120,64C240,96,480,160,720,160C960,160,1200,96,1320,64L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
 ]
 
-const GetSVG = ({ num }) => (
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+const GetSVG = ({ num, styles }) => (
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className={styles}>
         {paths[num]}
     </svg>
 )
