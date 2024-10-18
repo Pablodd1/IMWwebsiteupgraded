@@ -1,4 +1,7 @@
-[
+{
+  "h2":"Departamentos",
+  "p":"Descubre nuestros servicios médicos especializados, diseñados para abordar tus necesidades de salud específicas y mejorar tu bienestar general.",
+  "ul":[
   {
     "label": "MEDICINA REGENERATIVA",
     "image": {
@@ -24,3 +27,4 @@
     "description": "Revitaliza tu salud íntima con nuestros servicios integrales de bienestar sexual. Nuestros tratamientos personalizados y orientación experta están diseñados para mejorar tu vitalidad sexual, confianza y bienestar general."
   }
 ]
+}

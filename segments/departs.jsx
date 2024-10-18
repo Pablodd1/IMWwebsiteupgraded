@@ -18,14 +18,14 @@ const Departs = async ({ LANG }) => {
   return (
     <section className={styles.section1} >
       <h2 className={styles.h2}  >
-        {"Deprtments"}
+        {departs.h2}
       </h2>
       <p className={styles.desc}  >
-        {"It does not matter if one of the property values is missing, as long as the other ones are in this order. Note that we do not use the background-attachment property in the examples above, as it does not have a value.It does not matter if one of the property values is missing, as long as the other ones are in this order. Note that we do not use the background-attachment property in the examples above, as it does not have a value.It does not matter if one of the property values is missing, as long as the other ones are in this order. Note that we do not use the background-attachment property in the examples above, as it does not have a value."}
+        {departs.p}
       </p>
       <ul className={styles.list}  >
         {
-          departs.map((x, i) => {
+          departs.ul.map((x, i) => {
             return (
               <li key={i} className="card  ">
                 <Image

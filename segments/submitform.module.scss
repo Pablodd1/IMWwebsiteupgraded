@@ -1,0 +1,100 @@
+@import "@SASS/variables.scss";
+
+.input {
+    position: relative;
+    width: 100%;
+    margin-top: 0.625rem;
+}
+
+.input input,
+.input textarea {
+    width: 100%;
+    padding: 0.3125rem 0;
+    font-size: 1rem;
+    margin: 0.625rem 0;
+    border: none;
+    border-bottom: 1px solid #333;
+    outline: none;
+    resize: none;
+    background: transparent;
+
+    // Adjust for placeholder color when the input has text
+    &:valid ~ span {
+        color: $text_color; // Use your desired color
+        font-size: 0.75rem;
+        transform: translateY(-1.25rem);
+    }
+}
+
+.input span {
+    position: absolute;
+    left: 0;
+    padding: 0.3125rem 0;
+    font-size: 1rem;
+    margin: 0.625rem 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+    font-style: italic;
+}
+
+// Apply styles when the input is focused or has a value
+.input input:focus ~ span,
+.input textarea:focus ~ span,
+.input input:not(:placeholder-shown) ~ span,
+.input textarea:not(:placeholder-shown) ~ span {
+    color: $text_color; // Use your desired color
+    font-size: 0.75rem;
+    transform: translateY(-1.25rem);
+}
+
+.input input:focus,
+.input textarea:focus {
+    border-bottom: 1px solid $text_color !important;
+}
+
+.input button {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #ffffff;
+    background-color: #8fb660;
+    border-color: transparent;
+    padding: 0.9375rem 1.6875rem;
+    font-size: 1rem;
+    border-radius: 3.125rem;
+    transition: all 0.3s ease-in-out !important;
+    cursor: pointer;
+
+    svg {
+        font-size: 1.25rem;
+        margin-right: 0.4375rem;
+        margin-bottom: -0.25rem;
+    }
+}
+
+.input button:hover {
+    color: #ffffff;
+    background-color: #1e3423;
+    transition: all 0.3s ease-in-out;
+}
+
+.successMessage {
+    background-color: #d4edda; 
+    color: #155724 !important; 
+    border: 1px solid #c3e6cb; 
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    margin-top: 1rem;
+    transition: opacity 0.5s ease-in-out; 
+}
+
+.errorMessage {
+    background-color: #f8d7da;
+    color: #721c24 !important; 
+    border: 1px solid #f5c6cb;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    margin-top: 1rem;
+    transition: opacity 0.5s ease-in-out; 
+}

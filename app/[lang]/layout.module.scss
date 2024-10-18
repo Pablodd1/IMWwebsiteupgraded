@@ -1,12 +1,15 @@
 @import '@SASS/variables';
+@import '@SASS/font';
 
 .nav {
-    background-color: $white;
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     align-items: center;
     display: flex;
     z-index: 50;
-    width: 100%;
+    padding: .5rem;
+    width: calc(100% - 1rem);
+    height: 3rem;
     max-width: calc(100vw - 1rem);
     position: fixed;
     top: 0;
@@ -14,10 +17,8 @@
     column-gap: 2rem;
     transition: all 0.7s ease;
 
-    @media screen and (min-width:992px) {
-        padding: 1rem 1rem;
-        width: calc(100% - 2rem);
-    }
+    // @media screen and (min-width:992px) {
+    // }
 
     &:before {
         content: '';
@@ -42,6 +43,7 @@
         display: flex;
         align-items: center;
         column-gap: 35px;
+    
     }
 
 
@@ -50,53 +52,78 @@
         display: flex;
         justify-content: center;
         column-gap: 25px;
+        height: 100%;
 
-        svg {
-            height: 35px;
-            align-self: flex-end;
-
-            path {
-                fill: $black;
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;            
+            background-color: white;
+            padding: .25rem .35rem;
+            border-radius: 25px;
+            svg {
+                height: 28px;
+    
+                path {
+                    fill: $theme_color;
+                }
             }
         }
+        // .mail {
+        //     svg {
+        //         path {
+        //             // fill: transparent;
+        //             stroke: rgba(255, 255, 255, 0.5);
+        //         }
+        //     }
+
+        // }
     }
 
     .logo {
         display: flex;
         align-items: center;
+        width: 13rem;
         // gap: 10px;
         height: 3rem;
         align-self: center;
         will-change: auto;
         margin: 0;
-        padding: 0 0.5rem;
+        position: relative;
 
         img {
-            max-height: 100%;
-            height: 4.25rem;
-            width: 100%;
+            height: 2rem;
+            width: auto;
             margin: 0;
             padding: 0;
+            position: absolute;
+            top: 0;
+            left: 2rem;
         }
 
-        // h1 {
-        //     display: block;
-        //     font-size: 1rem;
-        //     font-weight: 300;
-        //     width: 165px;
-        //     color: $theme_color;
-        //     font-family: 'Roboto';
+        h1 {
+            flex-grow: 1;
+            font-size: 1rem;
+            font-weight: 300;
+            font-family: 'Monterchi Serif';
+            text-align: end;
+            word-spacing: .75rem;
+            width: 13rem;
 
-        //     &::first-line {
-        //         font-family: "Bruno Ace SC", 'sans-serif' !important;
-        //         font-size: 1.5rem;
-        //         text-transform: uppercase;
-        //         font-weight: bolder;
-        //         font-weight: 400;
-        //         font-style: normal;
-        //         letter-spacing: 2px;
-        //     }
-        // }
+            &::first-line {
+                font-family: "Custom Font", 'sans-serif' !important;
+                font-size: 1.45rem;
+                color: $theme_color;
+                font-weight: bolder;
+                font-weight: 400;
+                font-style: normal;
+                line-height: 2.5rem;
+                text-align: center;
+            }
+            span {
+                margin-right: 1rem;
+            }
+        }
 
         // svg {
         //     padding: 0;

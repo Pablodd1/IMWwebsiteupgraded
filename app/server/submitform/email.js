@@ -10,7 +10,7 @@ export async function sendEmailNotification(receipts,title, subject, html) {
         },
     });
     const mailOptions = {
-        from: process.env.EMAIL_TITLE,
+        from: process.env.SENDER,
         to: receipts,
         subject: subject,
         html: html,

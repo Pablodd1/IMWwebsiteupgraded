@@ -52,7 +52,7 @@ const Footer = async ({ LANG }) => {
                                 <Link href={y.href}>
                                     <Image
                                         className=""
-                                        src={`/svg/${y.icon}.svg`}
+                                        src={`/svg/${y.icon}-white.svg`}
                                         width={50}
                                         height={50}
                                         alt={y.label}

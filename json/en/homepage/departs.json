@@ -1,4 +1,7 @@
-[
+{
+  "h2":"Departments",
+  "p":"Discover our specialized medical services, designed to address your specific health needs and improve your overall well-being.",
+  "ul":[
     {
       "label": "REGENERATIVE MEDICINE",
       "image": {
@@ -24,3 +27,4 @@
       "description": "Revitalize your intimate health with our comprehensive sexual wellness services. Our personalized treatments and expert guidance aim to improve your sexual vitality, confidence, and overall well-being."
     }
   ]
+}

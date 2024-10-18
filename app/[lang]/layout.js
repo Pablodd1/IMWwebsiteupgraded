@@ -6,6 +6,7 @@ import styles from './layout.module.scss';
 import Footer from "./Footer";
 import { Suspense } from "react";
 import Image from 'next/image';
+
 export const metadata = {
   metadataBase: new URL('https://innovativemedicalwellness.com'),
   title: 'Innovative Medical Wellness | Miami Healthcare',
@@ -38,7 +39,9 @@ const renderIconButton = ({ label, icon, href }) => (
     {icon}
   </Link>
 );
-export default function RootLayout({ children, params }) {
+export default async function RootLayout({ children, params }) {
+  const LANG = params.lang
+  
   return (
     <html lang="en">
       <body >
@@ -46,17 +49,17 @@ export default function RootLayout({ children, params }) {
           <Link className={styles.logo} href="/">
             {/* <Logo /> */}
             <Image
-              src={`/raster/logo-512.webp`}
+              src={`/raster/logo-150.webp`}
               alt={'Innovative Medical Wellness - Logo'}
-              width={512} height={256}
+              width={150} height={150}
             />
-            {/* <h1>Medical <br />Innovative Wellness</h1> */}
+            <h1><span >Medical</span> <br />INNOVATIVE WELLNESS</h1>
           </Link>
           <nav className={styles.shortMenu}>{iconItems.map(renderIconButton)}</nav>
         </header>
         {children}
         <Suspense >
-          <Footer LANG={params.lang || 'en'} />
+          <Footer LANG={LANG || 'en'} />
         </Suspense>
       </body>
     </html>
