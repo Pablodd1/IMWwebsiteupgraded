@@ -40,7 +40,7 @@ const Page = async ({ params }) => {
                 </div>
                 <GetSVG num={2} />
             </section>
-            <Card PAGE={PAGE} data={data.services}/>
+            <Card PAGE={PAGE} data={data.services} LANG={LANG} />
             <Specialist LANG={LANG}  />
             <section className={styles.testimonials}>
                 <h2>{data.story.h2}</h2>

@@ -26,40 +26,28 @@
             "image": "Hormone Replacement",
             "heading": "Hormone Replacement Therapy (HRT)",
             "summary": "Balance hormones, boost energy, and improve quality of life.",
-            "desc": [
-                "Hormone Replacement Therapy (HRT) is a personalized treatment designed to restore hormone levels, improve energy, and enhance vitality. It focuses on identifying hormone deficiencies and implementing a tailored regimen that meets individual needs.",
-                "By restoring hormonal balance, individuals can experience increased energy, improved mood, and a better overall quality of life. HRT has been shown to positively impact sleep, libido, and cognitive function, making it a comprehensive approach to aging."
-            ],
+            "blog": "Hormone-Replacement-Therapy",
             "title": "Read More"
         },
         {
             "image": "Testosterone Therapy",
             "heading": "Testosterone Therapy for Men",
             "summary": "Reclaim your strength and vitality with testosterone optimization.",
-            "desc": [
-                "Testosterone Therapy for Men is aimed at addressing low testosterone levels, which can lead to fatigue, reduced muscle mass, and mood swings. This therapy involves a thorough evaluation of testosterone levels to customize treatment.",
-                "With optimized testosterone levels, men can regain their vitality, improve their physical performance, and enhance their overall well-being. Regular monitoring ensures that the therapy is effective and safe."
-            ],
+            "blog":"Testosterone",
             "title": "Read More"
         },
         {
             "image": "NAD+ cellular health",
             "heading": "NAD+ Therapy",
             "summary": "Enhance cellular health and promote longevity with NAD+ Therapy.",
-            "desc": [
-                "NAD+ Therapy is an innovative approach that focuses on boosting levels of nicotinamide adenine dinucleotide (NAD+), a coenzyme essential for cellular function. This therapy aids in cellular regeneration and energy production.",
-                "Patients often report improvements in mental clarity, energy levels, and overall vitality. As a result, NAD+ Therapy is gaining popularity as a powerful tool against the effects of aging."
-            ],
+            "blog":"NAD+Therapy",
             "title": "Read More"
         },
         {
             "image": "biohacking-self-care",
             "heading": "Biohacking Protocols",
             "summary": "Take control of your health and optimize your performance.",
-            "desc": [
-                "Biohacking Protocols empower individuals to take charge of their health through tailored strategies that enhance natural bodily functions. This may include nutrition optimization, exercise regimens, and cognitive enhancement techniques.",
-                "These protocols are designed to improve performance, increase longevity, and foster a deeper understanding of one’s own health. Personalized plans ensure that each individual can achieve their health and wellness goals effectively."
-            ],
+            "blog": "Biohacking",
             "title": "Read More"
         }
     ]

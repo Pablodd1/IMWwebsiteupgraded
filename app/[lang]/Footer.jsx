@@ -42,8 +42,7 @@ const Footer = async ({ LANG }) => {
                 <footer className={styles.footer}>
                     <section className={styles.footerLinks}>
                         <p>© All Rights Reserved.</p>
-                        <Link href={"/tasamem-express-terms-of-service"}>Terms</Link>
-                        <Link href={"/tasamem-express-privacy-statement"}>Privacy</Link>
+                        <Link href={"/terms"}>Terms</Link>
                         <ToggleLanguage lang={LANG} />
                     </section>
                     <ul className={styles.socialLinks}>

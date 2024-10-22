@@ -26,44 +26,28 @@
             "image": "Nutritional Supplementation",
             "heading": "Injectables (PRP, Exosomes, Nutritional Supplementation)",
             "summary": "Advanced injectables for enhanced health.",
-            "blog": [
-                "Our injectables, including PRP (Platelet-Rich Plasma) and exosomes, are at the forefront of modern wellness treatments. These advanced therapies are designed to stimulate natural healing processes within the body, promoting rejuvenation and vitality.",
-                "By harnessing the healing properties of your own body, these injectables can target specific health issues, such as joint pain, skin conditions, and even hair loss. The result is a tailored approach that aims to restore balance and enhance overall well-being.",
-                "With our expert guidance, you can expect a personalized treatment plan that focuses on your unique needs. Experience the transformative power of injectables and unlock a new level of health and vitality."
-            ],
+            "blog": "Injectables",
             "title": "Read More"
         },
         {
             "image": "Hair Restoration",
             "heading": "Hair Restoration",
             "summary": "Regain your confidence with effective hair solutions.",
-            "blog": [
-                "Hair restoration is not just a treatment; it’s a journey towards regaining your confidence and youthful appearance. Our services employ the latest techniques to stimulate hair growth and improve thickness, catering to the unique needs of each individual.",
-                "Through personalized consultations, we assess your specific hair loss conditions and develop a tailored approach to treatment. Whether you’re experiencing thinning hair or complete hair loss, our solutions are designed to achieve optimal results.",
-                "Experience the profound difference that effective hair restoration can make in your life. With our expert care, you’ll embark on a path to fuller, healthier hair, allowing you to embrace life with renewed confidence."
-            ],
+            "blog":"Hair-Restoration",
             "title": "Read More"
         },
         {
             "image": "Skin Rejuvenation Treatments",
             "heading": "Skin Rejuvenation Treatments",
             "summary": "Revitalize your skin for a youthful appearance.",
-            "blog": [
-                "Our skin rejuvenation treatments are expertly crafted to enhance your skin’s health and appearance. Utilizing cutting-edge technologies, we address various skin issues such as fine lines, wrinkles, and uneven skin tone.",
-                "Each treatment is personalized to meet your skin's specific needs, ensuring that you achieve the desired results. From laser therapies to chemical peels, we offer a range of options designed to restore your skin’s youthful glow.",
-                "Rediscover your radiance and boost your confidence with our skin rejuvenation services. Let our skilled professionals guide you on your journey to healthier, more vibrant skin."
-            ],
+            "blog": "skin-treatment",
             "title": "Read More"
         },
         {
             "image": "Facial Contouring",
             "heading": "Facial Contouring",
             "summary": "Sculpt your features for enhanced beauty.",
-            "blog": [
-                "Facial contouring provides a non-surgical approach to enhancing your natural beauty. Our advanced techniques allow for precise sculpting of facial features, helping you achieve a balanced and attractive profile.",
-                "Through expert assessments, we identify areas for enhancement and create a personalized treatment plan tailored to your aesthetic goals. This process not only improves appearance but also boosts self-confidence.",
-                "Experience the art of facial contouring, where science meets beauty. With our dedicated team, you’ll achieve the look you’ve always desired, leaving you feeling empowered and radiant."
-            ],
+            "blog": "Facial-Contouring",
             "title": "Read More"
         }
     ]

@@ -10,22 +10,22 @@ import Image from 'next/image';
 export const metadata = {
   metadataBase: new URL('https://innovativemedicalwellness.com'),
   title: 'Innovative Medical Wellness | Miami Healthcare',
-  keywords: 'Locksmith, Miami locksmith, locksmith services, emergency locksmith, car locksmith, lost car keys, key replacement, 24-hour locksmith, Miami Beach locksmith, Miami Gardens locksmith, Miami Oklahoma locksmith, Miami airport locksmith, security solutions, lockout assistance, spare car keys, car key replacement, new car keys, locksmith team, reliable locksmith, trusted locksmith, professional locksmith, Miami security, locksmith expertise, locksmith history, locksmith values',
-  description: 'Get locked in the car? Trust our 24/7 Miami locksmith for expert solutions. Lost keys, lockouts, and security expertise for a decade-long commitment.',
+  // keywords: 'Locksmith, Miami locksmith, locksmith services, emergency locksmith, car locksmith, lost car keys, key replacement, 24-hour locksmith, Miami Beach locksmith, Miami Gardens locksmith, Miami Oklahoma locksmith, Miami airport locksmith, security solutions, lockout assistance, spare car keys, car key replacement, new car keys, locksmith team, reliable locksmith, trusted locksmith, professional locksmith, Miami security, locksmith expertise, locksmith history, locksmith values',
+  // description: 'Get locked in the car? Trust our 24/7 Miami locksmith for expert solutions. Lost keys, lockouts, and security expertise for a decade-long commitment.',
   generator: 'Next.js',
-  applicationName: 'DP Locksmith',
+  applicationName: 'Medical Innovative Wellness',
   creator: 'MyAbabeel - M Talha',
   alternates: {
     canonical: 'https://innovativemedicalwellness.com'
   },
-  verification: {
-    google: '5mY7Mp4Wz4jdKB94tgnuTNF1g1I5MV447Cm--rsF3SI',
-  },
-  manifest: '/manifest.json',
+  // verification: {
+  //   google: '5mY7Mp4Wz4jdKB94tgnuTNF1g1I5MV447Cm--rsF3SI',
+  // },
+  manifest: '/logos/manifest.json',
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/apple-icon.png'
+    icon: '/logos/logo.png',
+    shortcut: '/logos/logo.png',
+    apple: '/logos/apple-icon.png'
   },
 }
 

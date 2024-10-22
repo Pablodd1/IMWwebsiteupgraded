@@ -26,44 +26,28 @@
             "image": "Nutritional Supplementation",
             "heading": "Inyecciones (PRP, Exosomas, Suplementación Nutricional)",
             "summary": "Inyecciones avanzadas para una mejor salud.",
-            "blog": [
-                "Nuestras inyecciones, incluyendo PRP (Plasma Rico en Plaquetas) y exosomas, están a la vanguardia de los tratamientos de bienestar modernos. Estas terapias avanzadas están diseñadas para estimular los procesos de curación natural dentro del cuerpo, promoviendo rejuvenecimiento y vitalidad.",
-                "Al aprovechar las propiedades curativas de tu propio cuerpo, estas inyecciones pueden dirigirse a problemas de salud específicos, como el dolor articular, afecciones de la piel e incluso la pérdida de cabello. El resultado es un enfoque personalizado que busca restaurar el equilibrio y mejorar el bienestar general.",
-                "Con nuestra orientación experta, puedes esperar un plan de tratamiento personalizado que se enfoque en tus necesidades únicas. Experimenta el poder transformador de las inyecciones y desbloquea un nuevo nivel de salud y vitalidad."
-            ],
+            "blog": "Injectables",
             "title": "Leer Más"
         },
         {
             "image": "Hair Restoration",
             "heading": "Restauración Capilar",
             "summary": "Recupera tu confianza con soluciones capilares efectivas.",
-            "blog": [
-                "La restauración capilar no es solo un tratamiento; es un viaje hacia la recuperación de tu confianza y apariencia juvenil. Nuestros servicios emplean las últimas técnicas para estimular el crecimiento del cabello y mejorar su grosor, atendiendo las necesidades únicas de cada individuo.",
-                "A través de consultas personalizadas, evaluamos tus condiciones específicas de pérdida de cabello y desarrollamos un enfoque adaptado al tratamiento. Ya sea que estés experimentando adelgazamiento del cabello o pérdida total, nuestras soluciones están diseñadas para lograr resultados óptimos.",
-                "Experimenta la diferencia profunda que la restauración capilar efectiva puede hacer en tu vida. Con nuestro cuidado experto, emprenderás un camino hacia un cabello más lleno y saludable, lo que te permitirá abrazar la vida con renovada confianza."
-            ],
+            "blog":"Hair-Restoration",
             "title": "Leer Más"
         },
         {
             "image": "Skin Rejuvenation Treatments",
             "heading": "Tratamientos de Rejuvenecimiento de Piel",
             "summary": "Revitaliza tu piel para una apariencia juvenil.",
-            "blog": [
-                "Nuestros tratamientos de rejuvenecimiento de piel están diseñados para mejorar la salud y apariencia de tu piel. Utilizando tecnologías de vanguardia, abordamos diversos problemas cutáneos como líneas finas, arrugas y tono de piel desigual.",
-                "Cada tratamiento se personaliza para satisfacer las necesidades específicas de tu piel, asegurando que logres los resultados deseados. Desde terapias láser hasta peelings químicos, ofrecemos una variedad de opciones diseñadas para restaurar el brillo juvenil de tu piel.",
-                "Redescubre tu resplandor y aumenta tu confianza con nuestros servicios de rejuvenecimiento de piel. Permite que nuestros profesionales calificados te guíen en tu camino hacia una piel más saludable y vibrante."
-            ],
+            "blog": "skin-treatment",
             "title": "Leer Más"
         },
         {
             "image": "Facial Contouring",
             "heading": "Contorno Facial",
             "summary": "Esculpe tus rasgos para una belleza mejorada.",
-            "blog": [
-                "El contorno facial proporciona un enfoque no quirúrgico para realzar tu belleza natural. Nuestras técnicas avanzadas permiten un esculpido preciso de los rasgos faciales, ayudándote a lograr un perfil equilibrado y atractivo.",
-                "A través de evaluaciones expertas, identificamos áreas de mejora y creamos un plan de tratamiento personalizado adaptado a tus objetivos estéticos. Este proceso no solo mejora la apariencia, sino que también potencia la confianza en uno mismo.",
-                "Experimenta el arte del contorno facial, donde la ciencia se encuentra con la belleza. Con nuestro equipo dedicado, lograrás el aspecto que siempre has deseado, dejándote sentir empoderado y radiante."
-            ],
+            "blog": "Facial-Contouring",
             "title": "Leer Más"
         }
     ]

@@ -26,44 +26,28 @@
             "image": "Concussion Treatment",
             "heading": "Tratamiento de Conmoción Post-MVA",
             "summary": "Estrategias efectivas para la recuperación de conmociones.",
-            "blog": [
-                "Nuestro Tratamiento de Conmoción Post-MVA está dedicado a ayudar a las personas a recuperarse de conmociones sufridas en accidentes. Proporcionamos atención personalizada que incorpora terapia cognitiva, rehabilitación física y apoyo nutricional, asegurando un enfoque holístico para tu recuperación. Nuestro equipo entiende los desafíos de la recuperación de conmociones y trabaja en estrecha colaboración contigo para recuperar claridad y salud.",
-                "Con nuestras instalaciones de vanguardia y profesionales experimentados, recibirás la atención y experiencia necesarias para una recuperación exitosa. También nos enfocamos en educarte sobre tu condición, empoderándote para que tomes un papel activo en tu proceso de sanación. No eres solo un paciente; eres parte de un viaje hacia la recuperación total.",
-                "Únete a nuestra comunidad de apoyo y experimenta un programa de recuperación que prioriza tus necesidades y bienestar. Ya sea que enfrentes desafíos cognitivos o limitaciones físicas, nuestro equipo dedicado está aquí para guiarte en cada paso del camino. Confía en nosotros para ayudarte a redescubrir tu vitalidad y alcanzar tu potencial de salud."
-            ],
+            "blog": "Post-MVA-Concussion-Treatment",
             "title": "Leer Más"
         },
         {
             "image": "Medical-Legal Notes",
             "heading": "Notas Médico-Legales Comprehensivas",
             "summary": "Uniendo la brecha entre la atención médica y las necesidades legales.",
-            "blog": [
-                "Navegar las consecuencias de una lesión personal puede ser complejo, especialmente cuando se trata de gestionar aspectos médicos y legales. Nuestro servicio de Notas Médico-Legales Comprehensivas está diseñado para proporcionarte la documentación esencial que apoya tu recuperación y reclamaciones legales. Aseguramos que todas las notas médicas sean detalladas y reflejen con precisión tu recorrido de tratamiento.",
-                "Nuestro equipo colabora con profesionales médicos y expertos legales para unir la brecha entre tu atención médica y los requisitos legales. Al mantener registros detallados, ayudamos a tu equipo legal a construir un caso sólido en tu nombre, asegurando que recibas la compensación que mereces.",
-                "Reconocemos el estrés involucrado en los casos de lesiones personales y buscamos simplificar el proceso para ti. Con nuestro apoyo, puedes concentrarte en tu recuperación mientras nosotros manejamos la documentación. Confía en nosotros para proporcionarte las herramientas necesarias para navegar tu reclamación de lesiones personales con confianza."
-            ],
+            "blog": "medical-notes",
             "title": "Leer Más"
         },
         {
             "image": "Injury Rehabilitation",
             "heading": "Rehabilitación y Recuperación de Lesiones",
             "summary": "Planes de recuperación personalizados para una curación óptima.",
-            "blog": [
-                "La rehabilitación de lesiones es crucial para restaurar la funcionalidad y promover una curación óptima. Nuestro servicio de Rehabilitación y Recuperación de Lesiones ofrece planes de recuperación personalizados adaptados a tus necesidades específicas. Utilizamos técnicas terapéuticas avanzadas diseñadas para aliviar el dolor y mejorar tu experiencia de recuperación en general.",
-                "Nuestro equipo de profesionales calificados está dedicado a brindarte apoyo continuo a lo largo de tu proceso de rehabilitación. Creemos en un enfoque integral que considera no solo tu condición física, sino también tu bienestar emocional. Al fomentar un ambiente de apoyo, te animamos a participar activamente en tu viaje de recuperación.",
-                "Ya sea que estés lidiando con una lesión deportiva, un incidente laboral o un accidente, estamos comprometidos a ayudarte a recuperar tu fuerza y regresar a un estilo de vida activo. Experimenta un plan de recuperación que se centra en ti, asegurando que cada paso dado conduzca a un futuro más brillante y saludable."
-            ],
+            "blog": "Injury-Rehabilitation",
             "title": "Leer Más"
         },
         {
             "image": "Whiplash Treatment",
             "heading": "Tratamiento de Latigazo",
             "summary": "Atención integral para lesiones de latigazo.",
-            "blog": [
-                "Las lesiones de latigazo pueden ser debilitantes, afectando tanto el bienestar físico como emocional. Nuestro programa de Tratamiento de Latigazo ofrece un enfoque multidisciplinario que integra cuidado quiropráctico, terapia física y estrategias efectivas de manejo del dolor. Nuestro objetivo es aliviar tu incomodidad mientras promovemos una curación a largo plazo.",
-                "Desde el momento en que ingresas a nuestra atención, priorizamos tu comodidad y comprensión de tu condición. Nuestro equipo trabaja contigo para desarrollar un plan de tratamiento que aborde tus síntomas y necesidades específicas, asegurando que recibas la atención más efectiva disponible.",
-                "Entendemos los desafíos asociados con el latigazo y estamos comprometidos a ayudarte a regresar a tus actividades diarias lo más rápido posible. Con nuestra experiencia y entorno de apoyo, puedes esperar recuperar tu movilidad y vivir sin dolor una vez más."
-            ],
+            "blog": "Whiplash",
             "title": "Leer Más"
         }
     ]

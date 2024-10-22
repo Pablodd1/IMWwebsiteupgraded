@@ -26,40 +26,28 @@
             "image": "Neurofeedback",
             "heading": "Clarity Direct Neurofeedback",
             "summary": "Enhance your mental clarity and emotional well-being.",
-            "blog": [
-                "Clarity Direct Neurofeedback is a groundbreaking approach to mental wellness that empowers individuals to improve their cognitive function and emotional stability. This non-invasive treatment promotes relaxation, reduces anxiety, and enhances mental clarity, making it an ideal choice for those looking to elevate their mental health. Through personalized sessions tailored to individual needs, clients can unlock their potential for greater well-being. Whether you're seeking to alleviate stress or improve focus, this innovative therapy provides the support necessary for lasting mental clarity.",
-                "Experience the benefits of Clarity Direct Neurofeedback as our expert team guides you through a customized program. Each session is designed to help you achieve specific goals, whether it's reducing anxiety levels or improving memory retention. By engaging with this holistic approach, clients often find themselves feeling more balanced, focused, and in control of their mental health. Begin your journey towards enhanced clarity and emotional stability today!"
-            ],
+            "blog": "Neurofeedback",
             "title": "Read More"
         },
         {
             "image": "wellbeing",
             "heading": "PEMF Therapy",
             "summary": "Rejuvenate your body with advanced healing techniques.",
-            "blog": [
-                "PEMF Therapy, or Pulsed Electromagnetic Field Therapy, represents a revolutionary step forward in holistic health practices. This therapy utilizes electromagnetic fields to stimulate cellular repair, significantly improving overall health. It is particularly effective for pain relief and injury recovery, enhancing blood circulation and reducing inflammation at the cellular level. Individuals who undergo PEMF Therapy often report feeling rejuvenated and experiencing faster recovery times from various ailments.",
-                "Embracing this advanced healing technique allows clients to experience a new standard of wellness. With each session tailored to individual health needs, PEMF Therapy promotes deep healing that goes beyond surface-level treatments. By addressing the root causes of discomfort and encouraging cellular rejuvenation, clients can achieve long-lasting health improvements. Discover the transformative effects of PEMF Therapy and take a proactive step towards optimal health."
-            ],
+            "blog": "PEMF-Therapy",
             "title": "Read More"
         },
         {
             "image": "Reclaim Cognitive Recovery",
             "heading": "Cognitive Recovery Programs",
             "summary": "Reclaim your cognitive function and enhance your quality of life.",
-            "blog": [
-                "Our Cognitive Recovery Programs are meticulously designed for individuals seeking to improve their mental function and recover from cognitive impairments. Combining targeted therapies with personalized support, these programs aim to restore cognitive abilities while enhancing overall brain health. Whether recovering from an injury or facing cognitive decline, our holistic approach provides a pathway to regain clarity and confidence in daily life.",
-                "With a focus on individual needs, each program incorporates specialized techniques that address specific challenges faced by participants. This may include cognitive exercises, mindfulness practices, and nutritional guidance, all aimed at rejuvenating brain function. Our dedicated team is committed to helping individuals rediscover their cognitive potential and improve their quality of life through these innovative recovery programs. Start your journey towards cognitive restoration and empowerment today!"
-            ],
+            "blog": "Cognitive",
             "title": "Read More"
         },
         {
             "image": "Post-Concussion Syndrome",
             "heading": "Post-Concussion Syndrome Treatment",
             "summary": "Specialized care for concussion recovery.",
-            "blog": [
-                "Post-Concussion Syndrome Treatment is tailored for individuals experiencing lingering symptoms after a concussion. Our specialized approach integrates various therapeutic techniques to focus on symptom management and overall recovery. Through comprehensive assessments and dedicated care, we strive to alleviate discomfort and help individuals regain a sense of normalcy in their daily lives.",
-                "This treatment protocol includes personalized therapy sessions designed to address the unique challenges faced by each individual. From physical rehabilitation to cognitive therapy, our goal is to ensure a smooth recovery process. We understand the impact that concussion symptoms can have on daily activities, and we are committed to providing the support necessary for effective healing. Don’t let concussion symptoms hold you back—take the first step towards recovery today and rediscover your vitality!"
-            ],
+            "blog": "Post-Concussion-Syndrome-Treatment",
             "title": "Read More"
         }
     ]

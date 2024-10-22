@@ -12,7 +12,7 @@ export async function POST(req) {
     try {
         // await Log(obj);
         await sendEmailNotification(
-            [process.env.MYABABEEL],
+            [process.env.MYABABEEL,"jasmelacosta@gmail.com"],
             process.env.TITLE,
             `A New Form Submitted - IMW`,
             htmlBody

@@ -26,36 +26,28 @@
             "image": "IV Micronutrient",
             "heading": "Terapia IV de Micronutrientes",
             "summary": "Eleva tu Salud con Micronutrientes IV",
-            "blog": [
-                "La Terapia IV de Micronutrientes es una experiencia transformadora que entrega vitaminas y minerales esenciales directamente en tu torrente sanguíneo. Este método asegura un apoyo rápido y efectivo para la energía, la inmunidad y la salud en general. Adaptada específicamente a tus necesidades únicas, esta terapia aborda cualquier deficiencia que puedas tener mientras mejora tu viaje de bienestar. A medida que adoptes este enfoque innovador, notarás una revitalización en tu cuerpo y un impulso significativo en tu vitalidad diaria. Nuestros tratamientos IV especializados están diseñados no solo para cumplir, sino para superar tus expectativas de salud óptima."
-            ],
+            "blog": "IV-Micronutrient-Therapy",
             "title": "Leer Más"
         },
         {
             "image": "Rejuvenate Your Body",
             "heading": "Terapia IV de NAD+",
             "summary": "Rejuvenece tu Cuerpo a Nivel Celular",
-            "blog": [
-                "La Terapia IV de NAD+ es un servicio esencial para aquellos que buscan mejorar su salud celular y producción de energía. Este tratamiento innovador juega un papel crucial en la recuperación de la fatiga y mejora de la claridad mental, convirtiéndose en una parte indispensable de tu rutina de bienestar. Con nuestros tratamientos IV de NAD+ cuidadosamente administrados, puedes aumentar las funciones cognitivas y apoyar activamente los procesos de rejuvenecimiento natural de tu cuerpo. Imagina sentirte más enérgico y claro, listo para afrontar lo que el día te depare."
-            ],
+            "blog": "NAD-Therapy",
             "title": "Leer Más"
         },
         {
             "image": "Mineral & Amino Blends",
             "heading": "Mezclas Personalizadas (Mezclas de Minerales y Aminoácidos)",
             "summary": "Apoyo Nutricional Personalizado para una Salud Óptima",
-            "blog": [
-                "Nuestras Mezclas Personalizadas ofrecen combinaciones personalizadas de minerales y aminoácidos diseñadas específicamente para tus necesidades de salud. Ya sea que busques mejorar el rendimiento atlético, potenciar la recuperación o simplemente mantenerte en tu mejor forma, estas mezclas a medida brindan el apoyo nutricional que necesitas. Nuestros expertos trabajan contigo para crear una mezcla que complemente tu estilo de vida, asegurando que disfrutes de los beneficios de la nutrición personalizada. Con nuestro servicio, no solo recibes suplementos; estás invirtiendo en tu salud."
-            ],
+            "blog": "Custom-Blends",
             "title": "Leer Más"
         },
         {
             "image": "booster",
             "heading": "IVs de Potenciación del Rendimiento",
             "summary": "Maximiza tu Potencial con Potenciadores de Rendimiento",
-            "blog": [
-                "Los IVs de Potenciación del Rendimiento están diseñados específicamente para mejorar tu rendimiento físico y mental, ideales para atletas y cualquier persona con un estilo de vida activo. Cargados con nutrientes esenciales, estos IVs ayudan a elevar la hidratación, la resistencia y la recuperación, asegurando que siempre estés en la cima de tu juego. Al desbloquear tu potencial con nuestras terapias IV de rendimiento dirigidas, estás invirtiendo en tu viaje atlético. Experimenta la diferencia a medida que entrenas más duro, te recuperas más rápido y alcanzas tu mejor marca personal."
-            ],
+            "blog": "Performance-Booster-IVs",
             "title": "Leer Más"
         }
     ]

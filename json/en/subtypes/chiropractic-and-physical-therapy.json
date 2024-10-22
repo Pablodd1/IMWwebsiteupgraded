@@ -26,40 +26,28 @@
             "image": "Spinal Decompression",
             "heading": "Spinal Decompression",
             "summary": "Relieve pressure on your spine for lasting pain relief.",
-            "blog": [
-                "Spinal decompression therapy is a non-invasive treatment designed to alleviate back pain and improve spinal function. By gently stretching the spine, it creates negative pressure, helping to relieve pressure on herniated discs and improve nutrient flow. Patients often report significant reductions in pain and enhanced mobility after treatment. It's an ideal solution for those suffering from chronic back pain or disc issues, aiming to restore a pain-free lifestyle.",
-                "In addition, spinal decompression therapy helps with sciatica, degenerative disc disease, and herniated discs. During the treatment, patients lie comfortably on a specialized table that gently pulls the spine, allowing for proper alignment and relief. Many patients experience immediate pain relief and increased range of motion, leading to a more active lifestyle. Spinal decompression not only addresses existing pain but also works as a preventive measure to keep the spine healthy."
-            ],
+            "blog": "spinal-decompression",
             "title": "Read More"
         },
         {
             "image": "Chiropractic Adjustments",
             "heading": "Chiropractic Adjustments",
             "summary": "Restore balance and function with expert care.",
-            "blog": [
-                "Chiropractic adjustments involve precise manipulations of the spine and joints to enhance mobility, alleviate pain, and promote overall health. This hands-on therapy addresses misalignments that can cause discomfort and dysfunction. Regular adjustments can lead to improved posture, increased energy, and a greater sense of well-being.",
-                "Our experienced chiropractors tailor each session to the individual needs of the patient, ensuring effective and safe treatment. Each adjustment is designed to realign the spine, which can alleviate pressure on nerves, enhance blood flow, and promote overall healing. With consistent care, patients often report improved sleep, reduced stress, and a greater ability to engage in daily activities without pain."
-            ],
+            "blog": "chiropractic-adjustments",
             "title": "Read More"
         },
         {
             "image": "Posture Correction Therapy",
             "heading": "Posture Correction Therapy",
             "summary": "Achieve optimal posture for better health.",
-            "blog": [
-                "Posture Correction Therapy focuses on aligning your body for optimal function and health. Poor posture can lead to various health issues, including back pain and respiratory problems. Our specialized therapy combines assessments, personalized exercises, and chiropractic adjustments to improve posture and alleviate discomfort.",
-                "With a focus on strengthening core muscles and correcting alignment, this therapy aims to reshape how your body stands, sits, and moves. By retraining your body to adopt a healthier alignment, you can experience increased energy levels, enhanced breathing, and an overall improvement in quality of life. Many clients find that improved posture not only alleviates physical pain but also boosts their confidence and mental clarity."
-            ],
+            "blog": "posture-correction-therapy",
             "title": "Read More"
         },
         {
             "image": "Shockwave-and-Laser",
             "heading": "Shockwave & Laser Therapy",
             "summary": "Innovative therapies for faster recovery.",
-            "blog": [
-                "Shockwave and Laser Therapy are advanced treatment options that promote healing and recovery by enhancing blood flow and reducing inflammation. Shockwave therapy uses acoustic waves to stimulate tissue repair, while laser therapy uses light energy to alleviate pain and accelerate healing processes.",
-                "These therapies are effective for various conditions, including chronic pain and sports injuries, providing a non-invasive approach to recovery and improving overall physical performance. Many patients experience significant improvements in pain levels and mobility after just a few sessions. These innovative therapies not only help in recovery but also play a crucial role in preventing future injuries, allowing individuals to maintain an active and healthy lifestyle."
-            ],
+            "blog":"shockwave-and-laser-therapy",
             "title": "Read More"
         }
     ]

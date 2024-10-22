@@ -1,0 +1,56 @@
+// styles/Terms.module.scss
+
+.termsContainer {
+    padding: 20px;
+    max-width: 800px;
+    margin: 5rem auto 0;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+    article {
+        margin: 3.5rem auto;
+    }
+
+    .title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: serif;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    .intro {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: serif;
+
+        @media (max-width: 768px) {
+            font-size: 1.25rem;
+        }
+    }
+
+    p {
+        font-family: serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+
+        @media (max-width: 768px) {
+            font-size: 0.9rem;
+        }
+    }
+}

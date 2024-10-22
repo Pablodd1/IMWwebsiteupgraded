@@ -1,0 +1,62 @@
+@import "@SASS/variables.scss";
+
+.blogContainer {
+    overflow: auto;
+    margin: 0 auto;
+    text-align: justify;
+
+    .des {
+        width: 35%;
+        height: .5rem;
+        background-color: $theme_color;
+        margin: 0 auto 0 0;
+        border-radius:  25px;
+    }
+
+    h3,h4,
+    .level3,
+    .level4 {
+        margin: 0 !important;
+        line-height: normal;
+        width: fit-content;
+    }
+    h3 {        
+        margin: 3rem 0 .5rem !important;
+        padding: 1rem 0 .25rem;
+    }
+    .level4  {
+        margin: 1.75rem 0 .5rem !important;
+        padding: 1rem 0 .25rem;
+    }
+
+    .heading {
+        color: #333;
+        font-family: 'Arial, sans-serif';
+        font-weight: bold;
+    }
+
+
+    .level3 .heading {
+        font-size: 1.5rem;
+        color: #333;
+        // border-bottom: 2px solid $theme_color;
+        padding-bottom: 5px;
+    }
+
+    .level4 .heading {
+        font-size: 1.25rem;
+        color: #3a3a3a;
+        border-left: .35rem solid $theme_color;
+        padding-left: 10px;
+    }
+
+    .paragraph {
+        font-size: .75rem;
+        color: #696969;
+        line-height: 1.2;
+        margin: .25rem 0;
+    }
+
+}
+
+
