@@ -9,7 +9,18 @@
     --line_color: #004400; /* Dark Green */
     --back_color: #D4F9D4; /* Light Green */
 }
-
+.green {
+    --line_color: #9BEC00; /* Dark Green */
+    --back_color: #015a01;
+}
+.darkGray {
+    --line_color: #b3b3b3;
+    --back_color: #414141;
+}
+.darkWhite {
+    --line_color: white;
+    --back_color: #6ac7fd;
+}
 .darkBlue {
     --line_color: #007BA7;
     // --line_color: #024950;

@@ -1,0 +1,48 @@
+@import "@SASS/variables.scss";
+
+.ctaContainer {
+    padding: 2rem;
+    background-color: $theme_color;
+    text-align: center;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    
+    & .title {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        color: white;
+        font-family: $font_primary;
+    }
+
+    & .animation {
+        font-size: 1.28rem;
+        color: rgb(250, 250, 250);
+        margin: 1rem auto;
+        font-family: $font_secondary;
+        letter-spacing: 5px;
+        @media screen and (max-width:768px) {
+            height: 5rem;
+        }
+    }
+
+    & .paragraph {
+        font-size: 1.25rem;
+        color: #e7e7e7;
+        max-width: 50rem;
+        margin: .5rem auto 2rem;
+    }
+
+    & .buttonContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        padding: 0 1rem;
+        margin: 2rem auto;
+        max-width: fit-content;
+        gap: .25rem;
+        @media screen and (min-width:768px) {
+            gap: 1rem;
+            flex-direction: row;
+        }
+    }
+}

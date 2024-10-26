@@ -1,21 +1,24 @@
 {
     "heading": "Our Mission",
     "subTitle":"- Compassionate and Comprehensive Healthcare At Your Door!",
-    "paragraph": "Innovative Medical Wellness brings the forefront of medical care directly to you. Our House Calls service is a testament to our dedication to providing personalized, high-quality healthcare in the comfort and privacy of your own home.",
+    "paragraph": "At Innovative Medical Wellness, our mission is to empower individuals by providing personalized, high-quality healthcare that integrates holistic and regenerative medicine. With over 40 years of combined expertise, we are committed to enhancing the well-being of our patients through compassionate, professional care tailored to their unique needs. By offering a seamless process that blends diagnostic wellness, lifestyle optimization, and advanced treatments, we aim to unlock the body’s natural potential for healing. We are dedicated to making healthcare accessible through services like house calls, ensuring care is delivered with privacy, comfort, and convenience. Whether addressing chronic conditions, personal injury, or optimizing performance, our approach is designed to foster a vibrant and healthier future for our community.",
     "right_side_video": "https://innovativemedicalwellness.com/wp-content/uploads/2023/08/Innovative-Medical-Wellness.mp4",
     "ul":[
+        {
+            "heading": "Health Memberships for Every Lifestyle",
+            "des": "Our tailored health memberships offer high-quality, personalized care to meet your wellness goals. Whether it's routine checkups or advanced treatments, enjoy the ease of house calls and exclusive discounts designed for your lifestyle."
+        },
         {
             "heading": "Experienced Health Care Providers",
             "des": "Our licensed physicians and providers have years of experience providing compassionate care. They are knowledgeable in the latest developments and treatments in healthcare."
         },
-    
         {
             "heading": "Professional & Friendly Staff",
             "des": "Our professional staff will always treat you with caring compassion. We are dedicated to ensuring you or your loved one receive the highest level of care."
         },
     
         {
-            "heading": "Medicare, Private Pay and Most Insurance Accepted",
+            "heading": "Membership, Private Pay and Most Insurance Accepted",
             "des": "We accept Medicare and most insurance plans. We also accept private pay per visit. Call our office today to see if you qualify for our services!"
         }
     ]

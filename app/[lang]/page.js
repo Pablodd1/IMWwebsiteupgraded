@@ -10,6 +10,7 @@ import GetSVG from "@SEGMENT/getSVG";
 import { getDictionary } from '@JSON/index'
 import { Mail, PhoneIcon } from "@ELEMENT/svgIcons";
 import Link from "next/link";
+import Gallery from "@ELEMENT/getGallery";
 
 export default async function Home({ params }) {
   const LANG = params.lang
@@ -60,6 +61,7 @@ export default async function Home({ params }) {
       <Suspense >
         <HealthAbout LANG={LANG} />
       </Suspense>
+        <Gallery />
       <Suspense >
         <Departs LANG={LANG} />
       </Suspense>

@@ -42,7 +42,7 @@ const Departs = async ({ LANG }) => {
                       {truncateDescription(x.description, 105)}
                     </p>
                   </div>
-                  <button className="card__button">Read more</button>
+                  {/* <button className="card__button">Read more</button> */}
                 </div>
               </li>
             )

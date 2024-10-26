@@ -6,6 +6,7 @@ const dictionaries = {
       navs: () => import('./en/general/navs.json'),
       socialLinks: () => import('./en/general/socialLinks.json'),
       contactUS: () => import('./en/general/contactUS.json'),
+      costCTA: () => import('./en/general/costCTA.json'),
       btn: () => import('./en/general/buttons.json'),
     },
     blogs:{
@@ -74,8 +75,9 @@ const dictionaries = {
   es: {
     general: {
       navs: () => import('./es/general/navs.json'),
-      socialLinks: () => import('./es/general/socialLinks.json'),
+      socialLinks: () => import('./en/general/socialLinks.json'),
       contactUS: () => import('./es/general/contactUS.json'),
+      costCTA: () => import('./es/general/costCTA.json'),
       btn: () => import('./es/general/buttons.json'),
     },
     blogs:{

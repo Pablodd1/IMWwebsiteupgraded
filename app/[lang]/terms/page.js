@@ -17,7 +17,7 @@ const terms = [
     },
     {
         h: "3. Intellectual Property Rights",
-        p: "All content on the website, including text, graphics, logos, images, and software, is the property of [Your Company Name] and is protected by international copyright laws. You may not modify, reproduce, distribute, create derivative works, or otherwise exploit the content in any way without prior written consent from [Your Company Name]."
+        p: "All content on the website, including text, graphics, logos, images, and software, is the property of Innovative Medical Wellness LLC and is protected by international copyright laws. You may not modify, reproduce, distribute, create derivative works, or otherwise exploit the content in any way without prior written consent from Innovative Medical Wellness LLC."
     },
     {
         h: "4. Privacy Policy",
@@ -29,7 +29,7 @@ const terms = [
     },
     {
         h: "6. Limitation of Liability",
-        p: "In no event shall [Your Company Name] be liable for any damages (including, without limitation, indirect, incidental, special, or consequential damages) arising out of the use or inability to use the website or any content provided on the website."
+        p: "In no event shall Innovative Medical Wellness LLC be liable for any damages (including, without limitation, indirect, incidental, special, or consequential damages) arising out of the use or inability to use the website or any content provided on the website."
     },
     {
         h: "7. Governing Law",

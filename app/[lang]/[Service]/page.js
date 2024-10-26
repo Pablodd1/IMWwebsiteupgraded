@@ -1,9 +1,11 @@
 import styles from './page.module.scss';
 import GetSVG from '@SEGMENT/getSVG';
-import Card from '@SEGMENT/Card';
-import EmblaCarousel from '@SEGMENT/carousel/carousel';
-import Specialist from '@SEGMENT/Specialist';
-import AnimatedAction from '@ELEMENT/Action';
+import dynamic from 'next/dynamic';
+const Card = dynamic(() => import('@SEGMENT/Card'));
+const EmblaCarousel = dynamic(() => import('@SEGMENT/carousel/carousel'));
+const Specialist = dynamic(() => import('@SEGMENT/Specialist'));
+const AnimatedAction = dynamic(() => import('@ELEMENT/Action'));
+const CostQueryCTA = dynamic(() => import('@SEGMENT/costCTA'));
 import NotFound from '../not-found';
 import { getDictionary } from '@JSON/index'
 export async function generateMetadata({ params, searchParams }, parent) {
@@ -21,10 +23,11 @@ export async function generateMetadata({ params, searchParams }, parent) {
 const Page = async ({ params }) => {
     let PAGE = params.Service;
     const LANG = params.lang;
-    let data; 
+    let data;
     if (!PAGE)
         <NotFound />;
     data = PAGE && await getDictionary(LANG || 'en', `subtypes.${PAGE}`);
+    const cost_data = await getDictionary(LANG || 'en', `general.costCTA`);
     return (
         <main
             className={styles.Page}
@@ -41,7 +44,8 @@ const Page = async ({ params }) => {
                 <GetSVG num={2} />
             </section>
             <Card PAGE={PAGE} data={data.services} LANG={LANG} />
-            <Specialist LANG={LANG}  />
+            <CostQueryCTA services={data.services.map(x => x.heading)} data={cost_data} />
+            <Specialist LANG={LANG} />
             <section className={styles.testimonials}>
                 <h2>{data.story.h2}</h2>
                 <EmblaCarousel slides={data.story?.ul} />

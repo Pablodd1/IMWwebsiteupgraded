@@ -1,9 +1,13 @@
 {
     "heading": "Nuestra Misión",
     "subTitle": "- ¡Atención Sanitaria Compasiva y Completa a Tu Puerta!",
-    "paragraph": "Innovative Medical Wellness lleva lo mejor de la atención médica directamente a ti. Nuestro servicio de Llamadas a Domicilio es un testimonio de nuestra dedicación a proporcionar atención médica personalizada y de alta calidad en la comodidad y privacidad de tu propio hogar.",
+    "paragraph": "En Innovative Medical Wellness, nuestra misión es empoderar a las personas brindándoles atención médica personalizada y de alta calidad, integrando medicina holística y regenerativa. Con más de 40 años de experiencia combinada, nos comprometemos a mejorar el bienestar de nuestros pacientes a través de una atención compasiva y profesional, adaptada a sus necesidades únicas. Ofrecemos un proceso integral que combina bienestar diagnóstico, optimización del estilo de vida y tratamientos avanzados, con el objetivo de desbloquear el potencial natural del cuerpo para sanar. Nos dedicamos a hacer que la atención médica sea accesible a través de servicios como visitas domiciliarias, asegurando una atención con privacidad, comodidad y conveniencia. Ya sea abordando condiciones crónicas, lesiones personales u optimización de rendimiento, nuestro enfoque está diseñado para fomentar un futuro vibrante y saludable para nuestra comunidad.",
     "right_side_video": "https://innovativemedicalwellness.com/wp-content/uploads/2023/08/Innovative-Medical-Wellness.mp4",
     "ul": [
+      {
+        "heading": "Membresías de Salud para Cada Estilo de Vida",
+        "des": "Nuestras membresías de salud personalizadas ofrecen atención de alta calidad para alcanzar tus metas de bienestar. Ya sea en chequeos de rutina o tratamientos avanzados, disfruta de la comodidad de visitas a domicilio y descuentos exclusivos adaptados a tu estilo de vida."
+      },
       {
         "heading": "Proveedores de Atención Médica Experimentados",
         "des": "Nuestros médicos y proveedores con licencia tienen años de experiencia brindando atención compasiva. Están actualizados en los últimos desarrollos y tratamientos en atención médica."
@@ -13,7 +17,7 @@
         "des": "Nuestro personal profesional siempre te tratará con compasión y cuidado. Estamos dedicados a asegurar que tú o tu ser querido reciban el más alto nivel de atención."
       },
       {
-        "heading": "Medicare, Pago Privado y La Mayoría de Seguros Aceptados",
+        "heading": "Membresías, Pago Privado y Aceptamos la Mayoría de los Seguros",
         "des": "Aceptamos Medicare y la mayoría de los planes de seguro. También aceptamos pagos privados por visita. ¡Llama a nuestra oficina hoy para ver si calificas para nuestros servicios!"
       }
     ]
