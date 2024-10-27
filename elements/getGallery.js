@@ -18,16 +18,19 @@ export default function Gallery() {
         <section id="gallery" className={styles.gallery} >
             {
                 images.map(x => (
-                    <figure key={x.title} style={{ gridRow: `span ${x.row}`, gridColumn: `span ${x.col}` }} >
-                        <Image
-                            src={x.src}                            
-                            title={x.title}
-                            alt={x.title}
-                            width={x.height}
-                            height={x.height}
-                            loading='lazy'
-                        />
-                    </figure>
+                    <Image
+                        key={x.title}
+                        style={{
+                            gridRow: `span ${x.row}`,
+                            gridColumn: `span ${x.col}`
+                        }}
+                        src={x.src}
+                        title={x.title}
+                        alt={x.title}
+                        width={x.height}
+                        height={x.height}
+                        loading='lazy'
+                    />
                 ))
             }
         </section>
