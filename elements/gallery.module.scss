@@ -1,0 +1,36 @@
+.gallery {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(12, auto);
+    gap: .25rem;
+    padding: 0;
+
+    figure {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all .75s ease;
+        }
+
+        // &:hover {
+        //     img {
+        //         transform: scale(.95) ;
+        //         border-radius: 25px;
+        //     }
+        // }
+
+    }
+
+    @media screen and (min-width:768px) {
+        grid-template-columns: repeat(12, auto);
+        grid-template-rows: repeat(6, auto);
+    }
+}

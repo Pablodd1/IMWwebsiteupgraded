@@ -1,7 +1,8 @@
 
 import ContactUs from "@SEGMENT/ContactUs";
 export default async function Support({params}) {
-    const LANG = params.lang
+    const par = await params
+    const LANG = par.lang
 
     return (
         <ContactUs LANG={LANG} />        

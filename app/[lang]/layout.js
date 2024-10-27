@@ -39,8 +39,9 @@ const renderIconButton = ({ label, icon, href }) => (
     {icon}
   </Link>
 );
-export default async function RootLayout({ children, params }) {
-  const LANG = params.lang
+export default async function RootLayout({ children, params  }) {
+  const par = await params
+  const LANG = par.lang
   
   return (
     <html lang="en">

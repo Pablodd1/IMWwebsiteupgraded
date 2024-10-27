@@ -9,8 +9,9 @@ const CostQueryCTA = dynamic(() => import('@SEGMENT/costCTA'));
 import NotFound from '../not-found';
 import { getDictionary } from '@JSON/index'
 export async function generateMetadata({ params, searchParams }, parent) {
-    const PAGE = params.Service;
-    const LANG = params.lang;
+    const par = await params
+    const LANG = par.lang
+    const PAGE = par.Service;
     // const t = await getDictionary(LANG)
     let data;
     data = PAGE && await getDictionary(LANG || 'en', `subtypes.${PAGE}`);
@@ -21,20 +22,16 @@ export async function generateMetadata({ params, searchParams }, parent) {
     }
 }
 const Page = async ({ params }) => {
-    let PAGE = params.Service;
-    const LANG = params.lang;
+    const par = await params
+    const LANG = par.lang
+    let PAGE = par.Service;
     let data;
     if (!PAGE)
         <NotFound />;
     data = PAGE && await getDictionary(LANG || 'en', `subtypes.${PAGE}`);
     const cost_data = await getDictionary(LANG || 'en', `general.costCTA`);
     return (
-        <main
-            className={styles.Page}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-        >
+        <main className={styles.Page} >
             <section className={styles.hero} style={{ backgroundImage: `url('/raster/departs/${PAGE}/Innovative Medical Wellness - ${PAGE}.webp')` }} >
                 <GetSVG num={5} />
                 <div className={styles.heroContent}>
@@ -49,11 +46,7 @@ const Page = async ({ params }) => {
             <section className={styles.testimonials}>
                 <h2>{data.story.h2}</h2>
                 <EmblaCarousel slides={data.story?.ul} />
-                {/* {
-                    data.story?.ul?.map(x=><p key={x} >{x}</p>)
-                } */}
             </section>
-
             <section className={styles.cta}>
                 <h2>{data.cta.h2}</h2>
                 <AnimatedAction

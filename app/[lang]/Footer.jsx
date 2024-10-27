@@ -7,8 +7,8 @@ import { getDictionary } from '@JSON/index'
 
 const Footer = async ({ LANG }) => {
     let footerNav, socialLinks;
-    footerNav = await getDictionary(LANG || 'en', `general.navs`);
-    socialLinks = await getDictionary(LANG || 'en', `general.socialLinks`);
+    footerNav = await getDictionary(await LANG || 'en', `general.navs`);
+    socialLinks = await getDictionary(await LANG || 'en', `general.socialLinks`);
  
     return (
         <footer className={styles.footer}>

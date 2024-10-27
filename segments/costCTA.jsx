@@ -2,10 +2,9 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import styles from './costCTA.module.scss';
-import Link from 'next/link';
 import AnimatedAction from '@ELEMENT/Action';
 
-const CostQueryCTA = async ({ services, data }) => {
+const CostQueryCTA =  ({ services, data }) => {
 
     return (
         <div className={styles.ctaContainer}>
@@ -23,7 +22,7 @@ const CostQueryCTA = async ({ services, data }) => {
             </p>
             <div className={styles.animation}>
                 <TypeAnimation
-                    sequence={services.flatMap(service => [service, 2000])} // Shows each service name for 2 seconds
+                    sequence={services.flatMap(service => [service, 4000])} // Shows each service name for 2 seconds
                     speed={50}
                     wrapper="span"
                     repeat={Infinity}
@@ -32,6 +31,7 @@ const CostQueryCTA = async ({ services, data }) => {
             <div className={styles.buttonContainer}>
                 <AnimatedAction
                     label={data.button.about}
+                    href={'/about'}
                     icon="emailSend-white"
                     hoverIcon={"emailSend-black"}
                     iconAlt={data.button.about}
@@ -42,6 +42,7 @@ const CostQueryCTA = async ({ services, data }) => {
                 />
                 <AnimatedAction
                     label={data.button.getCost}
+                    href={'/contact'}
                     icon="emailSend-white"
                     hoverIcon={"emailSend-black"}
                     iconAlt={data.button.getCost}

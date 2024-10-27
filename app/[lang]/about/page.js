@@ -5,9 +5,10 @@ import History from '@SEGMENT/history';
 import styles from './page.module.scss';
 import { getDictionary } from '@JSON/index';
 
-const About =async ({params}) => {
-    const LANG = params.lang
-    const data = await getDictionary(LANG || 'en', `about.intro`);
+const About = async ({ params }) => {
+  const par = await params
+  const LANG = par.lang
+  const data = await getDictionary(LANG || 'en', `about.intro`);
 
   return (
     <div className={styles.about}>
@@ -23,7 +24,7 @@ const About =async ({params}) => {
         <p>{data.story}</p>
       </section>
 
-      <Values  LANG={LANG}/>
+      <Values LANG={LANG} />
 
       <History LANG={LANG} />
 

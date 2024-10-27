@@ -10,12 +10,14 @@ import GetSVG from "@SEGMENT/getSVG";
 import { getDictionary } from '@JSON/index'
 import { Mail, PhoneIcon } from "@ELEMENT/svgIcons";
 import Link from "next/link";
-import Gallery from "@ELEMENT/getGallery";
+import dynamic from "next/dynamic";
+const Gallery = dynamic(() => import('@ELEMENT/getGallery'));
 
 export default async function Home({ params }) {
-  const LANG = params.lang
-  const intro = await getDictionary(LANG || 'en', `homepage.intro`);
-  const socialLinks = await getDictionary(LANG || 'en', `general.socialLinks`);
+  const par = await params
+  const LANG = par.lang
+  const intro = await getDictionary(LANG, `homepage.intro`);
+  const socialLinks = await getDictionary(LANG, `general.socialLinks`);
 
   return (
     <main >
@@ -61,7 +63,9 @@ export default async function Home({ params }) {
       <Suspense >
         <HealthAbout LANG={LANG} />
       </Suspense>
+      <Suspense >
         <Gallery />
+      </Suspense>
       <Suspense >
         <Departs LANG={LANG} />
       </Suspense>

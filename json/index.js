@@ -9,7 +9,7 @@ const dictionaries = {
       costCTA: () => import('./en/general/costCTA.json'),
       btn: () => import('./en/general/buttons.json'),
     },
-    blogs:{
+    blogs: {
       'Injectables': () => import('./en/blogs/Injectables.json'),
       'Hair-Restoration': () => import('./en/blogs/Hair Restoration.json'),
       'skin-treatment': () => import('./en/blogs/skin-treatment.json'),
@@ -80,7 +80,7 @@ const dictionaries = {
       costCTA: () => import('./es/general/costCTA.json'),
       btn: () => import('./es/general/buttons.json'),
     },
-    blogs:{
+    blogs: {
       'Injectables': () => import('./es/blogs/Injectables.json'),
       'Hair-Restoration': () => import('./es/blogs/Hair Restoration.json'),
       'skin-treatment': () => import('./es/blogs/skin-treatment.json'),
@@ -144,28 +144,39 @@ const dictionaries = {
     },
   },
 };
-
 export const getDictionary = async (locale, path) => {
-  const pathParts = path.split('.');
-  let currentLevel = dictionaries[locale];
-
-  for (const part of pathParts) {
-    if (!currentLevel[part]) {
-      throw new Error(`Path "${path}" not found for locale "${locale}"`);
-    }
-    currentLevel = currentLevel[part];
+  // Ensure the path is a valid string
+  if (typeof path !== 'string') {
+    console.error('Invalid path:', path);
+    throw new Error('Path must be a string');
   }
 
+  // Split the path into parts
+  const pathParts = path.split('.');
+
+  // Check if locale is valid and the path has at least two parts
+  const currentLocale = locale || 'en'; // Fallback to English
+  if (!dictionaries[currentLocale]) {
+    console.error('Locale not found:', currentLocale);
+    throw new Error(`Locale "${currentLocale}" not found`);
+  }
+
+  // Access the nested dictionary structure
+  let currentLevel = dictionaries[currentLocale];
+  for (const part of pathParts) {
+    if (currentLevel[part]) {
+      currentLevel = currentLevel[part];
+    } else {
+      console.error('Path part not found:', part);
+      throw new Error(`Path "${path}" not found for locale "${currentLocale}"`);
+    }
+  }
+
+  // Check if currentLevel is a function and call it if it is
   if (typeof currentLevel === 'function') {
     return currentLevel().then((module) => module.default);
   }
 
-  const data = {};
-  for (const key in currentLevel) {
-    if (typeof currentLevel[key] === 'function') {
-      data[key] = await currentLevel[key]().then((module) => module.default);
-    }
-  }
-
-  return data;
+  // Return the current level if it's not a function
+  return currentLevel;
 };
