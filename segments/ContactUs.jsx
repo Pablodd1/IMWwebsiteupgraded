@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './contact.module.scss';
-import {  LocationIcon, Mail, PhoneIcon } from '@ELEMENT/svgIcons';
+import {  FaxIcon, LocationIcon, Mail, PhoneIcon } from '@ELEMENT/svgIcons';
 import Link from 'next/link';
 import { getDictionary } from '@JSON/index'
 import SubmitForm from './submitForm';
@@ -21,6 +21,10 @@ const ContactUs = async ({LANG}) => {
                 <Link href={`tel:${contactUS.details.phone}`}>
                     <PhoneIcon color='#007BA7' />
                     {contactUS.details.phone}
+                </Link>
+                <Link href={`fax:${contactUS.details.fax}`}>
+                    <FaxIcon color='#007BA7' />
+                    {contactUS.details.fax}
                 </Link>
                 <Link href={`mailto:${contactUS.details.email}`}>
                     <Mail color='#007BA7' />

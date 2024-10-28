@@ -1,7 +1,6 @@
-import UseScrollEffect from "@HOOK/monitorScroll";
 import "./globals.css";
 import Link from "next/link";
-import { ContactUS, Mail, Logo, PhoneIcon } from "@ELEMENT/svgIcons";
+import { ContactUS, Mail,  PhoneIcon } from "@ELEMENT/svgIcons";
 import styles from './layout.module.scss';
 import Footer from "./Footer";
 import { Suspense } from "react";
@@ -10,10 +9,10 @@ import Image from 'next/image';
 export const metadata = {
   metadataBase: new URL('https://innovativemedicalwellness.com'),
   title: 'Innovative Medical Wellness | Miami Healthcare',
-  // keywords: 'Locksmith, Miami locksmith, locksmith services, emergency locksmith, car locksmith, lost car keys, key replacement, 24-hour locksmith, Miami Beach locksmith, Miami Gardens locksmith, Miami Oklahoma locksmith, Miami airport locksmith, security solutions, lockout assistance, spare car keys, car key replacement, new car keys, locksmith team, reliable locksmith, trusted locksmith, professional locksmith, Miami security, locksmith expertise, locksmith history, locksmith values',
-  // description: 'Get locked in the car? Trust our 24/7 Miami locksmith for expert solutions. Lost keys, lockouts, and security expertise for a decade-long commitment.',
+  keywords: 'regenerative medicine, IV therapy, aesthetic treatments, weight loss programs, brain health',
+  description: 'Innovative Medical Wellness: regenerative medicine, IV therapy, aesthetic & weight loss solutions to boost vitality, recovery & overall wellness.',
   generator: 'Next.js',
-  applicationName: 'Medical Innovative Wellness',
+  applicationName: 'IMW App',
   creator: 'MyAbabeel - M Talha',
   alternates: {
     canonical: 'https://innovativemedicalwellness.com'
@@ -48,7 +47,6 @@ export default async function RootLayout({ children, params  }) {
       <body >
         <header className={styles.nav} id="navbar">
           <Link className={styles.logo} href="/">
-            {/* <Logo /> */}
             <Image
               src={`/raster/logo-150.webp`}
               alt={'Innovative Medical Wellness - Logo'}

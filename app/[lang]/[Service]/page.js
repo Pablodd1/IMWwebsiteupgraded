@@ -12,7 +12,6 @@ export async function generateMetadata({ params, searchParams }, parent) {
     const par = await params
     const LANG = par.lang
     const PAGE = par.Service;
-    // const t = await getDictionary(LANG)
     let data;
     data = PAGE && await getDictionary(LANG || 'en', `subtypes.${PAGE}`);
 

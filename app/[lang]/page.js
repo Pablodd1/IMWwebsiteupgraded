@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Suspense } from "react";
 import About from "@SEGMENT/About";
-import Card from "@SEGMENT/Card";
 import HealthAbout from "@SEGMENT/HealthAbout";
 import styles from './page.module.scss'
 import Departs from "@SEGMENT/departs";
@@ -11,6 +10,7 @@ import { getDictionary } from '@JSON/index'
 import { Mail, PhoneIcon } from "@ELEMENT/svgIcons";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import MembershipPopup from "@ELEMENT/floatButton";
 const Gallery = dynamic(() => import('@ELEMENT/getGallery'));
 
 export default async function Home({ params }) {
@@ -71,6 +71,9 @@ export default async function Home({ params }) {
       </Suspense>
       <Suspense >
         <ContactUs LANG={LANG} />
+      </Suspense>
+      <Suspense >
+        <MembershipPopup />
       </Suspense>
     </main>
   );

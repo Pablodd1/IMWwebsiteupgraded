@@ -76,7 +76,7 @@ const dictionaries = {
     general: {
       navs: () => import('./es/general/navs.json'),
       socialLinks: () => import('./en/general/socialLinks.json'),
-      contactUS: () => import('./es/general/contactUS.json'),
+      contactUS: () => import('./en/general/contactUS.json'),
       costCTA: () => import('./es/general/costCTA.json'),
       btn: () => import('./es/general/buttons.json'),
     },
