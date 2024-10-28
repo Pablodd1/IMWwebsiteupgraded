@@ -5,6 +5,7 @@ import styles from './layout.module.scss';
 import Footer from "./Footer";
 import { Suspense } from "react";
 import Image from 'next/image';
+import Script from "next/script";
 
 export const metadata = {
   metadataBase: new URL('https://innovativemedicalwellness.com'),
@@ -60,6 +61,7 @@ export default async function RootLayout({ children, params  }) {
         <Suspense >
           <Footer LANG={LANG || 'en'} />
         </Suspense>
+        <Script src='/tawk.to.js' strategy='lazyOnload' />
       </body>
     </html>
   );
