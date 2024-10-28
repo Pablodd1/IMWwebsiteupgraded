@@ -18,9 +18,6 @@ export const metadata = {
   alternates: {
     canonical: 'https://innovativemedicalwellness.com'
   },
-  // verification: {
-  //   google: '5mY7Mp4Wz4jdKB94tgnuTNF1g1I5MV447Cm--rsF3SI',
-  // },
   manifest: '/logos/manifest.json',
   icons: {
     icon: '/logos/logo.png',
@@ -42,7 +39,6 @@ const renderIconButton = ({ label, icon, href }) => (
 export default async function RootLayout({ children, params  }) {
   const par = await params
   const LANG = par.lang
-  
   return (
     <html lang="en">
       <body >

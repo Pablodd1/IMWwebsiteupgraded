@@ -14,7 +14,7 @@ const Card = async ({ LANG, PAGE, data }) => {
                 <section id={`blog_${i}`} className={`${styles.inner}`} key={i}>
                     <Image
                         src={`/raster/departs/${PAGE}/Innovative Medical Wellness - ${item.image}.webp`}
-                        alt={item.heading}
+                        alt={item.heading + 'Innovative Medical Wellness'}
                         className={styles.img}
                         width={448} height={348}
                     />

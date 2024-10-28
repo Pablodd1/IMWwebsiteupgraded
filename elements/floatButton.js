@@ -30,7 +30,7 @@ const MembershipPopup = () => {
             <button onClick={closePopup} className={styles.closeButton}>
               &times;
             </button>
-            <Image src={membership} alt="Membership Plan" className={styles.image}  />
+            <Image src={membership} alt="Membership Plan Innovative Medical Wellness" className={styles.image}  />
           </div>
         </div>
       )}

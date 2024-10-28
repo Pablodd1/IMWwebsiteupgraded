@@ -23,7 +23,7 @@ const Team = async ({LANG}) => {
                                 member.image
                                     ? `/raster/specialists/${member.image}.webp`
                                     : `/svg/specialist-innovative-medical-wellness.svg`}
-                            alt={member.name}
+                            alt={member.name + 'Innovative Medical Wellness'}
                             width={250} height={250}
                             className={styles.img}
                         />

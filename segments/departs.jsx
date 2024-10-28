@@ -31,7 +31,7 @@ const Departs = async ({ LANG }) => {
                 <Image
                   className="card__background"
                   src={`/raster/departs/${x.image.src}`}
-                  alt={x.image.alt}
+                  alt={x.image.alt + 'Innovative Medical Wellness'}
                   width={1024}
                   height={512}
                 />

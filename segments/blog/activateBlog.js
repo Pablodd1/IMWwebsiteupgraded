@@ -60,7 +60,7 @@ const OpenBlog = ({ idx, blogC, btn, styles, classN, active }) => {
             }
             <Image
                 src={`/svg/close.svg`}
-                alt={'Close icon'}
+                alt={'Close icon' + 'Innovative Medical Wellness'}
                 className={styles}
                 width={50} height={50}
                 onClick={handleClose}

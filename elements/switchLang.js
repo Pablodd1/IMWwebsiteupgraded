@@ -23,7 +23,7 @@ const ToggleLanguage = ({ lang }) => {
             <Image
                 src={`/svg/language.svg`}
                 className={styles.icon}
-                alt={'Language icon'}
+                alt={'Language icon' + 'Innovative Medical Wellness'}
                 width={17}
                 height={25}
             />

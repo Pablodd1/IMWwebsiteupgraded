@@ -25,7 +25,7 @@ const About = async ({LANG}) => {
                                         src={`/svg/${y.icon}.svg`}
                                         width={50}
                                         height={50}
-                                        alt={y.label}
+                                        alt={y.label + 'Innovative Medical Wellness'}
                                     />
                                 </Link>
                             </li>
@@ -36,11 +36,11 @@ const About = async ({LANG}) => {
                 <Image
                     className={styles.img}
                     src={`/raster/about/${about.image}.webp`}
-                    alt="About Image"
+                    alt={"About Image" + 'Innovative Medical Wellness'}
                     width={1024} height={1024}
                 />
                 <figcaption>
-                    <Image className={styles.infoIcon} src={'/svg/info.svg'} width={50} height={50} alt="info icon" />
+                    <Image className={styles.infoIcon} src={'/svg/info.svg'} width={50} height={50} alt={"info icon" + 'Innovative Medical Wellness'} />
                     {about.right_side_desc}
                 </figcaption>
             </figure>

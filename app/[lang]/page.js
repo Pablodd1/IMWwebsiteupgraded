@@ -32,7 +32,7 @@ export default async function Home({ params }) {
                     src={`/svg/${y.icon}-white.svg`}
                     width={50}
                     height={50}
-                    alt={y.label}
+                    alt={y.label + 'Innovative Medical Wellness'}
                   />
                 </Link>
               </li>

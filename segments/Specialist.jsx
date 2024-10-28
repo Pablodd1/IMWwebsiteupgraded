@@ -19,7 +19,7 @@ const Specialist = async ({LANG}) => {
                                     item.image
                                         ? `/raster/specialists/${item.image}.webp`
                                         : `/svg/specialist-innovative-medical-wellness.svg`}
-                                alt={item.name}
+                                alt={item.name + 'Innovative Medical Wellness'}
                                 width={250} height={250}
                                 className={styles.img}
                             />
