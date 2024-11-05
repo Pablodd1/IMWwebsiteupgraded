@@ -23,31 +23,10 @@
     },
     "services": [
         {
-            "image": "PRP & Stem Cell Therapy",
-            "heading": "PRP & Stem Cell Therapy",
-            "summary": "Rejuvenate and Repair",
-            "blog": "stem-cell-therapy",
-            "title": "Read More"
-        },
-        {
-            "image": "Exosome Therapy",
-            "heading": "Exosome Therapy",
-            "summary": "Next-Gen Healing",
-            "blog": "exosome-therapy",
-            "title": "Read More"
-        },
-        {
             "image": "Musculoskeletal",
             "heading": "Joint & Musculoskeletal Injections",
             "summary": "Pain Relief & Restoration",
             "blog": "Joint-Injections",
-            "title": "Read More"
-        },
-        {
-            "image": "Tissue Engineering Therapies",
-            "heading": "Tissue Engineering Therapies",
-            "summary": "Advanced Regeneration",
-            "blog": "Tissue-Engineering-Therapy",
             "title": "Read More"
         }
     ]
