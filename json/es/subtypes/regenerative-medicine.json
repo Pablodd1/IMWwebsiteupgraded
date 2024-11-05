@@ -22,32 +22,12 @@
         "desc": "Descubre nuestros servicios de medicina regenerativa diseñados para ayudarte a desbloquear el pleno potencial de sanación y vitalidad de tu cuerpo."
     },
     "services": [
-        {
-            "image": "PRP & Stem Cell Therapy",
-            "heading": "Terapia PRP y Células Madre",
-            "summary": "Rejuvenecer y Reparar",
-            "blog": "stem-cell-therapy",
-            "title": "Leer Más"
-        },
-        {
-            "image": "Exosome Therapy",
-            "heading": "Terapia de Exosomas",
-            "summary": "Curación de Nueva Generación",
-            "blog": "exosome-therapy",
-            "title": "Leer Más"
-        },
+        
         {
             "image": "Musculoskeletal",
             "heading": "Inyecciones de Articulaciones y Musculoesqueléticas",
             "summary": "Alivio del Dolor y Restauración",
             "blog": "Joint-Injections",
-            "title": "Leer Más"
-        },
-        {
-            "image": "Tissue Engineering Therapies",
-            "heading": "Terapias de Ingeniería de Tejidos",
-            "summary": "Regeneración Avanzada",
-            "blog": "Tissue-Engineering-Therapy",
             "title": "Leer Más"
         }
     ]
