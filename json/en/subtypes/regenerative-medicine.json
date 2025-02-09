@@ -28,6 +28,27 @@
             "summary": "Pain Relief & Restoration",
             "blog": "Joint-Injections",
             "title": "Read More"
+        },
+        {
+            "image": "Clarity-Direct-Neurofeedback",
+            "heading": "Clarity Direct Neurofeedback",
+            "summary": "Clarity Direct Neurofeedback is an advanced, non-invasive therapeutic...",
+            "blog": "Clarity-Direct-Neurofeedback",
+            "title": "Read More"
+        },
+        {
+            "image": "Cold-Exposure-Therapy",
+            "heading": "Cold Exposure Therapy",
+            "summary": "Understanding Cold Exposure Therapy",
+            "blog": "Cold-Exposure-Therapy",
+            "title": "Read More"
+        },
+        {
+            "image": "Salt-Therapy",
+            "heading": "What Science Says About Salt Therapy",
+            "summary": "Halotherapy, commonly referred to as salt therapy...",
+            "blog": "Salt-Therapy",
+            "title": "Read More"
         }
     ]
 }

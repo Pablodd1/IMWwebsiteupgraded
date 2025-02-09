@@ -19,7 +19,7 @@ export default async function Log(obj) {
 
     }
     catch (err) {
-        console.error('Error writing file:', err);
+        console.info('Error writing file:', err);
 
     }
 }

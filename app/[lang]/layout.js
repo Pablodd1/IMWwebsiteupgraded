@@ -1,6 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
-import { ContactUS, Mail,  PhoneIcon } from "@ELEMENT/svgIcons";
+import { ContactUS, Mail, PhoneIcon, WhatsApp } from "@ELEMENT/svgIcons";
 import styles from './layout.module.scss';
 import Footer from "./Footer";
 import { Suspense } from "react";
@@ -27,16 +27,17 @@ export const metadata = {
 }
 
 const iconItems = [
+  { label: 'WhatsApp', icon: <WhatsApp key={3} />, href: 'https://wa.me/13058641373' },
   { label: 'Call', icon: <PhoneIcon key={0} />, href: 'tel:(305)864-1373' },
   { label: 'Mail', icon: <Mail key={1} />, href: 'mailto:info@innovativemedicalwellness.com' },
   { label: 'Contact', icon: <ContactUS key={2} />, href: '/contact' },
 ];
 const renderIconButton = ({ label, icon, href }) => (
-  <Link key={label} title={label} href={href} aria-label={label}>
+  <Link key={label} className={label === 'WhatsApp' ? '' : styles.color} title={label} href={href} aria-label={label}>
     {icon}
   </Link>
 );
-export default async function RootLayout({ children, params  }) {
+export default async function RootLayout({ children, params }) {
   const par = await params
   const LANG = par.lang
   return (

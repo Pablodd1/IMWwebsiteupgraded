@@ -41,6 +41,9 @@ const dictionaries = {
       'stem-cell-therapy': () => import('./en/blogs/stem-cell-therapy.json'),
       'exosome-therapy': () => import('./en/blogs/exosome-therapy.json'),
       'Joint-Injections': () => import('./en/blogs/Joint-Injections.json'),
+      'Clarity-Direct-Neurofeedback': () => import('./en/blogs/Clarity-Direct-Neurofeedback.json'),
+      'Cold-Exposure-Therapy': () => import('./en/blogs/Cold-Exposure-Therapy.json'),
+      'Salt-Therapy': () => import('./en/blogs/Salt-Therapy.json'),
       'Tissue-Engineering-Therapy': () => import('./en/blogs/Tissue-Engineering-Therapy.json'),
       'Semaglutide-Injections': () => import('./en/blogs/Semaglutide Injections.json'),
       'Brown-Fat-Activation': () => import('./en/blogs/Brown Fat Activation.json'),
@@ -112,6 +115,9 @@ const dictionaries = {
       'stem-cell-therapy': () => import('./es/blogs/stem-cell-therapy.json'),
       'exosome-therapy': () => import('./es/blogs/exosome-therapy.json'),
       'Joint-Injections': () => import('./es/blogs/Joint-Injections.json'),
+      'Clarity-Direct-Neurofeedback': () => import('./es/blogs/Clarity-Direct-Neurofeedback.json'),
+      'Cold-Exposure-Therapy': () => import('./es/blogs/Cold-Exposure-Therapy.json'),
+      'Salt-Therapy': () => import('./es/blogs/Salt-Therapy.json'),
       'Tissue-Engineering-Therapy': () => import('./es/blogs/Tissue-Engineering-Therapy.json'),
       'Semaglutide-Injections': () => import('./es/blogs/Semaglutide Injections.json'),
       'Brown-Fat-Activation': () => import('./es/blogs/Brown Fat Activation.json'),
@@ -147,7 +153,7 @@ const dictionaries = {
 export const getDictionary = async (locale, path) => {
   // Ensure the path is a valid string
   if (typeof path !== 'string') {
-    console.error('Invalid path:', path);
+    console.info('Invalid path:', path);
     throw new Error('Path must be a string');
   }
 
@@ -157,17 +163,16 @@ export const getDictionary = async (locale, path) => {
   // Check if locale is valid and the path has at least two parts
   const currentLocale = locale || 'en'; // Fallback to English
   if (!dictionaries[currentLocale]) {
-    console.error('Locale not found:', currentLocale);
+    console.info('Locale not found:', currentLocale);
     throw new Error(`Locale "${currentLocale}" not found`);
   }
-
   // Access the nested dictionary structure
   let currentLevel = dictionaries[currentLocale];
   for (const part of pathParts) {
     if (currentLevel[part]) {
       currentLevel = currentLevel[part];
     } else {
-      console.error('Path part not found:', part);
+      console.info('Path part not found:', part);
       throw new Error(`Path "${path}" not found for locale "${currentLocale}"`);
     }
   }

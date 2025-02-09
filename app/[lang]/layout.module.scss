@@ -43,7 +43,7 @@
         display: flex;
         align-items: center;
         column-gap: 35px;
-    
+
     }
 
 
@@ -57,18 +57,27 @@
         a {
             display: flex;
             align-items: center;
-            justify-content: center;            
-            background-color: white;
+            justify-content: center;
             padding: .25rem .35rem;
             border-radius: 25px;
+
             svg {
                 height: 28px;
-    
-                path {
-                    fill: $theme_color;
+            }
+
+            &.color {
+                background-color: white;
+
+                svg {
+                    height: 28px;
+
+                    path {
+                        fill: $theme_color;
+                    }
                 }
             }
         }
+
         // .mail {
         //     svg {
         //         path {
@@ -120,6 +129,7 @@
                 line-height: 2.5rem;
                 text-align: center;
             }
+
             span {
                 margin-right: 1rem;
             }
@@ -165,7 +175,7 @@
         display: none;
     }
 
-   
+
 }
 
 // }

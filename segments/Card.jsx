@@ -17,7 +17,7 @@ const Card = async ({ LANG, PAGE, data }) => {
                         alt={item.heading + 'Innovative Medical Wellness'}
                         className={styles.img}
                         width={448} height={348}
-                    />
+                    />{console.log(item,item.blog)}
                     <section className={styles.text}>
                         <h3>{item.heading}</h3>
                         <p>{item.summary}</p>

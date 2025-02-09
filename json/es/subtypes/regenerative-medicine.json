@@ -22,12 +22,32 @@
         "desc": "Descubre nuestros servicios de medicina regenerativa diseñados para ayudarte a desbloquear el pleno potencial de sanación y vitalidad de tu cuerpo."
     },
     "services": [
-        
         {
             "image": "Musculoskeletal",
             "heading": "Inyecciones de Articulaciones y Musculoesqueléticas",
             "summary": "Alivio del Dolor y Restauración",
             "blog": "Joint-Injections",
+            "title": "Leer Más"
+        },
+        {
+            "image": "Clarity-Direct-Neurofeedback",
+            "heading": "Clarity Direct Neurofeedback",
+            "summary": "Clarity Direct Neurofeedback es una tecnología terapéutica avanzada y no invasiva...",
+            "blog": "Clarity-Direct-Neurofeedback",
+            "title": "Leer Más"
+        },
+        {
+            "image": "Cold-Exposure-Therapy",
+            "heading": "Terapia de Exposición al Frío",
+            "summary": "Comprendiendo la Terapia de Exposición al Frío",
+            "blog": "Cold-Exposure-Therapy",
+            "title": "Leer Más"
+        },
+        {
+            "image": "Salt-Therapy",
+            "heading": "Qué Dice la Ciencia Sobre la Terapia de Sal",
+            "summary": "La haloterapia, comúnmente conocida como terapia de sal...",
+            "blog": "Salt-Therapy",
             "title": "Leer Más"
         }
     ]
