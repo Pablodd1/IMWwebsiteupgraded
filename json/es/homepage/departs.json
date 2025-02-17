@@ -1,30 +1,51 @@
 {
-  "h2":"Departamentos",
-  "p":"Descubre nuestros servicios médicos especializados, diseñados para abordar tus necesidades de salud específicas y mejorar tu bienestar general.",
-  "ul":[
-  {
-    "label": "MEDICINA REGENERATIVA",
-    "image": {
-      "src": "prostate-cancer-sexual-dysfunction-in-a-clinic-room-female-doctor-appointment-at-the-desk-1024x577.jpg",
-      "alt": ""
+  "h2": "Departamentos",
+  "p": "Descubre nuestros servicios médicos especializados, diseñados para abordar tus necesidades de salud específicas y mejorar tu bienestar general.",
+  "ul": [
+    {
+      "href": "/chiropractic-and-physical-therapy",
+      "label": "Quiropráctica y Terapia Física",
+      "description": "Desbloquea tu máximo potencial de salud con soluciones de bienestar personalizadas y de vanguardia."
     },
-    "description": "Desbloquea el potencial de tu cuerpo para sanar con nuestros avanzados tratamientos de medicina regenerativa. Adaptados para promover la recuperación natural y el bienestar a largo plazo, nuestro enfoque apunta a las causas profundas de tus problemas de salud para obtener resultados óptimos."
-  },
-  {
-    "label": "Rendimiento Ejecutivo (CEO)",
-    "image": {
-      "src": "african-american-ceo-analyzing-business-reports-with-his-team-during-a-briefing-in-the-office--1024x682.jpg",
-      "alt": ""
+    {
+      "href": "/regenerative-medicine",
+      "label": "Medicina Regenerativa",
+      "description": "Desbloquea todo tu potencial de salud con soluciones de bienestar personalizadas y de vanguardia que ayudan a restaurar y rejuvenecer tu cuerpo."
     },
-    "description": "Mejora el rendimiento del CEO con nuestro Programa de Terapia IV y Modificación del Estilo de Vida Personalizado. En nuestra clínica, nos especializamos en optimizar la salud y el rendimiento de los ejecutivos a través de tratamientos IV personalizados y estrategias integrales de estilo de vida. Experimenta una mayor función cognitiva, más energía y mejor resistencia al estrés, todo diseñado para ayudarte a rendir al máximo en la sala de juntas y más allá."
-  },
-  {
-    "label": "BIENESTAR SEXUAL",
-    "image": {
-      "src": "pablo-heimplatz-EAvS-4KnGrk-unsplash-1024x683-1.webp",
-      "alt": ""
+    {
+      "href": "/iv-therapy",
+      "label": "Terapia IV",
+      "description": "Desbloquea tu potencial de salud total con soluciones de bienestar personalizadas y de vanguardia diseñadas para rejuvenecer tu mente y cuerpo."
     },
-    "description": "Revitaliza tu salud íntima con nuestros servicios integrales de bienestar sexual. Nuestros tratamientos personalizados y orientación experta están diseñados para mejorar tu vitalidad sexual, confianza y bienestar general."
-  }
-]
+    {
+      "href": "/anti-aging-medicine",
+      "label": "Medicina Antienvejecimiento",
+      "description": "Desbloquea tu máximo potencial y retrocede el reloj con soluciones antienvejecimiento y de longevidad personalizadas y de vanguardia diseñadas para mejorar la vitalidad y el bienestar."
+    },
+    {
+      "href": "/aesthetic-treatments",
+      "label": "Tratamiento Estético",
+      "description": "Desbloquea tu pleno potencial de salud con soluciones de bienestar personalizadas y de vanguardia adaptadas a tus necesidades únicas."
+    },
+    {
+      "href": "/brain-Health",
+      "label": "Salud Cerebral",
+      "description": "Desbloquea todo tu potencial de salud con soluciones de bienestar personalizadas y de vanguardia."
+    },
+    {
+      "href": "/personal-Injury",
+      "label": "Lesiones Personales",
+      "description": "Desbloquea tu potencial de salud completo con soluciones de bienestar personalizadas y de vanguardia."
+    },
+    {
+      "href": "/weight-loss-programs",
+      "label": "Programas de Pérdida de Peso",
+      "description": "Desbloquea tu máximo potencial de salud con soluciones de bienestar personalizadas y de vanguardia."
+    },
+    {
+      "href": "/biohacking-and-optimization",
+      "label": "Biohacking y Optimización",
+      "description": "Desbloquea tu máximo potencial de salud con soluciones de bienestar personalizadas y de vanguardia."
+    }
+  ]
 }

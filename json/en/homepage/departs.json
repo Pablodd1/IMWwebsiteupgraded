@@ -1,30 +1,51 @@
 {
-  "h2":"Departments",
-  "p":"Discover our specialized medical services, designed to address your specific health needs and improve your overall well-being.",
-  "ul":[
+  "h2": "Departments",
+  "p": "Discover our specialized medical services, designed to address your specific health needs and improve your overall well-being.",
+  "ul": [
     {
-      "label": "REGENERATIVE MEDICINE",
-      "image": {
-        "src": "prostate-cancer-sexual-dysfunction-in-a-clinic-room-female-doctor-appointment-at-the-desk-1024x577.jpg",
-        "alt": ""
-      },
-      "description": "Unlock your body’s potential for healing with our advanced regenerative medicine treatments. Tailored to promote natural recovery and long-term wellness, our approach targets the root causes of your health issues for optimal results."
+      "href": "/chiropractic-and-physical-therapy",
+      "label": "Chiropractic & Physical Therapy",
+      "description": "Unlock your full health potential with personalized, cutting-edge wellness solutions."
     },
     {
-      "label": "Executive Performance (CEO)",
-      "image": {
-        "src": "african-american-ceo-analyzing-business-reports-with-his-team-during-a-briefing-in-the-office--1024x682.jpg",
-        "alt": ""
-      },
-      "description": "Elevate CEO Performance with Our Tailored IV Therapy and Lifestyle Modification Program. At our clinic, we specialize in optimizing the health and performance of top executives through personalized IV treatments and comprehensive lifestyle strategies. Experience enhanced cognitive function, increased energy, and improved stress resilience, all designed to help you perform at your peak in the boardroom and beyond."
+      "href": "/regenerative-medicine",
+      "label": "Regenerative Medicine",
+      "description": "Unlock your full health potential with personalized, cutting-edge wellness solutions that help restore and rejuvenate your body."
     },
     {
-      "label": "SEXUAL WELLNESS",
-      "image": {
-        "src": "pablo-heimplatz-EAvS-4KnGrk-unsplash-1024x683-1.webp",
-        "alt": ""
-      },
-      "description": "Revitalize your intimate health with our comprehensive sexual wellness services. Our personalized treatments and expert guidance aim to improve your sexual vitality, confidence, and overall well-being."
+      "href": "/iv-therapy",
+      "label": "IV Therapy",
+      "description": "Unlock your full health potential with personalized, cutting-edge wellness solutions designed to rejuvenate your mind and body."
+    },
+    {
+      "href": "/anti-aging-medicine",
+      "label": "Anti Aging  Medicine",
+      "description": "Unlock your full potential and turn back the clock with personalized, cutting-edge anti-aging and longevity solutions designed to enhance vitality and well-being."
+    },
+    {
+      "href": "/aesthetic-treatments",
+      "label": "Aesthetic Treatments",
+      "description": "Unlock your full health potential with personalized, cutting-edge wellness solutions tailored to your unique needs."
+    },
+    {
+      "href": "/brain-Health",
+      "label": "Brain Health",
+      "description": "Unlock your full health potential with personalized, cutting-edge wellness solutions."
+    },
+    {
+      "href": "/personal-Injury",
+      "label": "Personal Injury",
+      "description": "Unlock your full health potential with personalized, cutting-edge wellness solutions."
+    },
+    {
+      "href": "/weight-loss-programs",
+      "label": "Weight Loss Programs",
+      "description": "Unlock your full health potential with personalized, cutting-edge wellness solutions."
+    },
+    {
+      "href": "/biohacking-and-optimization",
+      "label": "Biohacking & Optimization",
+      "description": "Unlock your full health potential with personalized, cutting-edge wellness solutions."
     }
   ]
 }

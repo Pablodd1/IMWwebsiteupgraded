@@ -30,12 +30,12 @@ const Departs = async ({ LANG }) => {
               <li key={i} className="card  ">
                 <Image
                   className="card__background"
-                  src={`/raster/departs/${x.image.src}`}
-                  alt={x.image.alt + 'Innovative Medical Wellness'}
+                  src={`/raster/departs${x?.href}/Innovative Medical Wellness - ${x?.href?.split('/')[1]}.webp`}
+                  alt={x?.href?.split('/')[1] + ' Innovative Medical Wellness'}
                   width={1024}
                   height={512}
                 />
-                <div className="card__content | flow">
+                <Link href={x?.href} className="card__content | flow">
                   <div className="card__content--container | flow">
                     <h3 className="card__title expert-h2 text-2xl md:text-4xl ">{x.label}</h3>
                     <p className="card__description expert-p">
@@ -43,7 +43,7 @@ const Departs = async ({ LANG }) => {
                     </p>
                   </div>
                   {/* <button className="card__button">Read more</button> */}
-                </div>
+                </Link>
               </li>
             )
           })
