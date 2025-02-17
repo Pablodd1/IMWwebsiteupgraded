@@ -139,11 +139,16 @@
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: .9rem;
             max-width: 800px;
             margin: 0 auto;
             margin-bottom: 1.5rem;
             font-style: italic;
+        }
+        .source{
+            img {
+                margin: .25rem;
+            }
         }
     }
 

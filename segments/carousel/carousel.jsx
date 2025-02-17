@@ -4,6 +4,9 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { Thumb } from './thumbnails'
 import './styles.scss';
 import styles from './card.module.scss'
+import Link from 'next/link';
+import Image from 'next/image';
+const truncateText = (text, limit) => (text.length > limit ? text.substring(0, limit) + "..." : text);
 
 const EmblaCarousel = (props) => {
     const { slides, options } = props
@@ -61,14 +64,20 @@ const EmblaCarousel = (props) => {
                 <div className="embla__container">
                     {slides.map((slide, index) => (
                         <div className="embla__slide" key={index}>
-                            <div className={styles.testimonial}>
+                            <Link href={slide?.href || ''} target='_blank' className={styles.testimonial}>
                                 <div className={styles.shadow}></div>
                                 <span className={`${styles.top} ${styles.border}`}></span>
-                                <h1>{slide.split('-')[1]}</h1>
-                                <p>{slide.split('-')[0]}</p>
-                                <p className={styles.source}>&mdash; Medical Innovative Wellness</p>
+                                <h1>{slide?.title}</h1>
+                                <p>{truncateText(slide?.commit || "", 325)}</p>
+                                <div className={styles.source}>
+                                    {
+                                        (new Array(slide?.star).fill('')).map((_,x)=>(
+                                            <Image key={x} className={styles.im} src={'/svg/star.svg'} height={27} width={27} alt={`Rating: ${slide?.title} gives ${slide.star}`} />
+                                        ))
+                                    }
+                                </div>
                                 <span className={`${styles.bottom} ${styles.border}`}></span>
-                            </div>
+                            </Link>
                         </div>
                     ))}
                 </div>
@@ -83,7 +92,7 @@ const EmblaCarousel = (props) => {
                                 key={index}
                                 onClick={() => onThumbClick(index)} // Use the correct index
                                 selected={index === selectedIndex}
-                                index={slide.split('-')[1]} // Pass the actual index
+                                index={slide?.title} // Pass the actual index
                             />
                         ))}
                     </div>

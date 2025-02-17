@@ -1,6 +1,7 @@
 import styles from './page.module.scss';
 import GetSVG from '@SEGMENT/getSVG';
 import dynamic from 'next/dynamic';
+import slides from '@JSON/testimonials.json'
 const Card = dynamic(() => import('@SEGMENT/Card'));
 const EmblaCarousel = dynamic(() => import('@SEGMENT/carousel/carousel'));
 const Specialist = dynamic(() => import('@SEGMENT/Specialist'));
@@ -44,7 +45,7 @@ const Page = async ({ params }) => {
             <Specialist LANG={LANG} />
             <section className={styles.testimonials}>
                 <h2>{data.story.h2}</h2>
-                <EmblaCarousel slides={data.story?.ul} />
+                <EmblaCarousel slides={slides} />
             </section>
             <section className={styles.cta}>
                 <h2>{data.cta.h2}</h2>
