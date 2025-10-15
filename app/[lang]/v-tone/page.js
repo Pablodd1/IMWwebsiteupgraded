@@ -1,14 +1,14 @@
 import { Suspense } from "react";
 import { getDictionary } from "@JSON/index";
-import VToneHero from "@SEGMENT/VTone/Hero";
-import VToneFeatured from "@SEGMENT/VTone/Featured";
-import VToneIntroForm from "@SEGMENT/VTone/IntroForm";
-import VToneAbout from "@SEGMENT/VTone/About";
-import VToneConditions from "@SEGMENT/vtone/VToneConditions";
-import VToneTreatment from "@SEGMENT/vtone/VToneTreatment";
-import VToneBenefit from "@SEGMENT/vtone/VToneBenefit";
-import VToneTestimonials from "@SEGMENT/vtone/VToneTestimonials";
-import VToneFAQ from "@SEGMENT/vtone/VToneFAQ";
+import VToneHero from "../../../segments/vtone/Hero";
+import VToneFeatured from "../../../segments/vtone/Featured";
+import VToneIntroForm from "../../../segments/vtone/IntroForm";
+import VToneAbout from "../../../segments/vtone/About";
+import VToneConditions from "../../../segments/vtone/VToneConditions";
+import VToneTreatment from "../../../segments/vtone/VToneTreatment";
+import VToneBenefit from "../../../segments/vtone/VToneBenefit";
+import VToneTestimonials from "../../../segments/vtone/VToneTestimonials";
+import VToneFAQ from "../../../segments/vtone/VToneFAQ";
 
 export const metadata = {
   title: "V-Tone | Innovative Medical Wellness",

@@ -1,4 +1,4 @@
-import styles from "./VtoneConditions.module.scss";
+import styles from "./VToneConditions.module.scss";
 
 export default function VToneConditions({ content }) {
   const { heading, paragraph1, paragraph2, left, imageAlt } = content;
