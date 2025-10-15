@@ -1,0 +1,36 @@
+{
+  "section": {
+    "heading": "What Our Patients Are Saying",
+    "testimonials": [
+      {
+        "name": "Maya F.",
+        "text": "Dr. Moore is a lovely and compassionate doctor. I was in a lot of pain and had been for a while until I came to the office, and she explained everything to me clearly. She was very kind and understanding. The doctor spent extra time going over my test results and made sure I was comfortable before every step. Her staff is also wonderful — so friendly and warm."
+      },
+      {
+        "name": "Elizabeth R.",
+        "text": "I recently sought treatment at Innovative Medical Wellness, and I’m beyond impressed. Dr. Jeffrey G. Draesel Jr., DC—Dr. Jeff—is truly exceptional. His warm and friendly demeanor immediately puts you at ease, and it’s clear he genuinely cares about helping his patients heal and thrive. What amazed me most was how quickly Dr. Jeff could assess my issue and pinpoint exactly what was going on. From the very first day, I saw a noticeable improvement in both pain and mobility. Dr. Jeff used a combination of advanced therapies, including Low-Level Laser Therapy (LLLT), Acoustic Wave Therapy (AWT), Pulsed Electromagnetic Field Therapy (PEMF), hands-on manipulation, and personalized instruction on avoiding repeat issues and self-care techniques. His vast wealth of healthcare knowledge is unparalleled, and he shared it in a way that empowered me to take control of my health. The entire staff was incredibly friendly, and the open, welcoming atmosphere made every visit a positive experience. Dr. Jeff is a rare find—his approach is not only highly effective but also compassionate and educational. If you’re looking for a knowledgeable, approachable, and hands-on practitioner who truly has your best interests at heart, I highly recommend Dr. Jeff and the team at Innovative Medical Wellness!🙂"
+      },
+      {
+        "image": "https://mosaicmedicalbh.com/wp-content/uploads/2025/01/Testimonial-Image-MosaicMedical-Beverly-Hills.webp",
+        "alt": "Happy patient after treatment"
+      },
+      {
+        "image": "https://mosaicmedicalbh.com/wp-content/uploads/2025/01/Testimonial-IMG-Home-Mosaic-Medical-Beverly-Hills-CA-1.webp",
+        "alt": "patient smiling"
+      },
+
+      {
+        "name": "Ariel B.",
+        "text": "Overall, a really great experience. I arrived anxious and was immediately reassured by how calm and friendly the staff were. Dr. Moore spent time explaining everything clearly. I left feeling confident and cared for. Wonderful experience from start to finish!"
+      },
+      {
+        "name": "Ariel B.",
+        "text": "Overall, a really great experience. I arrived anxious and was immediately reassured by how calm and friendly the staff were. Dr. Moore spent time explaining everything clearly. I left feeling confident and cared for. Wonderful experience from start to finish!"
+      },
+      {
+        "name": "Rio M.",
+        "text": "I recently visited the clinic for regenerative therapy for a litany of injuries and ailments including arthritis, soft tissue damage and chronic fatigue. The level of knowledge here of regenerative medicine, hormone optimisation and physiotherapy/rehabilitation puts the UK to shame. Cutting-edge techniques, high-end equipment and a friendly and hugely capable team left me certain this was the best decision I've made with regards to my healthcare."
+      }
+    ]
+  }
+}

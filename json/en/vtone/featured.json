@@ -1,0 +1,12 @@
+{
+  "heading": "Treatments Featured In",
+  "logos": [
+    { "alt": "Women's Health", "src": "/raster/vtone/womans-health.png" },
+    { "alt": "The New York Times", "src": "/raster/vtone/the-new-yorks.png" },
+    { "alt": "SHAPE", "src": "/raster/vtone/shape-logo.png" },
+    { "alt": "ELLE", "src": "/raster/vtone/elle-logo.png" },
+    { "alt": "GLAMOUR", "src": "/raster/vtone/glamour-logo.png" },
+    { "alt": "VOGUE", "src": "/raster/vtone/vogue-logo.png" },
+    { "alt": "Forbes", "src": "/raster/vtone/Forbes-logo.png" }
+  ]
+}
