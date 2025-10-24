@@ -12,7 +12,7 @@
 .heading {
   text-align: center;
   font-size: clamp(34px, 4vw, 54px);
-  color: #102961;
+  color: #007ba7 !important;
   font-weight: 500;
   margin-bottom: 80px;
   letter-spacing: -0.2px;
@@ -36,7 +36,7 @@
   border: none;
   outline: none;
   font-size: 23px;
-  color: #1a1a1a;
+  // color: #1a1a1a;
   font-weight: 400;
   padding: 32px 0;
   display: flex;
@@ -46,7 +46,7 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: #006a8e;
+    color: #007ba7 !important;
   }
 }
 
@@ -75,7 +75,6 @@
 }
 
 .answer {
-  color: #3c3c3c;
   font-size: 18px;
   line-height: 1.9;
   padding-right: 40px;

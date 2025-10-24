@@ -8,12 +8,13 @@
   max-width: 1500px;
   margin: 0 auto;
   padding: 20px 40px;
-  background: linear-gradient(180deg, #faf9f7 0%, #f3efe9 100%);
+  // background: linear-gradient(180deg, #faf9f7 0%, #f3efe9 100%);
+  background: #ececec;
 }
 
 .heading {
   text-align: center;
-  color: #006a8e;
+  color: #007ba7 !important;
   font-weight: 500;
   font-size: clamp(32px, 4vw, 50px);
   margin-bottom: 80px;
@@ -22,7 +23,7 @@
 /* Masonry Grid */
 .masonryGrid {
   display: flex;
-  margin-left: -32px; /* gutter offset */
+  margin-left: -32px;
   width: auto;
 }
 
@@ -86,7 +87,7 @@
 }
 
 .text {
-  color: #1e1e1e;
+  // color: #1e1e1e;
   font-size: 17px;
   line-height: 1.8;
   margin-bottom: 16px;
@@ -94,7 +95,7 @@
 
 .name {
   font-weight: 600;
-  color: #102961;
+  color: #007ba7 !important;
   font-size: 18px;
 }
 

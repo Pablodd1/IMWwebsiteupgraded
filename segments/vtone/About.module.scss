@@ -21,8 +21,8 @@
 
 /* LEFT SIDE (Text + Video) */
 .left {
-  background: radial-gradient(circle at top left, #f9f7f3 0%, #f5f2ed 100%);
-  padding: 50px 100px;
+  background: #ececec;
+  padding: 80px 100px;
   position: relative;
   z-index: 2;
   height: 100%;
@@ -35,14 +35,15 @@
 .heading {
   font-weight: 400;
   font-size: clamp(32px, 4vw, 50px);
-  color: #006a8e;
+  // color: #006a8e;
+  color: #007ba7;
   margin-bottom: 24px;
 }
 
 .paragraph {
   font-size: 16px;
   line-height: 1.8;
-  color: #232323;
+  // color: #232323;
   margin-bottom: 18px;
 }
 

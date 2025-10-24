@@ -18,7 +18,7 @@ export default function VToneAbout({ content }) {
 
           <p className={styles.paragraph}>{paragraph1}</p>
           <p className={styles.paragraph}>{paragraph2}</p>
-          <div className={styles.videoWrapper}>
+          {/* <div className={styles.videoWrapper}>
             <iframe
               width="560"
               height="315"
@@ -27,7 +27,7 @@ export default function VToneAbout({ content }) {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-          </div>
+          </div> */}
         </article>
 
         <aside className={styles.right}>
