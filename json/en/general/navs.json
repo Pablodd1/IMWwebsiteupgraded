@@ -25,10 +25,6 @@
       {
         "href": "/aesthetic-treatments",
         "label": "Aesthetic Treatments"
-      },
-      {
-        "href": "/v-tone",
-        "label": "Vton"
       }
     ]
   },
@@ -50,6 +46,10 @@
       {
         "href": "/biohacking-and-optimization",
         "label": "Biohacking & Optimization"
+      },
+      {
+        "href": "/v-tone",
+        "label": "Vton"
       }
     ]
   },
