@@ -1,0 +1,110 @@
+.wrap {
+  position: relative;
+  padding: 80px 0;
+  background: white;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  // background: linear-gradient(180deg, #faf9f7 0%, #f3efe9 100%);
+  background: #ececec;
+}
+
+.heading {
+  text-align: center;
+  color: #007ba7 !important;
+  font-weight: 500;
+  font-size: clamp(32px, 4vw, 50px);
+  margin-bottom: 80px;
+}
+
+/* Masonry Grid */
+.masonryGrid {
+  display: flex;
+  margin-left: -32px;
+  width: auto;
+}
+
+.masonryColumn {
+  padding-left: 32px;
+  background-clip: padding-box;
+}
+
+/* Text Cards */
+/* Each Card */
+.card {
+  background: #fff;
+  border-radius: 28px;
+  padding: 36px 30px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  break-inside: avoid;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+  }
+
+  /* ✅ Remove padding completely if this is an image card */
+  &.imageCard {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+}
+
+/* Image Wrapper (inside imageCard) */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 620px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+
+  @media (max-width: 1024px) {
+    height: 340px;
+  }
+
+  @media (max-width: 768px) {
+    height: 280px;
+  }
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.text {
+  // color: #1e1e1e;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.name {
+  font-weight: 600;
+  color: #007ba7 !important;
+  font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+  .wrap {
+    padding: 80px 0;
+  }
+
+  .card {
+    padding: 28px 24px;
+  }
+}

@@ -1,0 +1,120 @@
+.wrap {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: 600px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* LEFT SIDE (Text + Video) */
+.left {
+  background: #ececec;
+  padding: 80px 100px;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+
+  @media (max-width: 1024px) {
+    padding: 60px 24px;
+  }
+}
+
+.heading {
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 50px);
+  // color: #006a8e;
+  color: #007ba7;
+  margin-bottom: 24px;
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 1.8;
+  // color: #232323;
+  margin-bottom: 18px;
+}
+
+.videoWrapper {
+  margin-top: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 700px;
+  margin-inline: auto;
+  overflow: hidden;
+  background: #fff;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 90%;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 24px;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* RIGHT SIDE (Image) */
+.right {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  //   border: 1px solid red;
+  width: 100%;
+  @media (max-width: 1024px) {
+    justify-content: center;
+    margin-top: 40px;
+  }
+}
+
+.image {
+  position: absolute;
+  //   border: 1px solid black;
+  top: 40%;
+  right: 30px;
+  transform: translateY(-50%);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+  @media (max-width: 1024px) {
+    position: relative;
+    top: unset;
+    right: unset;
+    transform: none;
+    width: 80%;
+    max-width: 460px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
