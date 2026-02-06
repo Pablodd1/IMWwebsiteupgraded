@@ -1,8 +1,8 @@
 {
-    "h2": "Obtenga información sobre los costos de nuestros servicios",
-    "p": "Discover the costs associated with our healthcare services tailored to your needs. Whether you're interested in our specialized treatments or routine check-ups, we provide transparent pricing to help you make informed decisions. Click below to get detailed cost information for the services you require and take the first step towards your health today!",
+    "h2": "Reciba precios claros y orientacion personalizada",
+    "p": "Cuente lo que necesita y le enviaremos precios, tiempos y pasos recomendados. Nuestro equipo lo guia en la mejor opcion.",
     "button": {
-        "about": "Sobre nosotros",
-        "getCost": "Obtener costo ahora"
+        "about": "Conozca nuestra atencion",
+        "getCost": "Solicitar precios"
     }
 }

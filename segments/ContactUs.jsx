@@ -9,7 +9,7 @@ const ContactUs = async ({LANG}) => {
   const contactUS = await getDictionary(LANG || 'en', `general.contactUS`);
 
     return (
-        <section className={styles.wrap}>
+        <section className={styles.wrap} id="contact">
         <section className={styles.container}>
             <article className={styles.contact_details}>
                 <h2>{contactUS.details.h2}</h2>

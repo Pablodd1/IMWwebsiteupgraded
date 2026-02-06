@@ -13,6 +13,11 @@ import dynamic from "next/dynamic";
 import MembershipPopup from "@ELEMENT/floatButton";
 const Gallery = dynamic(() => import('@ELEMENT/getGallery'));
 
+export const metadata = {
+  title: 'Miami Integrative Healthcare and Wellness',
+  description: 'Integrated wellness, regenerative care, IV therapy, aesthetics, and personalized health programs in Miami.',
+};
+
 export default async function Home({ params }) {
   const par = await params
   const LANG = par.lang
@@ -22,6 +27,20 @@ export default async function Home({ params }) {
   return (
     <main >
       <section className={styles.heroSec} >
+        <div className={styles.heroMedia}>
+          <video
+            className={styles.heroVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/raster/Innovative Medical Wellness - cover.webp"
+          >
+            <source src="/videos/hero.webm" type="video/webm" />
+            <source src="/videos/hero.mp4" type="video/mp4" />
+          </video>
+          <div className={styles.heroOverlay} />
+        </div>
         <header className={styles.header}>
           <ul className={styles.socialLinks}>
             {socialLinks.map((y, j) => (
@@ -41,6 +60,14 @@ export default async function Home({ params }) {
           <section >
             <h1>Innovative <br /> Medical Wellness</h1>
             <p>{intro.p}</p>
+            <div className={styles.ctaButtons}>
+              <Link href="tel:(305)864-1373" className={styles.ctaPrimary}>
+                Book a Consultation
+              </Link>
+              <Link href="#contact" className={styles.ctaSecondary}>
+                Request Information
+              </Link>
+            </div>
             <footer className={styles.cta_footer} >
               <Link href="mailto:info@innovativemedicalwellness.com" className={styles.email} >
                 <Mail />

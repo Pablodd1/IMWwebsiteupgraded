@@ -1,8 +1,8 @@
 {
-    "h2": "Get Cost Information for Our Services",
-    "p":"Discover the costs associated with our healthcare services tailored to your needs. Whether you're interested in our specialized treatments or routine check-ups, we provide transparent pricing to help you make informed decisions. Click below to get detailed cost information for the services you require and take the first step towards your health today!",
+    "h2": "Get Transparent Pricing and Care Guidance",
+    "p":"Tell us what you are looking for and we will send tailored pricing, timelines, and next steps. Our coordinators make it simple to choose the right service.",
     "button": {
-        "about": "About Us",
-        "getCost": "Get Cost Now"
+        "about": "Explore Our Care",
+        "getCost": "Request Pricing"
     }
 }
