@@ -34,10 +34,11 @@ export default async function Home({ params }) {
             muted
             loop
             playsInline
-            poster="/raster/Innovative Medical Wellness - cover.webp"
+            poster="/raster/hero_cinematic.png"
           >
             <source src="/videos/hero.webm" type="video/webm" />
             <source src="/videos/hero.mp4" type="video/mp4" />
+            <img src="/raster/hero_cinematic.png" alt="Innovative Medical Wellness Clinic" className={styles.heroVideo} />
           </video>
           <div className={styles.heroOverlay} />
         </div>

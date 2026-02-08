@@ -32,13 +32,13 @@
       justify-content: center;
       gap: 0;
       padding: 1rem;
+
       @media screen and (min-width:575px) {
         padding: 3rem;
       }
 
       h1 {
-        color: #222222;
-        // color: #d3d3d3;
+        color: #fff;
         font-weight: 300;
         font-size: 1.15rem;
         letter-spacing: 6px;
@@ -46,29 +46,34 @@
         text-transform: uppercase;
         padding-bottom: 0.75rem;
         width: 100%;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 
         @media screen and (min-width:575px) {
-          font-size: 1.35rem;
-          width: 22rem;
+          font-size: 2.35rem;
+          /* Increased size */
+          width: 28rem;
         }
+
         @media screen and (min-width:992px) {
-          width: 45rem;
+          width: 55rem;
         }
 
 
         &::first-line {
-          color: #005D93;
-          // color: #ffffff;
+          color: $theme_color;
           font-family: $font_secondary;
           letter-spacing: 5px;
           text-align: justify;
           width: 100%;
           text-transform: unset;
-          font-size: 1.5rem;
+          font-size: 2.5rem;
+          /* Increased size */
           font-weight: 800;
+          text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
           @media screen and (min-width:575px) {
-            font-size: 2rem;
+            font-size: 3.5rem;
+            /* Increased size */
           }
         }
 
@@ -188,7 +193,7 @@
       background-color: darken($theme_color, 15);
 
       @media screen and (max-width:575px) {
-          width: 2.5rem;
+        width: 2.5rem;
       }
 
       li {
@@ -281,8 +286,9 @@
   .heroOverlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, rgba(4, 21, 33, 0.7), rgba(0, 93, 147, 0.2), rgba(4, 21, 33, 0.65));
+    background: linear-gradient(120deg, rgba(4, 21, 33, 0.85), rgba(0, 93, 147, 0.4), rgba(4, 21, 33, 0.8));
     z-index: 1;
+    backdrop-filter: brightness(0.8);
   }
 
 

@@ -13,44 +13,47 @@ import SplashScreen from './SplashScreen';
 export const metadata = {
   metadataBase: new URL('https://innovativemedicalwellness.com'),
   title: {
-    default: 'Innovative Medical Wellness | Miami Integrative Healthcare',
+    default: 'Innovative Medical Wellness | Clinical Wellness & Regenerative Medicine Miami',
     template: '%s | Innovative Medical Wellness',
   },
-  description: 'Miami integrative wellness clinic offering regenerative medicine, IV therapy, aesthetics, brain health, weight loss, and personalized care since 1982.',
+  description: 'Expert integrative wellness clinic in Miami specializing in regenerative medicine, IV therapy, clinical aesthetics, brain health, and personalized wellness programs since 1982.',
   keywords: [
     'Innovative Medical Wellness',
-    'Miami wellness clinic',
+    'Miami integrative doctor',
     'regenerative medicine Miami',
     'IV therapy Miami',
-    'aesthetic treatments Miami',
-    'weight loss programs',
-    'brain health',
-    'chiropractic and physical therapy',
+    'anti-aging Miami',
+    'lifestyle medicine Miami',
+    'clinical wellness Miami',
+    'medical weight loss Miami',
+    'brain wellness clinic',
   ],
-  generator: 'Next.js',
-  applicationName: 'IMW App',
-  creator: 'MyAbabeel - M Talha',
-  category: 'Healthcare',
-  alternates: {
-    canonical: 'https://innovativemedicalwellness.com'
+  authors: [{ name: 'Innovative Medical Wellness Team' }],
+  creator: 'Innovative Medical Wellness',
+  publisher: 'Innovative Medical Wellness',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
-  manifest: '/logos/manifest.json',
-  icons: {
-    icon: '/logos/logo.png',
-    shortcut: '/logos/logo.png',
-    apple: '/logos/apple-icon.png'
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en',
+      'es-ES': '/es',
+    },
   },
   openGraph: {
     title: 'Innovative Medical Wellness | Miami Integrative Healthcare',
-    description: 'Regenerative medicine, IV therapy, aesthetics, brain health, weight loss, and personalized wellness programs in Miami.',
+    description: 'Transform your health with personalized regenerative and wellness care in Miami.',
     url: 'https://innovativemedicalwellness.com',
     siteName: 'Innovative Medical Wellness',
     images: [
       {
-        url: '/raster/Innovative Medical Wellness - cover.webp',
+        url: '/raster/hero_cinematic.png',
         width: 1200,
         height: 630,
-        alt: 'Innovative Medical Wellness clinic interior',
+        alt: 'Innovative Medical Wellness - Miami Wellness Clinic',
       },
     ],
     locale: 'en_US',
@@ -58,22 +61,27 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Innovative Medical Wellness | Miami Integrative Healthcare',
-    description: 'Integrated wellness, regenerative care, and IV therapy tailored to Miami patients.',
-    images: ['/raster/Innovative Medical Wellness - cover.webp'],
+    title: 'Innovative Medical Wellness Miami',
+    description: 'Advanced clinical wellness and regenerative care tailored for you.',
+    images: ['/raster/hero_cinematic.png'],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
+      'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
-      'max-video-preview': -1,
     },
   },
-  themeColor: '#005d93',
+  icons: {
+    icon: '/logos/logo.png',
+    apple: '/logos/apple-icon.png',
+  },
+  manifest: '/logos/manifest.json',
 }
 
 const iconItems = [
@@ -115,7 +123,7 @@ export default async function RootLayout({ children, params }) {
     medicalSpecialty: services,
   };
   return (
-    <html lang={LANG || 'en'}>
+    <html lang={LANG || 'en'} suppressHydrationWarning>
       <body >
         <SplashScreen />
         <header className={styles.nav} id="navbar">

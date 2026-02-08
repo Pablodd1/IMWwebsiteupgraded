@@ -89,10 +89,10 @@ const dictionaries = {
       "iv-therapy": () => import("./en/subtypes/iv-therapy.json"),
       "regenerative-medicine": () =>
         import("./en/subtypes/regenerative-medicine.json"),
-      "brain-Health": () => import("./en/subtypes/brain-Health.json"),
+      "brain-health": () => import("./en/subtypes/brain-health.json"),
       "aesthetic-treatments": () =>
         import("./en/subtypes/aesthetic-treatments.json"),
-      "personal-Injury": () => import("./en/subtypes/personal-Injury.json"),
+      "personal-injury": () => import("./en/subtypes/personal-injury.json"),
       "weight-loss-programs": () =>
         import("./en/subtypes/weight-loss-programs.json"),
       "biohacking-and-optimization": () =>
@@ -199,10 +199,10 @@ const dictionaries = {
       "iv-therapy": () => import("./es/subtypes/iv-therapy.json"),
       "regenerative-medicine": () =>
         import("./es/subtypes/regenerative-medicine.json"),
-      "brain-Health": () => import("./es/subtypes/brain-Health.json"),
+      "brain-health": () => import("./es/subtypes/brain-health.json"),
       "aesthetic-treatments": () =>
         import("./es/subtypes/aesthetic-treatments.json"),
-      "personal-Injury": () => import("./es/subtypes/personal-Injury.json"),
+      "personal-injury": () => import("./es/subtypes/personal-injury.json"),
       "weight-loss-programs": () =>
         import("./es/subtypes/weight-loss-programs.json"),
       "biohacking-and-optimization": () =>
