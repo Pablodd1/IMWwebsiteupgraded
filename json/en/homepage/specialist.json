@@ -1,63 +1,62 @@
 [
-    {
-      "name": "Dr. Jeffrey G. Draesel Jr. DC",
-      "position": "Director of operations",
-      "description": "Expert in chiropractic medicine, contributing to our integrative healthcare approach.",
-      "image": "Dr-Jeff"
-    },
-    {
-      "name": "Deborah Trenfield, ARNP",
-      "position": "Specialist",
-      "description": "Family medicine specialist dedicated to providing exceptional care.",
-      "image": "Deborah"
-    },
-    {
-      "name": "Marcos Jose Carvajal, ARNP",
-      "position": "Specialist",
-      "description": "Specialist in interventional pain management, focused on alleviating chronic pain.",
-      "image": "Marcos-Carvajal"
-    },
-    {
-      "name": "Jennifer Maine",
-      "position": "Case Manager",
-      "description": "Medical-Legal Case Manager with expertise in trauma and acute care cases.",
-      "image": null
-    },
-    {
-      "name": "Dr. Jeffrey G. Draesel MD",
-      "position": "CoFounder - Recently Retired",
-      "description": "Founder with over 40 years of experience, now retired, but his legacy guides our practice.",
-      "image": "jeffrey-draesel"
-    },
-    {
-      "name": "Jackie Draesel",
-      "position": "CoFounder",
-      "description": "Co-owner of the practice, offering management expertise and personal support.",
-      "image": null
-    },
-    {
-      "name": "Dr. Gregory Shtender MD",
-      "position": "Specialist",
-      "description": "Medical Director, ensuring the integration of our medical services and high-quality care.",
-      "image": null
-    },
-    {
-      "name": "Marcos Jose Carvajal, ARNP",
-      "position": "Specialist",
-      "description": "Interventional pain management expert focused on improving patients' lives.",
-      "image": null
-    },
-    {
-      "name": "Caitlin Alivia Moore",
-      "position": "Practice Administration",
-      "description": "Practice administrator ensuring seamless operations and a positive patient experience.",
-      "image": "Caitlin-pic"
-    },
-    {
-      "name": "Simon Sankin, MD",
-      "position": "Research Director",
-      "description": "Research Director with experience in surgical urology and healthcare innovation.",
-      "image": null
-    }
-  ]
-  
+  {
+    "name": "Dr. Jeffrey G. Draesel Jr. DC",
+    "position": "Director of operations",
+    "description": "Expert in chiropractic medicine, contributing to our integrative healthcare approach.",
+    "image": "Dr-Jeff"
+  },
+  {
+    "name": "Deborah Trenfield, ARNP",
+    "position": "Specialist",
+    "description": "Family medicine specialist dedicated to providing exceptional care.",
+    "image": "Deborah"
+  },
+  {
+    "name": "Marcos Jose Carvajal, ARNP",
+    "position": "Specialist",
+    "description": "Specialist in interventional pain management, focused on alleviating chronic pain.",
+    "image": "Marcos-Carvajal"
+  },
+  {
+    "name": "Jennifer Maine",
+    "position": "Case Manager",
+    "description": "Medical-Legal Case Manager with expertise in trauma and acute care cases.",
+    "image": null
+  },
+  {
+    "name": "Dr. Jeffrey G. Draesel MD",
+    "position": "CoFounder - Recently Retired",
+    "description": "Founder with over 40 years of experience, now retired, but his legacy guides our practice.",
+    "image": "jeffrey-draesel"
+  },
+  {
+    "name": "Jackie Draesel",
+    "position": "CoFounder",
+    "description": "Co-owner of the practice, offering management expertise and personal support.",
+    "image": null
+  },
+  {
+    "name": "Dr. Gregory Shtender MD",
+    "position": "Specialist",
+    "description": "Medical Director, ensuring the integration of our medical services and high-quality care.",
+    "image": null
+  },
+  {
+    "name": "Marcos Jose Carvajal, ARNP",
+    "position": "Specialist",
+    "description": "Interventional pain management expert focused on improving patients' lives.",
+    "image": null
+  },
+  {
+    "name": "Caitlin Alivia Moore",
+    "position": "Practice Administration",
+    "description": "Practice administrator ensuring seamless operations and a positive patient experience.",
+    "image": "Caitlin-pic"
+  },
+  {
+    "name": "Simon Sankin, MD",
+    "position": "Research Director",
+    "description": "Research Director with experience in surgical urology and healthcare innovation.",
+    "image": null
+  }
+]

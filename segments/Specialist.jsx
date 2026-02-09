@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { FacebookIcon, LinkedinIcon, PinterestIcon, YoutubeIcon } from '@ELEMENT/svgIcons';
 import Link from 'next/link';
 import { getDictionary } from '@JSON/index'
-const Specialist = async ({LANG}) => {
-  const profile = await getDictionary(LANG || 'en', `homepage.specialist`);
+const Specialist = async ({ LANG }) => {
+    const profile = await getDictionary(LANG || 'en', `homepage.specialist`);
 
     return (
         <div className={styles.container}>
@@ -27,7 +27,7 @@ const Specialist = async ({LANG}) => {
                         </header>
                         <section className={styles.content}>
                             <nav className={styles.social_link}>
-                            <p>{item.position}</p>
+                                <p>{item.position}</p>
                                 <Link key={1} href=""><FacebookIcon /></Link>
                                 <Link key={2} href=""><PinterestIcon /></Link>
                                 <Link key={3} href=""><LinkedinIcon /></Link>
