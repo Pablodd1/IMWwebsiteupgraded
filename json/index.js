@@ -89,10 +89,10 @@ const dictionaries = {
       "iv-therapy": () => import("./en/subtypes/iv-therapy.json"),
       "regenerative-medicine": () =>
         import("./en/subtypes/regenerative-medicine.json"),
-      "brain-health": () => import("./en/subtypes/brain-health.json"),
+      "brain-health": () => import("./en/subtypes/brain-health-en.json"),
       "aesthetic-treatments": () =>
         import("./en/subtypes/aesthetic-treatments.json"),
-      "personal-injury": () => import("./en/subtypes/personal-injury.json"),
+      "personal-injury": () => import("./en/subtypes/personal-injury-en.json"),
       "weight-loss-programs": () =>
         import("./en/subtypes/weight-loss-programs.json"),
       "biohacking-and-optimization": () =>
