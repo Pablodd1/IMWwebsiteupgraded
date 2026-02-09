@@ -2,7 +2,7 @@
   position: fixed;
   right: 24px;
   bottom: 110px;
-  z-index: 40;
+  z-index: 1000;
 }
 
 .toggle {
@@ -97,12 +97,63 @@
 }
 
 .form {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   padding: 16px;
-  background: #f7fbff;
-  border-top: 1px solid rgba(0, 93, 147, 0.15);
+
+  input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+
+    &.listening {
+      border-color: #005d93;
+      background-color: #f0f8ff;
+      animation: pulse 1.5s infinite;
+    }
+  }
+
+  .inputGroup {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .voiceBtn {
+    padding: 12px;
+    border: 1px solid #005d93;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background: #005d93;
+      color: white;
+    }
+
+    &.listeningBtn {
+      background: #ff4444;
+      color: white;
+      border-color: #ff4444;
+      animation: pulse 1s infinite;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
 }
 
 .form input {

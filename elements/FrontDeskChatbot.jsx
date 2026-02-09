@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect, useRef } from 'react';
 import styles from './frontDeskChatbot.module.scss';
 
 const MEDICAL_DISCLAIMER = "\n\n*Note: I am an AI assistant for Innovative Medical Wellness. I can provide general information but I am not a doctor and this is not medical advice. For specific health concerns, please consult our specialists.*";
@@ -82,6 +82,8 @@ export default function FrontDeskChatbot({ clinicName, intro, address, phone, em
     },
   ]);
   const [input, setInput] = useState('');
+  const [isListening, setIsListening] = useState(false);
+  const recognitionRef = useRef(null);
 
   const serviceList = useMemo(() => services.filter(Boolean), [services]);
 
@@ -93,6 +95,46 @@ export default function FrontDeskChatbot({ clinicName, intro, address, phone, em
     utterance.pitch = 1.0;
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'webkitSpeechRecognition' in window) {
+      const recognition = new window.webkitSpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'en-US';
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        setInput(transcript);
+        setIsListening(false);
+      };
+
+      recognition.onerror = () => {
+        setIsListening(false);
+      };
+
+      recognition.onend = () => {
+        setIsListening(false);
+      };
+
+      recognitionRef.current = recognition;
+    }
+  }, []);
+
+  const toggleListening = () => {
+    if (!recognitionRef.current) {
+      alert('Speech recognition is not supported in your browser. Please use Chrome or Edge.');
+      return;
+    }
+
+    if (isListening) {
+      recognitionRef.current.stop();
+      setIsListening(false);
+    } else {
+      recognitionRef.current.start();
+      setIsListening(true);
+    }
   };
 
   const sendMessage = (text) => {
@@ -160,13 +202,25 @@ export default function FrontDeskChatbot({ clinicName, intro, address, phone, em
           </div>
 
           <form className={styles.form} onSubmit={handleSend}>
-            <input
-              type="text"
-              placeholder="Ask about services, pricing, or appointments..."
-              value={input}
-              onChange={(event) => setInput(event.target.value)}
-            />
-            <button type="submit">Send</button>
+            <div className={styles.inputGroup}>
+              <input
+                type="text"
+                placeholder={isListening ? "Listening..." : "Ask about services, pricing, or appointments..."}
+                value={input}
+                onChange={(event) => setInput(event.target.value)}
+                className={isListening ? styles.listening : ''}
+              />
+              <button 
+                type="button" 
+                className={`${styles.voiceBtn} ${isListening ? styles.listeningBtn : ''}`}
+                onClick={toggleListening}
+                disabled={!recognitionRef.current}
+                title={recognitionRef.current ? "Click to speak" : "Speech recognition not supported"}
+              >
+                {isListening ? '🛑' : '🎤'}
+              </button>
+              <button type="submit">Send</button>
+            </div>
           </form>
         </section>
       ) : null}
