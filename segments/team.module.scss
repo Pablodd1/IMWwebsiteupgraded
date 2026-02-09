@@ -1,4 +1,4 @@
-@import "@SASS/variables";
+@use "../style-config/variables" as *;
 
 .team {
     padding: 2rem 0;

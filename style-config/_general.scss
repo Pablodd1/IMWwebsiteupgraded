@@ -1,4 +1,4 @@
-@import './variables.scss';
+@use './variables' as *;
 
 .Wrap {
     height: 100vh;
