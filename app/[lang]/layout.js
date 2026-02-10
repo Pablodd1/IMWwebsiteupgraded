@@ -155,7 +155,7 @@ export default async function RootLayout({ children, params }) {
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <Script src='/tawk.to.js' strategy='lazyOnload' />
+
       </body>
     </html>
   );

@@ -1,0 +1,111 @@
+@use "../style-config/variables" as *;
+
+.about {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 4rem);
+    margin: 0 auto 3rem;
+    height: fit-content;
+
+    .left_side {
+        padding: 0 1.5rem;
+
+        h2 {
+            font-family: $font_secondary;
+            color: $theme_color;
+            font-weight: 400;
+            font-size: 3rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: $text_color;
+        }
+
+        .cta_button {
+            display: inline-block;
+            background: $theme_color;
+            /* Fallback */
+            background: linear-gradient(130deg, #005d93, #0b1b26);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+
+    .right_side {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: column;
+
+        .left_side {
+            h2 {
+                font-size: 3.5rem;
+            }
+        }
+
+        .right_side {
+            display: block;
+
+            .img {
+                height: 20rem;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 25px;
+                margin-bottom: 1rem;
+            }
+
+            figcaption {
+                font-size: 1rem;
+                font-family: $font_help;
+                color: #333;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                .infoIcon {
+                    width: 1.5rem;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        flex-direction: row-reverse;
+        /* Flip layout: Image left/right? About.jsx uses row (text left, img right). Let's use row-reverse to alternate: text right, img left? Or standard. Let's start standard but add gap. */
+        flex-direction: row;
+        gap: 3rem;
+
+        .left_side {
+            flex: 1;
+        }
+
+        .right_side {
+            flex: 1;
+
+            .img {
+                height: auto;
+                max-height: 400px;
+            }
+        }
+    }
+}

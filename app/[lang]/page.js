@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Suspense } from "react";
 import About from "@SEGMENT/About";
+import Exomind from "@SEGMENT/Exomind";
 import HealthAbout from "@SEGMENT/HealthAbout";
 import styles from './page.module.scss'
 import Departs from "@SEGMENT/departs";
@@ -84,6 +85,9 @@ export default async function Home({ params }) {
       </section>
       <Suspense >
         <About LANG={LANG} />
+      </Suspense>
+      <Suspense >
+        <Exomind LANG={LANG} />
       </Suspense>
       {/* <Suspense >
         <Card LANG={LANG} />
