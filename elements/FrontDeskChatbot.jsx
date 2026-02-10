@@ -5,7 +5,7 @@ import styles from './frontDeskChatbot.module.scss';
 
 const MEDICAL_DISCLAIMER = "\n\n*Note: I am an AI assistant for Innovative Medical Wellness. I can provide general information but I am not a doctor and this is not medical advice. For specific health concerns, please consult our specialists.*";
 
-const getReply = (message, clinicName, phone, email, serviceList, intro) => {
+const getReply = (message, clinicName, phone, email, serviceList, intro, address) => {
   const question = message.toLowerCase();
 
   // Emergency check
@@ -15,7 +15,7 @@ const getReply = (message, clinicName, phone, email, serviceList, intro) => {
 
   // Address / Location
   if (question.includes('address') || question.includes('location') || question.includes('where') || question.includes('find you')) {
-    return `We are located at 16100 NE 16th Ave, North Miami Beach, FL 33162. We'd love to see you! Individual appointments and walk-ins (where applicable) are welcome.`;
+    return `We are located at ${address}. We'd love to see you! Individual appointments and walk-ins (where applicable) are welcome.`;
   }
 
   // Phone / Call
@@ -142,7 +142,7 @@ export default function FrontDeskChatbot({ clinicName, intro, address, phone, em
     if (!trimmed) return;
 
     const userMessage = { role: 'user', text: trimmed };
-    const replyText = getReply(userMessage.text, clinicName, phone, email, serviceList, intro);
+    const replyText = getReply(userMessage.text, clinicName, phone, email, serviceList, intro, address);
     const botMessage = { role: 'bot', text: replyText };
 
     setMessages((prev) => [...prev, userMessage, botMessage]);
@@ -210,8 +210,8 @@ export default function FrontDeskChatbot({ clinicName, intro, address, phone, em
                 onChange={(event) => setInput(event.target.value)}
                 className={isListening ? styles.listening : ''}
               />
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className={`${styles.voiceBtn} ${isListening ? styles.listeningBtn : ''}`}
                 onClick={toggleListening}
                 disabled={!recognitionRef.current}
