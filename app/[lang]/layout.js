@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Script from "next/script";
 import { getDictionary } from '@JSON/index';
 import FrontDeskChatbot from '@ELEMENT/FrontDeskChatbot';
+import FloatingActionMenu from '@ELEMENT/FloatingActionMenu';
 import SplashScreen from './SplashScreen';
 
 export const metadata = {
@@ -141,6 +142,7 @@ export default async function RootLayout({ children, params }) {
         <Suspense >
           <Footer LANG={LANG || 'en'} />
         </Suspense>
+        <FloatingActionMenu />
         <FrontDeskChatbot
           clinicName="Innovative Medical Wellness"
           intro={intro?.p}

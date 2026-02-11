@@ -2,96 +2,95 @@
 
 import { useMemo, useState, useEffect, useRef } from 'react';
 import styles from './frontDeskChatbot.module.scss';
+import { chatbotKnowledge } from './chatbotKnowledge';
 
 const MEDICAL_DISCLAIMER = "\n\n*Note: I am an AI assistant for Innovative Medical Wellness. I can provide general information but I am not a doctor and this is not medical advice. For specific health concerns, please consult our specialists.*";
 
-const getReply = (message, clinicName, phone, email, serviceList, intro, address) => {
+const getReply = (message) => {
   const question = message.toLowerCase();
 
-  // Emergency check
+  // 1. Emergency
   if (question.includes('emergency') || question.includes('911') || question.includes('chest pain') || question.includes('stroke')) {
-    return `If you are experiencing a medical emergency, please call 911 immediately or go to the nearest emergency room.`;
+    return "If you are experiencing a medical emergency, please call 911 immediately or go to the nearest emergency room.";
   }
 
-  // Address / Location
-  if (question.includes('address') || question.includes('location') || question.includes('where') || question.includes('find you')) {
-    return `We are located at ${address}. We'd love to see you! Individual appointments and walk-ins (where applicable) are welcome.`;
+  // 2. Check FAQs
+  for (const faq of chatbotKnowledge.faqs) {
+    if (faq.q.some(q => question.includes(q))) {
+      return faq.a + MEDICAL_DISCLAIMER;
+    }
   }
 
-  // Phone / Call
+  // 3. Check Services
+  for (const [key, service] of Object.entries(chatbotKnowledge.services)) {
+    if (service.keywords.some(k => question.includes(k))) {
+      return `${service.description} \n\n${service.details || ''} \n\n${service.link ? `Learn more: ${service.link}` : ''}` + MEDICAL_DISCLAIMER;
+    }
+  }
+
+  // 4. Company Info
+  if (question.includes('address') || question.includes('location') || question.includes('where')) {
+    return `We are located at ${chatbotKnowledge.company.address}. We'd love to see you!`;
+  }
   if (question.includes('phone') || question.includes('call') || question.includes('number')) {
-    return `You can reach our front desk at ${phone}. Feel free to call us for immediate assistance, or I can take your details here for a callback.`;
+    return `You can reach us at ${chatbotKnowledge.company.phone}.`;
+  }
+  if (question.includes('email')) {
+    return `Email us at ${chatbotKnowledge.company.email}.`;
+  }
+  if (question.includes('hours') || question.includes('open')) {
+    return "We are generally open Monday-Friday. Please call to confirm availability for specific services.";
+  }
+  if (question.includes('aging') || question.includes('biohacking')) {
+    return `${chatbotKnowledge.services.agingBiohacking.description} Visit: ${chatbotKnowledge.services.agingBiohacking.link}`;
   }
 
-  // Email
-  if (question.includes('email') || question.includes('message') || question.includes('write')) {
-    return `Email us anytime at ${email}. I can also share information or collect your details for a coordinator to reach out.`;
+  // 5. General / Greetings
+  if (question.includes('hi') || question.includes('hello')) {
+    return `Hello! Welcome to ${chatbotKnowledge.company.name}. How can I assist you today?`;
   }
 
-  // Hours
-  if (question.includes('hours') || question.includes('open') || question.includes('when') || question.includes('time')) {
-    return `Our center is generally open Monday through Friday. Specific hours can vary by service (IV Therapy, Weight Loss, Aesthetics, etc.). Would you like to check availability for a specific day?`;
-  }
-
-  // Pricing / Insurance
-  if (question.includes('price') || question.includes('cost') || question.includes('how much') || question.includes('insurance') || question.includes('pay')) {
-    return `Pricing depends on your customized clinical wellness plan. We accept various insurance plans and offer competitive self-pay rates for our wellness programs. Would you like a clinical coordinator to provide a free estimate?`;
-  }
-
-  // Appointment / Booking
-  if (question.includes('appointment') || question.includes('book') || question.includes('schedule') || question.includes('visit') || question.includes('consultation')) {
-    return `Excellent. I can help start the booking process. Do you prefer an in-person consultation or a discovery call? You can also call us directly at ${phone}.`;
-  }
-
-  // Services
-  if (question.includes('services') || question.includes('treatments') || question.includes('what do you do') || question.includes('offer')) {
-    const list = serviceList.length ? serviceList.join(', ') : 'regenerative medicine, IV therapy, aesthetics, and wellness care';
-    return `We offer a wide range of integrative healthcare services including ${list}. Which area can we help you focus on?` + MEDICAL_DISCLAIMER;
-  }
-
-  // Specific Medical Questions (Pre-defined)
-  if (question.includes('cure') || question.includes('treat') || question.includes('heal') || question.includes('diagnosis') || question.includes('medicine')) {
-    return `I cannot provide medical diagnoses or treatment advice. However, our board-certified specialists at Innovative Medical Wellness create personalized plans for your specific health needs. Would you like to schedule a professional consultation?` + MEDICAL_DISCLAIMER;
-  }
-
-  // Match Services
-  const matchedService = serviceList.find((service) => question.includes(service.toLowerCase()));
-  if (matchedService) {
-    return `Yes, we specialize in ${matchedService} and related integrative therapies. Would you like more details on how we approach this, or shall we check for consultation availability?` + MEDICAL_DISCLAIMER;
-  }
-
-  // Politeness / Meta
-  if (question.includes('thank') || question.includes('thanks') || question.includes('bye') || question.includes('goodbye')) {
-    return "You're very welcome! We look forward to being part of your wellness journey. Have a healthy day!";
-  }
-
-  if (intro) {
-    return `${intro} How else can I assist you with our clinical wellness services today?`;
-  }
-
-  return `Thanks for reaching out to ${clinicName}. I'm here to help with services, pricing, and appointments. How can I guide you today?`;
+  return chatbotKnowledge.general.fallback;
 };
 
-export default function FrontDeskChatbot({ clinicName, intro, address, phone, email, services = [] }) {
+export default function FrontDeskChatbot({ clinicName, intro }) {
   const [isOpen, setIsOpen] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [messages, setMessages] = useState([
     {
       role: 'bot',
-      text: `Hi! I am your virtual front desk for ${clinicName}. How can I help you achieve your health goals today?`,
+      text: `Hi! I am your virtual front desk for ${clinicName || chatbotKnowledge.company.name}. How can I help you achieve your health goals today?`,
     },
   ]);
   const [input, setInput] = useState('');
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef(null);
 
-  const serviceList = useMemo(() => services.filter(Boolean), [services]);
+  // Voice Selection
+  const [voices, setVoices] = useState([]);
+  const [selectedVoice, setSelectedVoice] = useState(null);
+
+  useEffect(() => {
+    const loadVoices = () => {
+      const available = window.speechSynthesis.getVoices();
+      setVoices(available);
+      // Prefer a natural female voice (Google US English, Microsoft Zira, or just the first one)
+      const preferred = available.find(v => v.name.includes('Google US English') || v.name.includes('Zira'));
+      setSelectedVoice(preferred || available[0]);
+    };
+
+    loadVoices();
+    if (typeof window !== 'undefined' && window.speechSynthesis) {
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+  }, []);
 
   const speak = (text) => {
     if (!voiceEnabled || typeof window === 'undefined' || !window.speechSynthesis) return;
-    const cleanText = text.replace(/\*.*?\*/g, '').replace(/\n/g, ' ');
+    const cleanText = text.replace(/\*.*?\*/g, '').replace(/https?:\/\/[^\s]+/g, 'website').replace(/\n/g, '. '); // Remove URLs for speech
     const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.rate = 0.95;
+    if (selectedVoice) utterance.voice = selectedVoice;
+    utterance.rate = 1.0;
     utterance.pitch = 1.0;
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);
@@ -142,7 +141,7 @@ export default function FrontDeskChatbot({ clinicName, intro, address, phone, em
     if (!trimmed) return;
 
     const userMessage = { role: 'user', text: trimmed };
-    const replyText = getReply(userMessage.text, clinicName, phone, email, serviceList, intro, address);
+    const replyText = getReply(userMessage.text);
     const botMessage = { role: 'bot', text: replyText };
 
     setMessages((prev) => [...prev, userMessage, botMessage]);
@@ -168,14 +167,26 @@ export default function FrontDeskChatbot({ clinicName, intro, address, phone, em
               <p className={styles.title}>Front Desk Assistant</p>
               <p className={styles.subtitle}>Friendly, private, and helpful.</p>
             </div>
-            <label className={styles.voice}>
-              <input
-                type="checkbox"
-                checked={voiceEnabled}
-                onChange={(event) => setVoiceEnabled(event.target.checked)}
-              />
-              Voice replies
-            </label>
+
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+              <label className={styles.voice}>
+                <input
+                  type="checkbox"
+                  checked={voiceEnabled}
+                  onChange={(event) => setVoiceEnabled(event.target.checked)}
+                />
+                Voice Mode
+              </label>
+              {voiceEnabled && voices.length > 0 && (
+                <select
+                  className={styles.voiceSelect}
+                  value={selectedVoice?.name}
+                  onChange={(e) => setSelectedVoice(voices.find(v => v.name === e.target.value))}
+                >
+                  {voices.map(v => <option key={v.name} value={v.name}>{v.name.slice(0, 15)}...</option>)}
+                </select>
+              )}
+            </div>
           </header>
 
           <div className={styles.messages}>
@@ -183,6 +194,7 @@ export default function FrontDeskChatbot({ clinicName, intro, address, phone, em
               <p
                 key={`${message.role}-${index}`}
                 className={message.role === 'bot' ? styles.bot : styles.user}
+                style={{ whiteSpace: 'pre-wrap' }}
               >
                 {message.text}
               </p>
@@ -193,11 +205,11 @@ export default function FrontDeskChatbot({ clinicName, intro, address, phone, em
             <button type="button" onClick={() => sendMessage('What services do you offer?')}>
               Services
             </button>
-            <button type="button" onClick={() => sendMessage('Where are you located?')}>
-              Location
+            <button type="button" onClick={() => sendMessage('Tell me about Exomind')}>
+              Exomind
             </button>
-            <button type="button" onClick={() => sendMessage('I want to book an appointment.')}>
-              Book visit
+            <button type="button" onClick={() => sendMessage('Aging Biohacking info?')} style={{ borderColor: '#9BEC00' }}>
+              Aging Biohacking
             </button>
           </div>
 
@@ -205,7 +217,7 @@ export default function FrontDeskChatbot({ clinicName, intro, address, phone, em
             <div className={styles.inputGroup}>
               <input
                 type="text"
-                placeholder={isListening ? "Listening..." : "Ask about services, pricing, or appointments..."}
+                placeholder={isListening ? "Listening..." : "Ask us anything..."}
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
                 className={isListening ? styles.listening : ''}
