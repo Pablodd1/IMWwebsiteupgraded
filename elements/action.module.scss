@@ -1,4 +1,4 @@
-@import "@SASS/variables.scss";
+@use "../style-config/variables" as *;
 
 .darkRed {
     --line_color: #5C0013; /* Dark Red */

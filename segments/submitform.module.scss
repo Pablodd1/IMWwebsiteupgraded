@@ -1,4 +1,4 @@
-@import "@SASS/variables.scss";
+@use "../style-config/variables" as *;
 
 .input {
     position: relative;

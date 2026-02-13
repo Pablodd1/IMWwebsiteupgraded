@@ -18,7 +18,7 @@ const ContactUs = async ({ LANG }) => {
                 <article className={styles.contact_details}>
                     <h2>{contactUS.details.h2}</h2>
                     <aside className={styles.aside} >
-                        <Link href={'https://www.google.com/maps/search/?api=1&query=16100+NE+16th+Ave+North+Miami+Beach+FL+33162'} target="_blank">
+                        <Link href={'https://www.google.com/maps/search/?api=1&query=1899+NE+164th+St+North+Miami+Beach+FL+33162'} target="_blank">
                             <LocationIcon color='#007BA7' />
                             {contactUS.details.address}
                         </Link>

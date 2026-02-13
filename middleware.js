@@ -8,7 +8,7 @@ let locales = ['en', 'es'];
 function getLocale(request) {
     let headers = { 'accept-language': 'en-US,en;q=0.5' }
     let languages = new Negotiator({ headers }).languages()
-    let defaultLocale = 'ar'
+    let defaultLocale = 'en'
 
     return match(languages, locales, defaultLocale);
 }

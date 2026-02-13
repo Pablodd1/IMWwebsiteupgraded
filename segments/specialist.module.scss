@@ -1,4 +1,5 @@
-@import "@SASS/variables";
+@use "sass:color";
+@use "../style-config/variables" as *;
 
 .heading {
     font-weight: 700;
@@ -31,7 +32,7 @@
         align-items: center;
         gap: 1rem;
         margin: 0 auto;
-        background-color: lighten($theme_light,10);
+        background-color: color.adjust($theme_light, $lightness: 10%);
         border-radius: 25px;
         width: calc(100vw - 5rem);
         transition: all .5s ease;

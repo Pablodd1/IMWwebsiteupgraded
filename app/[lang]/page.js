@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Suspense } from "react";
 import About from "@SEGMENT/About";
+import Exomind from "@SEGMENT/Exomind";
 import HealthAbout from "@SEGMENT/HealthAbout";
 import styles from './page.module.scss'
 import Departs from "@SEGMENT/departs";
@@ -10,7 +11,6 @@ import { getDictionary } from '@JSON/index'
 import { Mail, PhoneIcon } from "@ELEMENT/svgIcons";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import MembershipPopup from "@ELEMENT/floatButton";
 const Gallery = dynamic(() => import('@ELEMENT/getGallery'));
 
 export const metadata = {
@@ -34,11 +34,11 @@ export default async function Home({ params }) {
             muted
             loop
             playsInline
-            poster="/raster/hero_cinematic.png"
+            poster="/raster/exomind_brain_hero.webp"
           >
             <source src="/videos/hero.webm" type="video/webm" />
             <source src="/videos/hero.mp4" type="video/mp4" />
-            <img src="/raster/hero_cinematic.png" alt="Innovative Medical Wellness Clinic" className={styles.heroVideo} />
+            <img src="/raster/exomind_brain_hero.webp" alt="Innovative Medical Wellness Clinic" className={styles.heroVideo} />
           </video>
           <div className={styles.heroOverlay} />
         </div>
@@ -85,6 +85,9 @@ export default async function Home({ params }) {
       <Suspense >
         <About LANG={LANG} />
       </Suspense>
+      <Suspense >
+        <Exomind LANG={LANG} />
+      </Suspense>
       {/* <Suspense >
         <Card LANG={LANG} />
       </Suspense> */}
@@ -99,9 +102,6 @@ export default async function Home({ params }) {
       </Suspense>
       <Suspense >
         <ContactUs LANG={LANG} />
-      </Suspense>
-      <Suspense >
-        <MembershipPopup />
       </Suspense>
     </main>
   );

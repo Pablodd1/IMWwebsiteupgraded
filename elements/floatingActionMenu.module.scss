@@ -1,0 +1,136 @@
+.container {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9990;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #005d93;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+        width: 180px;
+        border-radius: 25px;
+        justify-content: flex-start;
+        padding-left: 16px;
+        background: #004a75;
+
+        .label {
+            opacity: 1;
+            transform: translateX(0);
+            white-space: nowrap;
+        }
+    }
+
+    &.highlight {
+        background: #9BEC00;
+        /* Biohacking Green */
+        color: #0b1b26;
+
+        &:hover {
+            background: #8bd200;
+        }
+    }
+}
+
+.alwaysOpen .btn {
+    width: auto;
+    min-width: 100px;
+    /* Further Reduced */
+    height: 30px;
+    /* Smaller height */
+    border-radius: 15px;
+    justify-content: center;
+    /* Center text */
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #004a75;
+    margin-bottom: 4px;
+
+    .label {
+        opacity: 1;
+        transform: translateX(0);
+        margin-left: 0;
+        /* Remove margin since no icon */
+        white-space: nowrap;
+        font-size: 0.75rem;
+        /* Smaller text */
+    }
+
+    &.highlight {
+        background: #9BEC00;
+        color: #0b1b26;
+    }
+}
+
+.icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+}
+
+.label {
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .container {
+        left: 10px;
+        /* On mobile, maybe keep them icon-only or horizontal at bottom? */
+        /* User asked for "scrolling in cellphone view" - sticky sidebar works fine */
+    }
+
+    .btn {
+        width: 44px;
+        height: 44px;
+
+        /* On tap/hover in mobile, it expands */
+    }
+}
+
+.alwaysOpen .btn {
+    width: auto;
+    min-width: 160px;
+    border-radius: 25px;
+    justify-content: flex-start;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: #004a75;
+
+    .label {
+        opacity: 1;
+        transform: translateX(0);
+        white-space: nowrap;
+    }
+
+    &.highlight {
+        background: #9BEC00;
+        color: #0b1b26;
+    }
+}
