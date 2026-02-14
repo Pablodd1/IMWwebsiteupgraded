@@ -12,6 +12,7 @@ import { Mail, PhoneIcon } from "@ELEMENT/svgIcons";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 const Gallery = dynamic(() => import('@ELEMENT/getGallery'));
+import InteractiveCTA from "@ELEMENT/InteractiveCTA";
 
 export const metadata = {
   title: 'North Miami Beach Integrative Healthcare & Wellness Clinic',
@@ -72,7 +73,7 @@ export default async function Home({ params }) {
             playsInline
             poster="/raster/exomind_brain_hero.webp"
           >
-            <source src="https://herovideo.my.canva.site/dahbi4hg8o8/_assets/video/12fe4b297bc9f236038d29ea1d948090.mp4" type="video/mp4" />
+            <source src="/videos/Hero.mp4" type="video/mp4" />
             <img src="/raster/exomind_brain_hero.webp" alt="Innovative Medical Wellness Clinic in North Miami Beach" className={styles.heroVideo} />
           </video>
           <div className={styles.heroOverlay} />
@@ -98,14 +99,7 @@ export default async function Home({ params }) {
               <span style={{ fontSize: '0.6em', fontWeight: 400 }}>North Miami Beach & Aventura's Premier Integrative Clinic</span>
             </h1>
             <p>{intro.p}</p>
-            <div className={styles.ctaButtons}>
-              <Link href="tel:(305)864-1373" className={styles.ctaPrimary}>
-                Book a Free Consultation
-              </Link>
-              <Link href="#contact" className={styles.ctaSecondary}>
-                Request Information
-              </Link>
-            </div>
+            <InteractiveCTA />
             <footer className={styles.cta_footer} >
               <Link href="mailto:info@innovativemedicalwellness.com" className={styles.email} >
                 <Mail />
@@ -119,7 +113,7 @@ export default async function Home({ params }) {
         </header>
         <GetSVG num={4} styles={styles.svg_bottom} />
       </section>
-      
+
       <Suspense >
         <About LANG={LANG} />
       </Suspense>

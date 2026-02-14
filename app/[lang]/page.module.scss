@@ -12,17 +12,16 @@
     position: absolute;
     z-index: 2;
     color: $white;
-    border-radius: 25px;
+    border-radius: 16px; // Softer corners
     margin-bottom: 0;
     // top: 0;
     left: 5%;
     // right: 0;
     bottom: 35%;
-    background: rgba(255, 255, 255, 0.68);
-    // background: rgba(0, 149, 235, 0.315);
-    border: 2.5px solid $theme_color;
-    backdrop-filter: blur(2px);
-    box-shadow: rgba(0, 149, 235, 0.315) 0px 5px 15px;
+    background: rgba(0, 0, 0, 0.2); // Darker, subtler background for contrast
+    border: 1px solid rgba(255, 255, 255, 0.1); // Thin, subtle border
+    backdrop-filter: blur(10px); // Stronger blur for glass effect
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     display: flex;
     max-width: calc(100vw - 15%);
 
@@ -39,7 +38,7 @@
       }
 
       h1 {
-        color: #fff;
+        color: $white;
         font-weight: 300;
         font-size: 1.15rem;
         letter-spacing: 6px;
@@ -81,19 +80,19 @@
       }
 
       p {
-        border-top: 3px solid #252525;
-        color: #252525;
-        font-size: 1rem;
-        letter-spacing: 1px;
-        text-align: justify !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        color: #ddd; // White text for better contrast on dark bg
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+        text-align: left !important;
         font-weight: 300;
         margin-top: 0;
-        padding-top: 1.25rem;
-        padding-right: 2rem;
-        max-width: 20rem;
+        padding-top: 1.5rem;
+        padding-right: 0;
+        max-width: 35rem; // Increased width for better readability
 
         @media screen and (min-width:575px) {
-          width: 30rem;
+          width: 40rem;
         }
 
       }
@@ -113,25 +112,26 @@
         }
 
         .phone {
-          background-color: $theme_color;
-          border: 2px solid $theme_color;
+          background-color: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.5);
           padding: .35rem .65rem;
           border-radius: 25px;
           display: flex;
           align-items: center;
           column-gap: .5rem;
-          color: var(--text);
+          color: $white;
+          transition: all 0.3s ease;
 
           svg {
             path {
-              fill: var(--text);
+              fill: $white;
             }
           }
 
           &:hover {
+            background-color: $white;
             color: $theme_color;
-            background-color: var(--text);
-            border-color: var(--text);
+            border-color: $white;
 
             svg {
               path {
@@ -144,29 +144,30 @@
         .email {
           display: flex;
           align-items: center;
-          background-color: $theme_color;
-          border-radius: 25px;
+          background-color: transparent;
+          border-radius: 50%;
           padding: .25rem;
+          border: 1px solid rgba(255, 255, 255, 0.5);
+          transition: all 0.3s ease;
 
           svg {
             height: 2rem;
 
             path {
-              stroke: $theme_color;
-              fill: var(--text);
-              stroke-width: 1.75px;
+              stroke: $white;
+              fill: transparent;
+              stroke-width: 1.5px;
             }
           }
 
           &:hover {
-            color: $theme_color;
-            background-color: var(--text);
-            border-color: var(--text);
+            background-color: $white;
+            border-color: $white;
 
             svg {
               path {
-                fill: $theme_color;
-                stroke: var(--text);
+                fill: transparent;
+                stroke: $theme_color;
               }
             }
           }
@@ -182,16 +183,16 @@
     }
 
     .socialLinks {
-      width: 2rem;
+      width: auto;
       margin: 0;
-      border-radius: 22px 0 0 22px;
+      border-radius: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-evenly;
-      padding: 0;
-      overflow: hidden;
-      background-color: color.adjust($theme_color, $lightness: -15%);
+      justify-content: center;
+      padding: 1rem 0;
+      overflow: visible;
+      background-color: transparent; // Removed heavy background
 
       @media screen and (max-width:575px) {
         width: 2.5rem;
@@ -217,42 +218,7 @@
       }
 
       .ctaButtons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-top: 1rem;
-      }
-
-      .ctaPrimary,
-      .ctaSecondary {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.65rem 1.2rem;
-        border-radius: 999px;
-        font-size: 0.95rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-      }
-
-      .ctaPrimary {
-        background: $theme_color;
-        color: #fff;
-        box-shadow: 0 12px 24px rgba(0, 93, 147, 0.25);
-      }
-
-      .ctaSecondary {
-        background: #ffffff;
-        color: #0b1b26;
-        border: 1px solid rgba(0, 93, 147, 0.25);
-      }
-
-      .ctaPrimary:hover,
-      .ctaSecondary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 16px 30px rgba(0, 93, 147, 0.25);
+        display: none; // Removed in favor of InteractiveCTA
       }
     }
   }

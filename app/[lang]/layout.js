@@ -9,7 +9,7 @@ import Script from "next/script";
 import { getDictionary } from '@JSON/index';
 import FrontDeskChatbot from '@ELEMENT/FrontDeskChatbot';
 import FloatingActionMenu from '@ELEMENT/FloatingActionMenu';
-import SplashScreen from './SplashScreen';
+// import SplashScreen from './SplashScreen';
 
 export const metadata = {
   metadataBase: new URL('https://innovativemedicalwellness.com'),
@@ -133,7 +133,7 @@ export default async function RootLayout({ children, params }) {
   const contactUS = await getDictionary(LANG || 'en', 'general.contactUS');
   const navs = await getDictionary(LANG || 'en', 'general.navs');
   const intro = await getDictionary(LANG || 'en', 'homepage.intro');
-  
+
   const services = navs
     .flatMap((group) => group.nav || [])
     .filter((item) => item.label && item.label !== 'Contact' && item.label !== 'About' && item.label !== 'Support')
@@ -296,13 +296,13 @@ export default async function RootLayout({ children, params }) {
         <meta name="geo.placename" content="North Miami Beach" />
         <meta name="geo.position" content="25.933150;-80.162550" />
         <meta name="ICBM" content="25.933150, -80.162550" />
-        
+
         {/* Additional SEO Meta Tags */}
         <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
         <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
         <meta name="yandex-verification" content="YOUR_YANDEX_CODE" />
         <meta name="baidu-site-verification" content="YOUR_BAIDU_CODE" />
-        
+
         {/* Mobile App Capable */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -311,7 +311,7 @@ export default async function RootLayout({ children, params }) {
         <meta name="theme-color" content="#005d93" />
       </head>
       <body >
-        <SplashScreen />
+        {/* <SplashScreen /> Removed as per easy access cleanup */}
         <header className={styles.nav} id="navbar">
           <Link className={styles.logo} href="/">
             <Image
@@ -336,7 +336,7 @@ export default async function RootLayout({ children, params }) {
           email={contactUS?.details?.email}
           services={services}
         />
-        
+
         {/* Schema.org JSON-LD Structured Data */}
         <Script
           id="local-business-schema"
