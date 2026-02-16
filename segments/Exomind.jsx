@@ -22,12 +22,16 @@ const Exomind = ({ LANG }) => {
             </section>
 
             <figure className={styles.right_side}>
-                <Image
+                <video
                     className={styles.img}
-                    src={`/raster/exomind_brain_hero.webp`}
-                    alt={"ExoMind Brain Therapy at Innovative Medical Wellness"}
-                    width={1024} height={1024}
-                />
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    poster="/raster/exomind_brain_hero.webp"
+                >
+                    <source src="/videos/exomind_brain_hero.mp4" type="video/mp4" />
+                </video>
                 <figcaption>
                     <Image className={styles.infoIcon} src={'/svg/info.svg'} width={50} height={50} alt="Info" />
                     Discover the future of cognitive health with ExoTMS.
