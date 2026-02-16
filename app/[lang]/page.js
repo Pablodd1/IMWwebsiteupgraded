@@ -73,7 +73,7 @@ export default async function Home({ params }) {
             playsInline
             poster="/raster/exomind_brain_hero.webp"
           >
-            <source src="/videos/exomind_brain_hero.mp4" type="video/mp4" />
+            <source src="/videos/new-hero-video.mp4" type="video/mp4" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/raster/exomind_brain_hero.webp" alt="Innovative Medical Wellness Clinic in North Miami Beach" className={styles.heroVideo} />
           </video>
