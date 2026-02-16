@@ -74,6 +74,7 @@ export default async function Home({ params }) {
             poster="/raster/exomind_brain_hero.webp"
           >
             <source src="/videos/Hero.mp4" type="video/mp4" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/raster/exomind_brain_hero.webp" alt="Innovative Medical Wellness Clinic in North Miami Beach" className={styles.heroVideo} />
           </video>
           <div className={styles.heroOverlay} />
@@ -96,7 +97,7 @@ export default async function Home({ params }) {
           </ul>
           <section >
             <h1>Innovative Medical Wellness <br />
-              <span style={{ fontSize: '0.6em', fontWeight: 400 }}>North Miami Beach & Aventura's Premier Integrative Clinic</span>
+              <span style={{ fontSize: '0.6em', fontWeight: 400 }}>North Miami Beach & Aventura&apos;s Premier Integrative Clinic</span>
             </h1>
             <p>{intro.p}</p>
             <InteractiveCTA />
