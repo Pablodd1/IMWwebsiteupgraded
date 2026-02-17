@@ -71,11 +71,11 @@ export default async function Home({ params }) {
             muted
             loop
             playsInline
-            poster="/raster/futuristic_clinic_hero_placeholder.jpg"
+            poster="/raster/futuristic_clinic_hero_placeholder.webp"
           >
             <source src="/videos/new-hero-video.mp4" type="video/mp4" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/raster/futuristic_clinic_hero_placeholder.jpg" alt="Innovative Medical Wellness Clinic in North Miami Beach" className={styles.heroVideo} />
+            <img src="/raster/futuristic_clinic_hero_placeholder.webp" alt="Innovative Medical Wellness Clinic in North Miami Beach" className={styles.heroVideo} />
           </video>
           <div className={styles.heroOverlay} />
         </div>
