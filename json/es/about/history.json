@@ -1,22 +1,22 @@
 {
     "h2": "Our Journey",
-    "p":"Here’s a quick look at how we grew from a startup to a global leader in just a few years.",
+    "p": "Here’s a quick look at how we grew from a startup to a global leader in just a few years.",
     "ul": [
         {
-            "pre": "2010:",
-            "p": " Company founded with the vision of providing innovative tech solutions."
+            "pre": "1982:",
+            "p": " Fundada como una clínica combinada de medicina interna y quiropráctica en North Miami Beach."
         },
         {
-            "pre": "2012:",
-            "p": " Expanded into international markets, serving clients across Europe."
+            "pre": "Años 90:",
+            "p": " Ampliación de los servicios para incluir programas avanzados de fisioterapia y rehabilitación."
         },
         {
-            "pre": "2016:",
-            "p": " Achieved key milestones in product development and customer success."
+            "pre": "Años 10:",
+            "p": " Integración de la medicina regenerativa y la terapia intravenosa para ofrecer soluciones de curación holística."
         },
         {
-            "pre": "2020:",
-            "p": " Launched a new line of services focused on sustainability and community growth."
+            "pre": "Hoy:",
+            "p": " Más de 40 años de experiencia combinada, liderando el camino en el bienestar integral y personalizado."
         }
     ]
 }

@@ -30,7 +30,7 @@ const Departs = async ({ LANG }) => {
               <li key={i} className="card  ">
                 <Image
                   className="card__background"
-                  src={`/raster/departs${x?.href}/Innovative Medical Wellness - ${x?.href?.split('/')[1]}.webp`}
+                  src={`/raster/departs${x?.href}/Innovative Medical Wellness - ${x?.href?.split('/')[1]}${x.ext || '.webp'}`}
                   alt={x?.href?.split('/')[1] + ' Innovative Medical Wellness'}
                   width={1024}
                   height={512}

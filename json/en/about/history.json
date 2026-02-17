@@ -1,22 +1,22 @@
 {
     "h2": "Our Journey",
-    "p":"Here’s a quick look at how we grew from a startup to a global leader in just a few years.",
+    "p": "Here’s a quick look at how we grew from a startup to a global leader in just a few years.",
     "ul": [
         {
-            "pre": "2010:",
-            "p": " Company founded with the vision of providing innovative tech solutions."
+            "pre": "1982:",
+            "p": " Founded as a combined internal medicine and chiropractic clinic in North Miami Beach."
         },
         {
-            "pre": "2012:",
-            "p": " Expanded into international markets, serving clients across Europe."
+            "pre": "1990s:",
+            "p": " Expanded services to include advanced physical therapy and rehabilitation programs."
         },
         {
-            "pre": "2016:",
-            "p": " Achieved key milestones in product development and customer success."
+            "pre": "2010s:",
+            "p": " Integrated regenerative medicine and IV therapy to offer holistic healing solutions."
         },
         {
-            "pre": "2020:",
-            "p": " Launched a new line of services focused on sustainability and community growth."
+            "pre": "Today:",
+            "p": " Over 40 years of combined expertise, leading the way in integrative and personalized wellness."
         }
     ]
 }

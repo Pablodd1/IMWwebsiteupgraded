@@ -1,16 +1,21 @@
 {
-    "details":{
-        "h2":"Front Desk Contact",
-        "address":"1899 NE 164th St, North Miami Beach, FL 33162",
-        "phone":"(305) 864-1373",
-        "email":"info@innovativemedicalwellness.com",
-        "fax":"(305) 864-1373"
+    "details": {
+        "h2": "Front Desk Contact",
+        "address": "1899 NE 164th St, North Miami Beach, FL 33162",
+        "phone": "(305) 864-1373",
+        "email": "info@innovativemedicalwellness.com",
+        "fax": "(305) 864-1373",
+        "hours": {
+            "mon_fri": "9:00 AM - 5:30 PM",
+            "sat": "9:00 AM - 1:00 PM",
+            "sun": "Closed"
+        }
     },
-    "form":{
-        "h2":"Request Information",
-        "fullname":"Full Name",
-        "email":"Email",
-        "msg":"Type your Message...",
-        "btn":"Send My Request"
+    "form": {
+        "h2": "Request Information",
+        "fullname": "Full Name",
+        "email": "Email",
+        "msg": "Type your Message...",
+        "btn": "Send My Request"
     }
 }
