@@ -1,63 +1,56 @@
 [
-    {
-      "name": "Dr. Jeffrey G. Draesel Jr. DC",
-      "position": "Director de Operaciones",
-      "description": "Experto en medicina quiropráctica, contribuyendo a nuestro enfoque de salud integral.",
-      "image": "Dr-Jeff"
-    },
-    {
-      "name": "Deborah Trenfield, ARNP",
-      "position": "Especialista",
-      "description": "Especialista en medicina familiar, dedicada a brindar atención excepcional.",
-      "image": "Deborah"
-    },
-    {
-      "name": "Marcos Jose Carvajal, ARNP",
-      "position": "Especialista",
-      "description": "Especialista en manejo del dolor intervencionista, enfocado en aliviar el dolor crónico.",
-      "image": "Marcos-Carvajal"
-    },
-    {
-      "name": "Jennifer Maine",
-      "position": "Gerente de Casos",
-      "description": "Gerente de casos médico-legales con experiencia en casos de trauma y atención aguda.",
-      "image": null
-    },
-    {
-      "name": "Dr. Jeffrey G. Draesel MD",
-      "position": "Cofundador - Recientemente Retirado",
-      "description": "Fundador con más de 40 años de experiencia, ahora retirado, pero su legado guía nuestra práctica.",
-      "image": "jeffrey-draesel"
-    },
-    {
-      "name": "Jackie Draesel",
-      "position": "Cofundadora",
-      "description": "Copropietaria de la práctica, brindando experiencia en gestión y apoyo personal.",
-      "image": null
-    },
-    {
-      "name": "Dr. Gregory Shtender MD",
-      "position": "Especialista",
-      "description": "Director Médico, asegurando la integración de nuestros servicios médicos y atención de calidad.",
-      "image": null
-    },
-    {
-      "name": "Marcos Jose Carvajal, ARNP",
-      "position": "Especialista",
-      "description": "Experto en manejo del dolor intervencionista enfocado en mejorar la vida de los pacientes.",
-      "image": null
-    },
-    {
-      "name": "Caitlin Alivia Moore",
-      "position": "Administradora de Práctica",
-      "description": "Administradora de práctica que asegura operaciones fluidas y una experiencia positiva para los pacientes.",
-      "image": "Caitlin-pic"
-    },
-    {
-      "name": "Simon Sankin, MD",
-      "position": "Director de Investigación",
-      "description": "Director de Investigación con experiencia en urología quirúrgica e innovación en salud.",
-      "image": null
-    }
-  ]
-  
+  {
+    "name": "Dr. Jeffrey G. Draesel Jr. DC",
+    "position": "Director de Operaciones",
+    "description": "Experto en medicina quiropráctica, contribuyendo a nuestro enfoque de salud integral.",
+    "image": "Dr-Jeff"
+  },
+  {
+    "name": "Deborah Trenfield, ARNP",
+    "position": "Especialista",
+    "description": "Especialista en medicina familiar, dedicada a brindar atención excepcional.",
+    "image": "Deborah"
+  },
+  {
+    "name": "Marcos Jose Carvajal, ARNP",
+    "position": "Especialista",
+    "description": "Especialista en manejo del dolor intervencionista, enfocado en aliviar el dolor crónico.",
+    "image": "Marcos-Carvajal"
+  },
+  {
+    "name": "Jennifer Maine",
+    "position": "Gerente de Casos",
+    "description": "Gerente de casos médico-legales con experiencia en casos de trauma y atención aguda.",
+    "image": null
+  },
+  {
+    "name": "Dr. Jeffrey G. Draesel MD",
+    "position": "Cofundador - Recientemente Retirado",
+    "description": "Fundador con más de 40 años de experiencia, ahora retirado, pero su legado guía nuestra práctica.",
+    "image": "jeffrey-draesel"
+  },
+  {
+    "name": "Jackie Draesel",
+    "position": "Cofundadora",
+    "description": "Copropietaria de la práctica, brindando experiencia en gestión y apoyo personal.",
+    "image": null
+  },
+  {
+    "name": "Dr. Gregory Shtender MD",
+    "position": "Especialista",
+    "description": "Director Médico, asegurando la integración de nuestros servicios médicos y atención de calidad.",
+    "image": null
+  },
+  {
+    "name": "Caitlin Alivia Moore",
+    "position": "Administradora de Práctica",
+    "description": "Administradora de práctica que asegura operaciones fluidas y una experiencia positiva para los pacientes.",
+    "image": "Caitlin-pic"
+  },
+  {
+    "name": "Simon Sankin, MD",
+    "position": "Director de Investigación",
+    "description": "Director de Investigación con experiencia en urología quirúrgica e innovación en salud.",
+    "image": null
+  }
+]
