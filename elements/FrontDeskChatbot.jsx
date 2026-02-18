@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './frontDeskChatbot.module.scss';
 import { chatbotKnowledge } from './chatbotKnowledge';
 
@@ -39,7 +39,7 @@ const getReply = (message) => {
     return `Email us at ${chatbotKnowledge.company.email}.`;
   }
   if (question.includes('hours') || question.includes('open')) {
-    return "We are generally open Monday-Friday. Please call to confirm availability for specific services.";
+    return "We are open Monday-Friday 9:00 AM - 5:30 PM, and Saturday 9:00 AM - 1:00 PM. We are closed on Sundays.";
   }
   if (question.includes('aging') || question.includes('biohacking')) {
     return `${chatbotKnowledge.services.agingBiohacking.description} Visit: ${chatbotKnowledge.services.agingBiohacking.link}`;
@@ -47,13 +47,13 @@ const getReply = (message) => {
 
   // 5. General / Greetings
   if (question.includes('hi') || question.includes('hello')) {
-    return `Hello! Welcome to ${chatbotKnowledge.company.name}. How can I assist you today?`;
+    return `Hello! Welcome to ${chatbotKnowledge.company.name}. How can I assist you today with your wellness journey?`;
   }
 
   return chatbotKnowledge.general.fallback;
 };
 
-export default function FrontDeskChatbot({ clinicName, intro }) {
+export default function FrontDeskChatbot({ clinicName, intro, LANG = 'en' }) {
   const [isOpen, setIsOpen] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [messages, setMessages] = useState([
@@ -72,9 +72,8 @@ export default function FrontDeskChatbot({ clinicName, intro }) {
 
   useEffect(() => {
     const loadVoices = () => {
-      const available = window.speechSynthesis.getVoices();
+      const available = typeof window !== 'undefined' ? window.speechSynthesis.getVoices() : [];
       setVoices(available);
-      // Prefer a natural female voice (Google US English, Microsoft Zira, or just the first one)
       const preferred = available.find(v => v.name.includes('Google US English') || v.name.includes('Zira'));
       setSelectedVoice(preferred || available[0]);
     };
@@ -87,7 +86,7 @@ export default function FrontDeskChatbot({ clinicName, intro }) {
 
   const speak = (text) => {
     if (!voiceEnabled || typeof window === 'undefined' || !window.speechSynthesis) return;
-    const cleanText = text.replace(/\*.*?\*/g, '').replace(/https?:\/\/[^\s]+/g, 'website').replace(/\n/g, '. '); // Remove URLs for speech
+    const cleanText = text.replace(/\*.*?\*/g, '').replace(/https?:\/\/[^\s]+/g, 'website').replace(/\n/g, '. ');
     const utterance = new SpeechSynthesisUtterance(cleanText);
     if (selectedVoice) utterance.voice = selectedVoice;
     utterance.rate = 1.0;
@@ -97,19 +96,34 @@ export default function FrontDeskChatbot({ clinicName, intro }) {
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && 'webkitSpeechRecognition' in window) {
-      const recognition = new window.webkitSpeechRecognition();
-      recognition.continuous = false;
-      recognition.interimResults = false;
-      recognition.lang = 'en-US';
+    if (typeof window !== 'undefined' && ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const recognition = new SpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.lang = LANG === 'es' ? 'es-US' : 'en-US';
 
       recognition.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        setInput(transcript);
-        setIsListening(false);
+        let interimTranscript = '';
+        let finalTranscript = '';
+
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          if (event.results[i].isFinal) {
+            finalTranscript += event.results[i][0].transcript;
+          } else {
+            interimTranscript += event.results[i][0].transcript;
+          }
+        }
+
+        if (finalTranscript) {
+          setInput(finalTranscript);
+        } else if (interimTranscript) {
+          setInput(interimTranscript);
+        }
       };
 
-      recognition.onerror = () => {
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error', event.error);
         setIsListening(false);
       };
 
@@ -119,7 +133,7 @@ export default function FrontDeskChatbot({ clinicName, intro }) {
 
       recognitionRef.current = recognition;
     }
-  }, []);
+  }, [LANG]);
 
   const toggleListening = () => {
     if (!recognitionRef.current) {
@@ -129,8 +143,8 @@ export default function FrontDeskChatbot({ clinicName, intro }) {
 
     if (isListening) {
       recognitionRef.current.stop();
-      setIsListening(false);
     } else {
+      setInput('');
       recognitionRef.current.start();
       setIsListening(true);
     }
@@ -147,6 +161,10 @@ export default function FrontDeskChatbot({ clinicName, intro }) {
     setMessages((prev) => [...prev, userMessage, botMessage]);
     setInput('');
     speak(replyText);
+
+    if (isListening && recognitionRef.current) {
+      recognitionRef.current.stop();
+    }
   };
 
   const handleSend = (event) => {

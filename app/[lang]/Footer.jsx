@@ -9,18 +9,23 @@ const Footer = async ({ LANG }) => {
     let footerNav, socialLinks;
     footerNav = await getDictionary(await LANG || 'en', `general.navs`);
     socialLinks = await getDictionary(await LANG || 'en', `general.socialLinks`);
- 
+
     return (
         <footer className={styles.footer}>
             <section className={styles.container}>
-                <Link href="/" className={styles.logo}>
-                    {/* <Logo size={250} /> */}
-                    <Image
-                        src={`/raster/logo-512.webp`}
-                        alt={'Innovative Medical Wellness - Logo'}
-                        width={512} height={256}
-                    />
-                </Link>
+                <div className={styles.brand}>
+                    <Link href="/" className={styles.logo}>
+                        <Image
+                            src={`/raster/logo-512.webp`}
+                            alt={'Innovative Medical Wellness - Logo'}
+                            width={512} height={256}
+                        />
+                    </Link>
+                    <div className={styles.locationInfo}>
+                        <p>1899 NE 164th St,<br />North Miami Beach, FL 33162</p>
+                        <p><a href="tel:3058641373">(305) 864-1373</a></p>
+                    </div>
+                </div>
                 <nav className={styles.nav}>
                     {footerNav.map((x, i) => {
                         return (

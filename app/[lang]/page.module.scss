@@ -20,6 +20,7 @@
     bottom: 35%;
     background: rgba(0, 0, 0, 0.2); // Darker, subtler background for contrast
     border: 1px solid rgba(255, 255, 255, 0.1); // Thin, subtle border
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px); // Stronger blur for glass effect
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     display: flex;
@@ -248,14 +249,30 @@
     object-position: center;
     position: absolute;
     inset: 0;
+    -webkit-animation: kenBurns 20s infinite alternate ease-in-out;
+    animation: kenBurns 20s infinite alternate ease-in-out;
+  }
+
+  @keyframes kenBurns {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.1);
+    }
   }
 
   .heroOverlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, rgba(4, 21, 33, 0.85), rgba(0, 93, 147, 0.4), rgba(4, 21, 33, 0.8));
+    background: linear-gradient(135deg,
+        rgba(4, 21, 33, 0.9) 0%,
+        rgba(0, 93, 147, 0.3) 50%,
+        rgba(4, 21, 33, 0.9) 100%);
     z-index: 1;
-    backdrop-filter: brightness(0.8);
+    -webkit-backdrop-filter: brightness(0.9);
+    backdrop-filter: brightness(0.9);
   }
 
 

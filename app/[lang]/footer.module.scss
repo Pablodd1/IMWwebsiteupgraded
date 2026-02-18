@@ -21,35 +21,56 @@
             padding: 3.5rem 0;
         }
 
-        .logo {
-            height: 100%;
-            margin: auto;
-            padding: 1rem;
+        .brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
 
-            img {
-                max-height: 15rem;
-                width: auto;
+            @media (min-width: 1024px) {
+                align-items: flex-start;
+                margin-bottom: 0;
+            }
 
-                @media (min-width: 1024px) {
-                    max-height: 10rem;
-                }
+            .logo {
+                margin: 0;
+                padding: 0;
 
-                @media (min-width: 1200px) {
-                    max-height: 12rem;
-                    padding: 0;
+                img {
+                    max-height: 8rem;
+                    width: auto;
+
+                    @media (min-width: 1024px) {
+                        max-height: 6rem;
+                    }
                 }
             }
 
-            // svg {
-            //     max-height: 15rem;
-            //     @media (min-width: 1024px) {
-            //         max-height: 10rem;
-            //     }
-            //     @media (min-width: 1200px) {
-            //         max-height: 12rem;
-            //         padding: 0;
-            //     }
-            // }
+            .locationInfo {
+                text-align: center;
+                color: #4a5568;
+                font-size: 0.95rem;
+                line-height: 1.6;
+
+                @media (min-width: 1024px) {
+                    text-align: left;
+                }
+
+                p {
+                    margin: 0.25rem 0;
+                }
+
+                a {
+                    color: $theme_color;
+                    font-weight: 600;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
         }
 
         .nav {

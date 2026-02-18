@@ -18,20 +18,20 @@ export const metadata = {
   title: 'North Miami Beach Integrative Healthcare & Wellness Clinic',
   description: 'Top-rated integrative wellness clinic in North Miami Beach, FL. Expert regenerative medicine, IV therapy, TMS brain therapy, anti-aging & personalized wellness. Serving Aventura, Miami Beach & Miami. Book your free consultation today!',
   keywords: [
-    'North Miami Beach wellness clinic',
-    'Aventura medical spa',
-    'Miami Beach anti-aging clinic',
-    'integrative medicine North Miami Beach FL',
-    'regenerative medicine Aventura',
-    'IV therapy Miami Beach',
-    'TMS therapy North Miami Beach',
-    'brain health clinic Miami',
-    'wellness center 33162',
-    'medical clinic North Miami Beach',
+    'medical wellness clinic North Miami Beach',
+    'Aventura wellness center',
+    'integrative clinic Miami FL',
     'functional medicine Aventura',
-    'biohacking Miami Beach',
-    'stem cell therapy Florida',
-    'PRP treatment North Miami Beach',
+    'anti-aging clinic North Miami Beach',
+    'regenerative medicine Miami',
+    'IV therapy North Miami Beach',
+    'TMS brain health clinic',
+    'personalized healthcare Miami',
+    'holistic wellness North Miami Beach',
+    'hormone replacement therapy Aventura',
+    'medical weight loss Miami',
+    'PRP therapy North Miami Beach',
+    'biohacking center Miami',
   ],
   alternates: {
     canonical: 'https://innovativemedicalwellness.com',
@@ -59,6 +59,50 @@ export default async function Home({ params }) {
   const LANG = par.lang
   const intro = await getDictionary(LANG, `homepage.intro`);
   const socialLinks = await getDictionary(LANG, `general.socialLinks`);
+
+  // Medical Clinic Structured Data (JSON-LD)
+  const schemaOrg = {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Innovative Medical Wellness",
+    "alternateName": "IMW North Miami Beach",
+    "description": "Premier integrative wellness clinic specializing in regenerative medicine, IV therapy, and brain health.",
+    "url": "https://innovativemedicalwellness.com",
+    "logo": "https://innovativemedicalwellness.com/raster/logo.png",
+    "image": "https://innovativemedicalwellness.com/raster/exomind_brain_hero.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1899 NE 164th St",
+      "addressLocality": "North Miami Beach",
+      "addressRegion": "FL",
+      "postalCode": "33162",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 25.9265,
+      "longitude": -80.1472
+    },
+    "telephone": "+13058641373",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "13:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/InnovativeMedicalWellness/",
+      "https://www.linkedin.com/company/innovative-medical-wellness/"
+    ]
+  };
 
   return (
     <main >

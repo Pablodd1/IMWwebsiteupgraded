@@ -335,6 +335,7 @@ export default async function RootLayout({ children, params }) {
           phone={contactUS?.details?.phone}
           email={contactUS?.details?.email}
           services={services}
+          LANG={LANG}
         />
 
         {/* Schema.org JSON-LD Structured Data */}
