@@ -2,258 +2,226 @@
 
 import { useState, useEffect, useRef } from 'react';
 import styles from './frontDeskChatbot.module.scss';
-import { chatbotKnowledge } from './chatbotKnowledge';
 
-const MEDICAL_DISCLAIMER = "\n\n*Note: I am an AI assistant for Innovative Medical Wellness. I can provide general information but I am not a doctor and this is not medical advice. For specific health concerns, please consult our specialists.*";
-
-const getReply = (message) => {
-  const question = message.toLowerCase();
-
-  // 1. Emergency
-  if (question.includes('emergency') || question.includes('911') || question.includes('chest pain') || question.includes('stroke')) {
-    return "If you are experiencing a medical emergency, please call 911 immediately or go to the nearest emergency room.";
-  }
-
-  // 2. Check FAQs
-  for (const faq of chatbotKnowledge.faqs) {
-    if (faq.q.some(q => question.includes(q))) {
-      return faq.a + MEDICAL_DISCLAIMER;
-    }
-  }
-
-  // 3. Check Services
-  for (const [key, service] of Object.entries(chatbotKnowledge.services)) {
-    if (service.keywords.some(k => question.includes(k))) {
-      return `${service.description} \n\n${service.details || ''} \n\n${service.link ? `Learn more: ${service.link}` : ''}` + MEDICAL_DISCLAIMER;
-    }
-  }
-
-  // 4. Company Info
-  if (question.includes('address') || question.includes('location') || question.includes('where')) {
-    return `We are located at ${chatbotKnowledge.company.address}. We'd love to see you!`;
-  }
-  if (question.includes('phone') || question.includes('call') || question.includes('number')) {
-    return `You can reach us at ${chatbotKnowledge.company.phone}.`;
-  }
-  if (question.includes('email')) {
-    return `Email us at ${chatbotKnowledge.company.email}.`;
-  }
-  if (question.includes('hours') || question.includes('open')) {
-    return "We are open Monday-Friday 9:00 AM - 5:30 PM, and Saturday 9:00 AM - 1:00 PM. We are closed on Sundays.";
-  }
-  if (question.includes('aging') || question.includes('biohacking')) {
-    return `${chatbotKnowledge.services.agingBiohacking.description} Visit: ${chatbotKnowledge.services.agingBiohacking.link}`;
-  }
-
-  // 5. General / Greetings
-  if (question.includes('hi') || question.includes('hello')) {
-    return `Hello! Welcome to ${chatbotKnowledge.company.name}. How can I assist you today with your wellness journey?`;
-  }
-
-  return chatbotKnowledge.general.fallback;
-};
-
-export default function FrontDeskChatbot({ clinicName, intro, LANG = 'en' }) {
+export default function FrontDeskChatbot({ clinicName = 'Innovative Medical Wellness', LANG = 'en' }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [voiceEnabled, setVoiceEnabled] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      role: 'bot',
-      text: `Hi! I am your virtual front desk for ${clinicName || chatbotKnowledge.company.name}. How can I help you achieve your health goals today?`,
-    },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [isListening, setIsListening] = useState(false);
+  const [speaking, setSpeaking] = useState(false);
+  const [status, setStatus] = useState('');
+  const messagesEndRef = useRef(null);
   const recognitionRef = useRef(null);
-
-  // Voice Selection
-  const [voices, setVoices] = useState([]);
-  const [selectedVoice, setSelectedVoice] = useState(null);
+  const synthRef = useRef(null);
 
   useEffect(() => {
-    const loadVoices = () => {
-      const available = typeof window !== 'undefined' ? window.speechSynthesis.getVoices() : [];
-      setVoices(available);
-      const preferred = available.find(v => v.name.includes('Google US English') || v.name.includes('Zira'));
-      setSelectedVoice(preferred || available[0]);
-    };
-
-    loadVoices();
-    if (typeof window !== 'undefined' && window.speechSynthesis) {
-      window.speechSynthesis.onvoiceschanged = loadVoices;
+    if (isOpen && messages.length === 0) {
+      setMessages([{
+        role: 'assistant',
+        content: `Hi! I'm your virtual front desk assistant for ${clinicName}. How can I help you today?`
+      }]);
     }
-  }, []);
-
-  const speak = (text) => {
-    if (!voiceEnabled || typeof window === 'undefined' || !window.speechSynthesis) return;
-    const cleanText = text.replace(/\*.*?\*/g, '').replace(/https?:\/\/[^\s]+/g, 'website').replace(/\n/g, '. ');
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    if (selectedVoice) utterance.voice = selectedVoice;
-    utterance.rate = 1.0;
-    utterance.pitch = 1.0;
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(utterance);
-  };
+  }, [isOpen, messages.length, clinicName]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
-      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      const recognition = new SpeechRecognition();
-      recognition.continuous = true;
-      recognition.interimResults = true;
-      recognition.lang = LANG === 'es' ? 'es-US' : 'en-US';
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
-      recognition.onresult = (event) => {
-        let interimTranscript = '';
-        let finalTranscript = '';
-
-        for (let i = event.resultIndex; i < event.results.length; ++i) {
-          if (event.results[i].isFinal) {
-            finalTranscript += event.results[i][0].transcript;
-          } else {
-            interimTranscript += event.results[i][0].transcript;
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      synthRef.current = window.speechSynthesis;
+      
+      if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = true;
+        recognition.lang = LANG === 'es' ? 'es-ES' : 'en-US';
+        
+        recognition.onresult = (event) => {
+          let final = '';
+          for (let i = event.resultIndex; i < event.results.length; i++) {
+            if (event.results[i].isFinal) {
+              final += event.results[i][0].transcript;
+            }
           }
-        }
-
-        if (finalTranscript) {
-          setInput(finalTranscript);
-        } else if (interimTranscript) {
-          setInput(interimTranscript);
-        }
-      };
-
-      recognition.onerror = (event) => {
-        console.error('Speech recognition error', event.error);
-        setIsListening(false);
-      };
-
-      recognition.onend = () => {
-        setIsListening(false);
-      };
-
-      recognitionRef.current = recognition;
+          if (final) {
+            setInput(final);
+            handleSend(final);
+            setIsListening(false);
+          }
+        };
+        
+        recognition.onerror = (e) => {
+          console.error('Speech error:', e);
+          setIsListening(false);
+          setStatus('');
+        };
+        recognition.onend = () => {
+          setIsListening(false);
+          setStatus('');
+        };
+        recognitionRef.current = recognition;
+      }
     }
   }, [LANG]);
 
-  const toggleListening = () => {
+  const speak = (text) => {
+    if (!voiceEnabled || !synthRef.current) return;
+    synthRef.current.cancel();
+    const clean = text.replace(/[#*_\[\]]/g, '').replace(/https?:\/\/[^\s]+/g, 'website');
+    const utterance = new SpeechSynthesisUtterance(clean);
+    utterance.rate = 0.9;
+    utterance.onstart = () => setSpeaking(true);
+    utterance.onend = () => setSpeaking(false);
+    utterance.onerror = () => setSpeaking(false);
+    synthRef.current.speak(utterance);
+  };
+
+  const handleSend = async (text) => {
+    const trimmed = text || input.trim();
+    if (!trimmed) return;
+
+    const userMsg = { role: 'user', content: trimmed };
+    setMessages(prev => [...prev, userMsg]);
+    setInput('');
+    setIsLoading(true);
+    setStatus('Thinking...');
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: [...messages, userMsg] })
+      });
+
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.content || 'Failed');
+      }
+
+      const data = await res.json();
+      const reply = data.content || "I'm sorry, something went wrong. Please try again.";
+      
+      setMessages(prev => [...prev, { role: 'assistant', content: reply }]);
+      setStatus('');
+      if (voiceEnabled) speak(reply);
+    } catch (err) {
+      console.error('Chat error:', err);
+      setMessages(prev => [...prev, { 
+        role: 'assistant', 
+        content: err.message || "I apologize, but I'm having trouble connecting right now. Please try again or call us at (305) 864-1373." 
+      }]);
+      setStatus('');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const toggleVoice = () => {
+    setVoiceEnabled(!voiceEnabled);
+    if (voiceEnabled && synthRef.current) {
+      synthRef.current.cancel();
+      setSpeaking(false);
+    }
+  };
+
+  const toggleMic = () => {
     if (!recognitionRef.current) {
-      alert('Speech recognition is not supported in your browser. Please use Chrome or Edge.');
+      alert('Speech recognition not supported. Use Chrome or Edge.');
       return;
     }
-
     if (isListening) {
       recognitionRef.current.stop();
     } else {
-      setInput('');
+      setStatus('Listening...');
       recognitionRef.current.start();
       setIsListening(true);
     }
   };
 
-  const sendMessage = (text) => {
-    const trimmed = text.trim();
-    if (!trimmed) return;
-
-    const userMessage = { role: 'user', text: trimmed };
-    const replyText = getReply(userMessage.text);
-    const botMessage = { role: 'bot', text: replyText };
-
-    setMessages((prev) => [...prev, userMessage, botMessage]);
-    setInput('');
-    speak(replyText);
-
-    if (isListening && recognitionRef.current) {
-      recognitionRef.current.stop();
-    }
-  };
-
-  const handleSend = (event) => {
-    event.preventDefault();
-    sendMessage(input);
-  };
+  const quickQuestions = [
+    { text: 'Services', q: 'What services do you offer?' },
+    { text: 'Exomind', q: 'Tell me about Exomind brain therapy' },
+    { text: 'Contact', q: 'How can I contact you?' }
+  ];
 
   return (
     <div className={styles.chatbot}>
-      <button className={styles.toggle} type="button" onClick={() => setIsOpen((prev) => !prev)}>
-        {isOpen ? 'Close chat' : 'Chat with us'}
+      <button className={`${styles.toggle} ${speaking ? styles.speaking : ''}`} onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? '✕' : speaking ? '🔊' : '💬'}
       </button>
 
-      {isOpen ? (
+      {isOpen && (
         <section className={styles.panel}>
           <header className={styles.header}>
             <div>
-              <p className={styles.title}>Front Desk Assistant</p>
-              <p className={styles.subtitle}>Friendly, private, and helpful.</p>
+              <p className={styles.title}>
+                {speaking ? '🔊 Speaking...' : isListening ? '👂 Listening...' : 'Front Desk AI'}
+              </p>
+              <p className={styles.subtitle}>{status || 'Ask me anything'}</p>
             </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
-              <label className={styles.voice}>
-                <input
-                  type="checkbox"
-                  checked={voiceEnabled}
-                  onChange={(event) => setVoiceEnabled(event.target.checked)}
-                />
-                Voice Mode
-              </label>
-              {voiceEnabled && voices.length > 0 && (
-                <select
-                  className={styles.voiceSelect}
-                  value={selectedVoice?.name}
-                  onChange={(e) => setSelectedVoice(voices.find(v => v.name === e.target.value))}
-                >
-                  {voices.map(v => <option key={v.name} value={v.name}>{v.name.slice(0, 15)}...</option>)}
-                </select>
-              )}
-            </div>
+            <label className={styles.voice}>
+              <input type="checkbox" checked={voiceEnabled} onChange={toggleVoice} />
+              🔊 Voice
+            </label>
           </header>
 
           <div className={styles.messages}>
-            {messages.map((message, index) => (
-              <p
-                key={`${message.role}-${index}`}
-                className={message.role === 'bot' ? styles.bot : styles.user}
-                style={{ whiteSpace: 'pre-wrap' }}
-              >
-                {message.text}
+            {messages.map((m, i) => (
+              <p key={i} className={m.role === 'user' ? styles.user : styles.bot}>
+                {m.content}
               </p>
             ))}
+            {(isLoading || isListening) && (
+              <p className={styles.bot}>
+                <span className={styles.wave}>•••</span>
+              </p>
+            )}
+            <div ref={messagesEndRef} />
           </div>
 
           <div className={styles.quickLinks}>
-            <button type="button" onClick={() => sendMessage('What services do you offer?')}>
-              Services
-            </button>
-            <button type="button" onClick={() => sendMessage('Tell me about Exomind')}>
-              Exomind
-            </button>
-            <button type="button" onClick={() => sendMessage('Aging Biohacking info?')} style={{ borderColor: '#9BEC00' }}>
-              Aging Biohacking
-            </button>
+            {quickQuestions.map(q => (
+              <button key={q.text} onClick={() => handleSend(q.q)} disabled={isLoading}>{q.text}</button>
+            ))}
           </div>
 
-          <form className={styles.form} onSubmit={handleSend}>
-            <div className={styles.inputGroup}>
+          <form className={styles.form} onSubmit={(e) => { e.preventDefault(); handleSend(); }}>
+            <div className={`${styles.inputWrapper} ${isListening ? styles.listening : ''} ${speaking ? styles.speaking : ''}`}>
               <input
                 type="text"
-                placeholder={isListening ? "Listening..." : "Ask us anything..."}
                 value={input}
-                onChange={(event) => setInput(event.target.value)}
-                className={isListening ? styles.listening : ''}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder={isListening ? 'Listening...' : speaking ? 'AI Speaking...' : 'Type a message...'}
+                disabled={isLoading}
               />
-              <button
-                type="button"
-                className={`${styles.voiceBtn} ${isListening ? styles.listeningBtn : ''}`}
-                onClick={toggleListening}
-                disabled={!recognitionRef.current}
-                title={recognitionRef.current ? "Click to speak" : "Speech recognition not supported"}
-              >
-                {isListening ? '🛑' : '🎤'}
-              </button>
-              <button type="submit">Send</button>
+              <div className={styles.waveform}>
+                {isListening && <span className={styles.waveBar}></span>}
+                {isListening && <span className={styles.waveBar}></span>}
+                {isListening && <span className={styles.waveBar}></span>}
+              </div>
             </div>
+            <button 
+              type="button" 
+              onClick={toggleMic} 
+              disabled={isLoading}
+              className={`${styles.micBtn} ${isListening ? styles.micActive : ''}`}
+            >
+              {isListening ? '⬛' : '🎤'}
+            </button>
+            <button 
+              type="submit" 
+              disabled={!input.trim() || isLoading}
+              className={styles.sendBtn}
+            >
+              ➤
+            </button>
           </form>
         </section>
-      ) : null}
+      )}
     </div>
   );
 }

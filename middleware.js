@@ -20,6 +20,10 @@ export function middleware(request) {
         return;
     }
 
+    if (pathname.startsWith('/api/')) {
+        return;
+    }
+
     if (pathname.startsWith('/forms/')) {
         return NextResponse.rewrite(new URL('/404', request.url));
     }
