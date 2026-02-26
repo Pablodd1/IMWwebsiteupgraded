@@ -1,30 +1,64 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { getWebsiteContext } from '../../../lib/getWebsiteContext';
+import { chatbotKnowledge } from '../../../elements/chatbotKnowledge';
 
 let websiteKnowledge = '';
-try {
-  websiteKnowledge = getWebsiteContext();
-} catch (e) {
-  console.error('Could not load website context:', e);
+let isLoadingKnowledge = false;
+
+async function loadKnowledge() {
+  if (websiteKnowledge) return websiteKnowledge;
+  if (isLoadingKnowledge) {
+    while (!websiteKnowledge) await new Promise(r => setTimeout(r, 100));
+    return websiteKnowledge;
+  }
+  isLoadingKnowledge = true;
+  try {
+    websiteKnowledge = await getWebsiteContext();
+  } catch (e) {
+    console.error('Could not load website context:', e);
+  }
+  isLoadingKnowledge = false;
+  return websiteKnowledge;
 }
 
-const systemPrompt = `You are a helpful and friendly virtual front desk assistant for Innovative Medical Wellness.
-Company Information:
+const systemPromptBase = `You are a helpful, friendly, and professional virtual front desk assistant for Innovative Medical Wellness (IMW), a premier integrative wellness clinic in North Miami Beach, Florida.
+
+=== COMPANY INFORMATION ===
 - Name: Innovative Medical Wellness
 - Address: 1899 NE 164th St, North Miami Beach, FL 33162
 - Phone: (305) 864-1373
 - Email: info@innovativemedicalwellness.com
+- Website: https://innovativemedicalwellness.com
 
-Guidelines:
-- Below is ALL the information extracted from the website regarding our treatments, blogs, about pages, and FAQs. Use it to answer ALL user questions accurately.
-- If a user mentions a medical emergency, chest pain, stroke, or 911, instruct them to call 911 immediately or go to the nearest ER.
-- Do NOT provide medical advice. Add a small disclaimer that you are an AI and not a doctor when discussing treatments.
-- Be polite, professional, yet warm and conversational.
-- Keep responses concise as they may be spoken aloud via text-to-speech.
+=== LEGAL & COMPLIANCE GUIDELINES (CRITICAL) ===
+1. HIPAA COMPLIANCE: You must NEVER ask for or store personal health information (PHI). Do not request SSN, medical record numbers, or detailed medical history through this chat.
+2. MEDICAL DISCLAIMERS: 
+   - You are NOT a doctor, nurse, or licensed medical professional
+   - You cannot provide medical diagnoses, medical advice, or treatment recommendations
+   - Always encourage users to consult with qualified healthcare providers
+   - For any medical concerns, always recommend scheduling a consultation
+3. FDA COMPLIANCE:
+   - Do not make claims that any treatment "cures" any condition
+   - Do not claim treatments are "FDA approved" unless specifically verified
+   - Use phrases like "FDA-cleared" or "FDA-regulated" appropriately
+   - Do not promise specific outcomes or results
+4. SCOPE: Provide general information about services, answer non-medical questions, help with directions, scheduling, and general wellness education
 
---- WEBSITE KNOWLEDGE BASE ---
-${websiteKnowledge}
-`;
+=== SERVICE KNOWLEDGE ===
+${JSON.stringify(chatbotKnowledge.services, null, 2)}
+
+=== FAQ REFERENCE ===
+${JSON.stringify(chatbotKnowledge.faqs, null, 2)}
+
+=== TONE & STYLE ===
+- Be warm, professional, and empathetic
+- Use conversational language
+- Keep responses concise but informative
+- For voice output, avoid technical jargon and keep it natural
+- Always end with an offer to help further or schedule an appointment
+
+=== WEBSITE KNOWLEDGE BASE ===
+(Below is comprehensive content from our website and partner sites - use this to answer detailed questions)`;
 
 export async function POST(req) {
   try {
@@ -34,26 +68,48 @@ export async function POST(req) {
       return Response.json({ content: "Invalid request. Please refresh and try again." }, { status: 400 });
     }
 
+    const context = await loadKnowledge();
+    
+    const fullSystemPrompt = systemPromptBase + context;
+
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    const model = genAI.getGenerativeModel({ 
+      model: "gemini-2.5-flash",
+      systemInstruction: {
+        role: 'user',
+        parts: [{ text: fullSystemPrompt }]
+      }
+    });
 
-    // Build conversation with system prompt
-    let conversationHistory = systemPrompt + "\n\n";
-    for (const msg of messages) {
-      conversationHistory += `${msg.role === 'user' ? 'User' : 'Assistant'}: ${msg.content}\n`;
+    let conversationHistory = [];
+    
+    if (messages.length <= 1 && messages[0]?.role === 'user') {
+      conversationHistory.push({
+        role: 'user',
+        parts: [{ text: "Context: " + fullSystemPrompt + "\n\nFirst user question: " + messages[0].content }]
+      });
+    } else {
+      for (const msg of messages) {
+        conversationHistory.push({
+          role: msg.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: msg.content }]
+        });
+      }
     }
-    conversationHistory += "Assistant:";
 
-    const result = await model.generateContent(conversationHistory);
+    const result = await model.generateContent({
+      contents: conversationHistory
+    });
+    
     const response = result.response.text();
 
     return Response.json({ content: response });
   } catch (error) {
     console.error('API Chat Error:', error);
     
-    let errorMsg = "I apologize, but I'm having trouble connecting right now. Please try again.";
+    let errorMsg = "I apologize, but I'm having trouble connecting right now. Please try again or call us at (305) 864-1373.";
     
-    if (error.message?.includes('API key') || error.message?.includes('Unauthorized') || error.message?.includes('permission')) {
+    if (error.message?.includes('API key') || error.message?.includes('Unauthorized')) {
       errorMsg = "AI service configuration error. Please contact support.";
     } else if (error.message?.includes('quota') || error.message?.includes('rate limit')) {
       errorMsg = "I'm receiving too many requests. Please wait a moment and try again.";
