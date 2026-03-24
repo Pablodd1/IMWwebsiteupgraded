@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './contact.module.scss';
 import { FaxIcon, LocationIcon, Mail, PhoneIcon } from '@ELEMENT/svgIcons';
 import Link from 'next/link';
+import Script from 'next/script';
 import { getDictionary } from '@JSON/index'
 import SubmitForm from './submitForm';
 
@@ -14,6 +15,11 @@ const ContactUs = async ({ LANG }) => {
 
     return (
         <section className={styles.wrap} id="contact">
+            <Script
+                src="https://widgets.leadconnectorhq.com/loader.js"
+                data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+                data-widget-id="69c22eb4e9e3b460e72cf420"
+            />
             <section className={styles.container}>
                 <article className={styles.contact_details}>
                     <h2>{contactUS.details.h2}</h2>
