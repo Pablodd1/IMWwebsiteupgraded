@@ -28,6 +28,11 @@ export function middleware(request) {
         return NextResponse.rewrite(new URL('/404', request.url));
     }
 
+    // Never locale-redirect static files or AI/SEO root endpoints
+    if (/\.(?:mp4|webm|ogg|mp3|wav|png|jpe?g|webp|gif|svg|ico|woff2?|ttf|eot|txt|xml|json|webmanifest|css|js|map)$/i.test(pathname)) {
+        return;
+    }
+
     const pathnameHasLocale = locales.some(
         (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
     );
@@ -41,6 +46,6 @@ export function middleware(request) {
 
 export const config = {
     matcher: [
-        '/((?!_next/static|_next/image|tawk.to.js|gallery|favicon|apple|android|site.webmanifest|logos|font|logo.png|robots.txt|sitemap.xml|manifest.json|svg|raster).*)',
+        '/((?!api|_next/static|_next/image|tawk.to.js|gallery|videos|favicon|apple|android|site.webmanifest|logos|font|logo.png|robots.txt|sitemap.xml|llms.txt|llms-full.txt|agent-permissions.json|manifest.json|svg|raster).*)',
     ],
 };

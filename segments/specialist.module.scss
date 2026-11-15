@@ -6,21 +6,22 @@
     font-style: normal;
     font-family: $font_primary;
     color: $text_color;
-    font-size: 3.125rem;
-    line-height: 1.6;
+    font-size: clamp(2rem, 4.5vw, 3.125rem);
+    line-height: 1.35;
     letter-spacing: 0;
     text-align: center;
+    padding: 0 1rem;
 }
 
 .cont {
     display: grid;
-    justify-content: space-around;
+    justify-content: center;
     margin: 3rem auto;
-    width: max-content;
-    gap: 3rem;
-    width: max-content;
-    max-width: 100%;
-    padding: 0;
+    width: 100%;
+    gap: 2.5rem;
+    max-width: 78rem;
+    padding: 0 1.25rem;
+    box-sizing: border-box;
 
     @media (min-width: 768px) {
         grid-template-columns: 1fr 1fr;
@@ -34,21 +35,20 @@
         margin: 0 auto;
         background-color: color.adjust($theme_light, $lightness: 10%);
         border-radius: 25px;
-        width: calc(100vw - 5rem);
+        width: 100%;
+        max-width: 35rem;
+        padding: 1rem;
+        box-sizing: border-box;
         transition: all .5s ease;
         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
         &:hover{
-            transform:scale(1.05)
+            transform:scale(1.02)
         }
 
         @media (min-width: 768px) {
-            padding: 1rem;
-            width: auto;
+            padding: 1.25rem;
+            width: 100%;
             display: grid;
-            grid-template-rows: 15rem auto;
-        }
-
-        @media (min-width: 768px) {
             grid-template-columns: 1fr 2fr;
             grid-template-rows: auto;
             max-width: 35rem;

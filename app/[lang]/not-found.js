@@ -4,7 +4,7 @@ import styles from './not-found.module.scss';
 export default function NotFound() {
   return (
     <section className={styles.Wrap}>
-      <h2>Not Found</h2>
+      <h1>Not Found</h1>
       <p>Could not find requested resource</p>
       <AnimatedAction
         link={`/`}

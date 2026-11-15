@@ -6,7 +6,7 @@ import Script from 'next/script';
 import { getDictionary } from '@JSON/index'
 import SubmitForm from './submitForm';
 
-const ContactUs = async ({ LANG }) => {
+const ContactUs = async ({ LANG, isStandalone = false }) => {
     const contactUS = await getDictionary(LANG || 'en', `general.contactUS`);
 
     if (!contactUS || !contactUS.details || !contactUS.form) {
@@ -22,7 +22,7 @@ const ContactUs = async ({ LANG }) => {
             />
             <section className={styles.container}>
                 <article className={styles.contact_details}>
-                    <h2>{contactUS.details.h2}</h2>
+                    {isStandalone ? <h1>{contactUS.details.h2}</h1> : <h2>{contactUS.details.h2}</h2>}
                     <aside className={styles.aside} >
                         <Link href={'https://www.google.com/maps/search/?api=1&query=1899+NE+164th+St+North+Miami+Beach+FL+33162'} target="_blank">
                             <LocationIcon color='#007BA7' />

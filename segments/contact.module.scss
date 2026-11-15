@@ -5,8 +5,7 @@
     background-position: center left;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
-    padding: 7rem 0;
+    padding: 5.5rem 1rem 6rem;
     position: relative;
     isolation: isolate;
 
@@ -14,63 +13,74 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(120deg, rgba(5, 20, 32, 0.65), rgba(0, 93, 147, 0.15));
+        background: linear-gradient(120deg, rgba(5, 20, 32, 0.55), rgba(0, 93, 147, 0.2));
         z-index: -1;
     }
 
     @media (min-width: 769px) {
-        padding: 10rem 0;
+        padding: 7rem 2rem 8rem;
     }
 
     @media (min-width: 992px) {
-        padding: 15rem 0;
+        background-attachment: fixed;
+        padding: 9rem 3rem 10rem;
     }
 
     .container {
-        max-width: 30rem;
-        margin: auto;
-        background-color: rgba(255, 255, 255, 0.16);
-        border: 1px solid white;
+        width: 100%;
+        max-width: 34rem;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.84);
+        border: 1px solid rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(16px);
-        box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
-        margin: 1rem;
-        padding: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.14) 0px 8px 32px;
+        padding: 1.75rem;
         border-radius: 25px;
         position: relative;
         z-index: 1;
+        box-sizing: border-box;
 
         @media (min-width: 576px) {
-            margin: 1rem auto 0 2.5rem;
+            padding: 2.25rem;
         }
 
         @media (min-width: 769px) {
-            margin: 1rem 5rem 0 auto;
+            margin: 0 auto;
         }
 
         @media (min-width: 992px) {
-            margin: 1rem 10rem 0 auto;
+            margin: 0 auto;
         }
 
         .contact_details {
+            h1,
             h2 {
-                font-size: 1.75rem;
+                font-size: clamp(1.35rem, 3vw, 1.75rem);
+                margin-top: 0;
             }
 
             aside {
                 display: grid;
-                grid-template-rows: repeat(3, 1fr);
-                margin-left: 1.5rem;
+                grid-auto-rows: auto;
+                gap: 0.25rem;
+                margin-left: 0.5rem;
+
+                @media (min-width: 576px) {
+                    margin-left: 1rem;
+                }
 
                 a {
-                    padding: .25rem;
-                    margin: .5rem auto auto 0;
+                    padding: .25rem 0;
+                    margin: 0;
                     display: grid;
-                    grid-template-columns: 1.5rem auto;
+                    grid-template-columns: 1.5rem 1fr;
                     align-items: center;
-                    gap: .5rem;
+                    gap: .6rem;
+                    word-break: break-word;
 
                     svg {
                         height: 1.25rem;
+                        width: 1.25rem;
                     }
                 }
             }
@@ -78,7 +88,7 @@
 
 
         .contact_form h2 {
-            font-size: 1.75rem;
+            font-size: clamp(1.35rem, 3vw, 1.75rem);
         }
     }
 }

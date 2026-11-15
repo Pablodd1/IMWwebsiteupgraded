@@ -10,8 +10,8 @@ const Values =async ({ LANG }) => {
             <h2>{data.h2}</h2>
             <ul className={styles.grid}>
                 {
-                    data.ul.map(x => (
-                        <li key={x} className={styles.valueItem}>
+                    data.ul.map((x, i) => (
+                        <li key={x.h3 || i} className={styles.valueItem}>
                             <h3>{x.h3}</h3>
                             <p>{x.p}</p>
                         </li>

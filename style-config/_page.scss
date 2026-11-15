@@ -2,6 +2,7 @@
 
 .Page {
     background-color: #f9fafb;
+    overflow-x: clip;
 
     .hero {
         position: relative;
@@ -12,77 +13,91 @@
         background: linear-gradient(135deg, $theme_color, #00b4d8);
         color: white;
         text-align: center;
-        // background-image: url('/raster/Innovative Medical Wellness - wellness.jpg');
-        // background-image: url('/raster/Innovative Medical Wellness.jpg');
-        background-attachment: fixed;
         background-size: cover;
         background-position: top center;
         background-repeat: no-repeat;
-        padding: 5rem 0;
-        height: 85vh;
+        padding: 5.5rem 1.25rem 4.5rem;
+        min-height: 82svh;
+        height: auto;
+        box-sizing: border-box;
         overflow: hidden;
 
+        @media screen and (min-width: 992px) {
+            background-attachment: fixed;
+            padding: 6.5rem 2rem 5.5rem;
+        }
+
         .heroContent {
-            background: rgba(0, 0, 0, 0.65);
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.68);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
             width: 100%;
-            height: 100%;
+            max-width: 48rem;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
 
+            @media screen and (min-width: 768px) {
+                padding: 3rem 2.5rem;
+            }
+
             h1 {
-                color: #d3d3d3;
+                color: #e5e7eb;
                 font-weight: 300;
-                font-size: 1.35rem;
-                letter-spacing: 6px;
+                font-size: clamp(1rem, 2.2vw, 1.35rem);
+                letter-spacing: 4px;
+                margin-top: 0;
                 margin-bottom: 0;
-                width: 25rem;
+                width: 100%;
+                max-width: 40rem;
                 text-transform: uppercase;
                 padding-bottom: 0.75rem;
 
                 &::first-line {
                     color: #ffffff;
                     font-family: $font_secondary;
-                    letter-spacing: 5px;
-                    text-align: justify;
-                    width: 100%;
+                    letter-spacing: 3px;
+                    text-align: center;
                     text-transform: unset;
-                    font-size: 2rem;
+                    font-size: clamp(1.5rem, 4vw, 2.25rem);
                     font-weight: 800;
                 }
 
             }
 
             p {
-                border-top: 6px solid $light_2;
+                border-top: 4px solid $light_2;
                 color: $theme_light;
                 font-size: 1rem;
-                letter-spacing: 1px;
-                text-align: justify !important;
-                width: 30rem;
+                line-height: 1.65;
+                letter-spacing: 0.5px;
+                text-align: left !important;
+                width: 100%;
+                max-width: 36rem;
                 font-weight: 300;
                 margin-top: 0;
                 padding-top: 1.25rem;
-                padding-right: 2rem;
-
-                @media (max-width: 575px) {
-                    max-width: 20rem;
-                }
+                padding-right: 0;
             }
         }
 
         svg {
             position: absolute;
-            width: 170%;
-            height: 22rem;
+            left: 0;
+            width: 100%;
+            height: auto;
+            max-height: 7rem;
+            pointer-events: none;
+            z-index: 1;
 
             @media screen and (min-width:768px) {
-                width: 100%;
-                height: 25rem;
-            }
-            path {
-                // fill: transparent;
+                max-height: 12rem;
             }
         }
 

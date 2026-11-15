@@ -67,7 +67,7 @@ const EmblaCarousel = (props) => {
                             <Link href={slide?.href || ''} target='_blank' className={styles.testimonial}>
                                 <div className={styles.shadow}></div>
                                 <span className={`${styles.top} ${styles.border}`}></span>
-                                <h1>{slide?.title}</h1>
+                                <h3>{slide?.title}</h3>
                                 <p>{truncateText(slide?.commit || "", 325)}</p>
                                 <div className={styles.source}>
                                     {

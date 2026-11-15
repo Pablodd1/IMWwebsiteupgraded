@@ -3,13 +3,22 @@ export default function robots() {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: [
+          '/',
+          '/llms.txt',
+          '/llms-full.txt',
+          '/agent-permissions.json',
+          '/sitemap.xml',
+          '/raster/',
+          '/svg/',
+          '/logos/',
+        ],
         disallow: [
           '/private/',
           '/admin/',
           '/api/',
           '/server/',
-          '/*.json$',
+          '/forms/',
           '/_next/',
           '/404',
           '/500',
@@ -18,26 +27,56 @@ export default function robots() {
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: [
-          '/private/',
-          '/admin/',
-        ],
+        disallow: ['/private/', '/admin/', '/api/', '/server/', '/forms/'],
       },
       {
         userAgent: 'Googlebot-Image',
-        allow: [
-          '/raster/',
-          '/svg/',
-          '/logos/',
-        ],
+        allow: ['/raster/', '/svg/', '/logos/', '/gallery/'],
       },
       {
         userAgent: 'Bingbot',
         allow: '/',
+        disallow: ['/private/', '/admin/', '/api/', '/server/', '/forms/'],
       },
       {
         userAgent: 'DuckDuckBot',
         allow: '/',
+      },
+      {
+        userAgent: 'GPTBot',
+        allow: ['/', '/llms.txt', '/llms-full.txt', '/agent-permissions.json', '/sitemap.xml'],
+      },
+      {
+        userAgent: 'OAI-SearchBot',
+        allow: ['/', '/llms.txt', '/llms-full.txt', '/agent-permissions.json', '/sitemap.xml'],
+      },
+      {
+        userAgent: 'ChatGPT-User',
+        allow: ['/', '/llms.txt', '/llms-full.txt', '/agent-permissions.json', '/sitemap.xml'],
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: ['/', '/llms.txt', '/llms-full.txt', '/agent-permissions.json', '/sitemap.xml'],
+      },
+      {
+        userAgent: 'ClaudeBot',
+        allow: ['/', '/llms.txt', '/llms-full.txt', '/agent-permissions.json', '/sitemap.xml'],
+      },
+      {
+        userAgent: 'anthropic-ai',
+        allow: ['/', '/llms.txt', '/llms-full.txt', '/agent-permissions.json', '/sitemap.xml'],
+      },
+      {
+        userAgent: 'Google-Extended',
+        allow: ['/', '/llms.txt', '/llms-full.txt', '/agent-permissions.json'],
+      },
+      {
+        userAgent: 'Applebot-Extended',
+        allow: ['/', '/llms.txt', '/llms-full.txt'],
+      },
+      {
+        userAgent: 'meta-externalagent',
+        allow: ['/', '/llms.txt', '/llms-full.txt'],
       },
     ],
     sitemap: 'https://innovativemedicalwellness.com/sitemap.xml',

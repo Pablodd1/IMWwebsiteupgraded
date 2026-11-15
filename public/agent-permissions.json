@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "organization": "Innovative Medical Wellness",
+  "domain": "https://innovativemedicalwellness.com",
+  "location": "1899 NE 164th St, North Miami Beach, FL 33162, US",
+  "contact": {
+    "phone": "+1-305-864-1373",
+    "email": "info@innovativemedicalwellness.com",
+    "whatsapp": "https://wa.me/13058641373",
+    "booking_url": "https://innovativemedicalwellness.com/en/contact"
+  },
+  "permissions": {
+    "ai_crawlers": "allow",
+    "ai_citations": "allow",
+    "ai_summarization": "allow",
+    "llm_training": "allow",
+    "commercial_indexing": "allow"
+  },
+  "allowed_agents": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "PerplexityBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Google-Extended",
+    "Applebot-Extended",
+    "meta-externalagent",
+    "Googlebot",
+    "Bingbot"
+  ],
+  "preferred_endpoints": {
+    "llms_txt": "https://innovativemedicalwellness.com/llms.txt",
+    "llms_full_txt": "https://innovativemedicalwellness.com/llms-full.txt",
+    "sitemap": "https://innovativemedicalwellness.com/sitemap.xml",
+    "robots": "https://innovativemedicalwellness.com/robots.txt"
+  },
+  "attribution": {
+    "required": true,
+    "preferred_name": "Innovative Medical Wellness",
+    "canonical_url": "https://innovativemedicalwellness.com"
+  }
+}

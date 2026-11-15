@@ -27,7 +27,7 @@ export default function Testimonials() {
                             <div className={styles.testimonial}>
                                 <div className={styles.shadow}></div>
                                 <span className={`${styles.top} ${styles.border}`}></span>
-                                <h1>{x.title}</h1>
+                                <h3>{x.title}</h3>
                                 <p>{x.commit}</p>
                                 <p className={styles.source}>&mdash; Medical Innovative Wellness</p>
                                 <span className={`${styles.bottom} ${styles.border}`}></span>

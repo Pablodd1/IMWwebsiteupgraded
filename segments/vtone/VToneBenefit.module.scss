@@ -36,22 +36,19 @@
 }
 
 .image {
-  position: absolute;
-  top: 45%;
-  left: 30px;
-  transform: translateY(-50%);
-  width: 105%;
-  height: 900px;
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  max-height: 680px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  margin: 0 auto;
+  display: block;
 
   @media (max-width: 1024px) {
-    position: relative;
-    top: unset;
-    left: unset;
-    transform: none;
-    width: 85%;
+    width: 90%;
     max-width: 500px;
     height: auto;
     border-radius: 8px;

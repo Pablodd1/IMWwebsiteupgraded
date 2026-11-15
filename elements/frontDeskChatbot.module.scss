@@ -495,17 +495,21 @@
 @media (max-width: 480px) {
   .chatbot {
     right: 12px;
-    bottom: 12px;
-    left: 12px;
-    align-items: stretch;
+    bottom: 16px;
+    left: auto;
+    max-width: calc(100vw - 24px);
+    align-items: flex-end;
   }
 
   .toggle {
     align-self: flex-end;
+    width: 52px;
+    height: 52px;
   }
 
   .panel {
-    width: auto;
+    width: calc(100vw - 24px);
+    max-width: 380px;
     max-height: 75vh;
   }
 

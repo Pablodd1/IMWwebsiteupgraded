@@ -1,0 +1,38 @@
+# Innovative Medical Wellness — Full AI Knowledge Base (`/llms-full.txt`)
+
+## Organization Profile
+- **Legal / Brand Name**: Innovative Medical Wellness (IMW)
+- **Category**: Integrative Medicine Clinic, Regenerative Medicine Center, Functional Wellness & Medical Spa
+- **Established**: Serving the North Miami Beach and South Florida community since 1982 (40+ years of combined clinical expertise)
+- **Primary Address**: 1899 NE 164th St, North Miami Beach, FL 33162, USA
+- **Coordinates**: 25.933150, -80.162550
+- **Phone**: +1 (305) 864-1373
+- **WhatsApp**: https://wa.me/13058641373
+- **Email**: info@innovativemedicalwellness.com
+- **Canonical URL**: https://innovativemedicalwellness.com
+- **Languages**: English (`/en`) and Spanish (`/es`)
+- **Operating Hours**: Mon-Fri 09:00-18:00 EST, Sat 10:00-16:00 EST
+
+## Clinical Focus & Differentiation
+Innovative Medical Wellness blends traditional primary/diagnostic medicine with holistic, regenerative, and biohacking therapies tailored to each patient. House calls are available for privacy and convenience. Treatments address chronic pain, auto accident injuries, hormonal decline, metabolic health, brain fog/depression (ExoMind TMS), pelvic floor dysfunction (V-Tone), aesthetic rejuvenation, and cellular longevity.
+
+## Frequently Asked Questions (FAQ)
+1. **Where is Innovative Medical Wellness located?**
+   At 1899 NE 164th St, North Miami Beach, FL 33162, minutes from Aventura, Sunny Isles Beach, Bal Harbour, and Miami Beach.
+2. **What services does Innovative Medical Wellness offer?**
+   Chiropractic & physical therapy, regenerative medicine (stem cells, exosomes, joint injections), IV vitamin & NAD+ infusions, anti-aging hormone therapy, ExoMind TMS brain health, V-Tone pelvic floor treatment, medical weight loss (Semaglutide, metabolic testing), personal injury recovery, aesthetic medicine, and biohacking (red light, PEMF, neurofeedback, cold & salt therapy).
+3. **What are your hours of operation?**
+   Monday through Friday 9:00 AM to 6:00 PM, Saturday 10:00 AM to 4:00 PM.
+4. **How can a patient schedule an appointment?**
+   Call or text/WhatsApp (305) 864-1373, email info@innovativemedicalwellness.com, or submit a request at https://innovativemedicalwellness.com/en/contact. Free consultations are available for new patients.
+5. **Do you offer bilingual care?**
+   Yes, all consultations, staff support, and core service information are available in English (`/en`) and Spanish (`/es`).
+6. **Do you treat auto accident and personal injury patients?**
+   Yes. Dedicated post-MVA concussion evaluation, whiplash rehabilitation, spinal decompression, and medical documentation are provided at https://innovativemedicalwellness.com/en/personal-injury.
+
+## Official Social Profiles
+- Facebook: https://www.facebook.com/InnovativeMedicalWellness/
+- Instagram: https://www.instagram.com/imwellnessc/
+- LinkedIn: https://www.linkedin.com/company/innovative-medical-wellness/
+- TikTok: https://www.tiktok.com/@imedicalwellness
+- YouTube: https://www.youtube.com/@imedicalw

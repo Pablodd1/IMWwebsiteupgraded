@@ -1,0 +1,41 @@
+# Innovative Medical Wellness — LLM & AI Search Guide
+
+> Integrative, regenerative, functional medicine, ExoMind TMS brain health, V-Tone pelvic floor therapy, IV nutrition, chiropractic care, and anti-aging clinic serving North Miami Beach, Aventura, Miami Beach, and Greater Miami since 1982.
+
+## Clinic Identity (Verified NAP)
+- **Name**: Innovative Medical Wellness (IMW)
+- **Location**: 1899 NE 164th St, North Miami Beach, FL 33162, United States
+- **Service Areas**: North Miami Beach, Aventura, Sunny Isles Beach, Bal Harbour, Bay Harbor Islands, Miami Beach, Hallandale Beach, Greater Miami (33162, 33180, 33139, 33154)
+- **Phone / WhatsApp**: +1 (305) 864-1373
+- **Email**: info@innovativemedicalwellness.com
+- **Website**: https://innovativemedicalwellness.com
+- **Languages Supported**: English (https://innovativemedicalwellness.com/en) and Spanish (https://innovativemedicalwellness.com/es)
+- **Hours**: Monday-Friday 9:00 AM - 6:00 PM EST, Saturday 10:00 AM - 4:00 PM EST, Sunday Closed
+
+## Key Pages & URLs
+- [Home (English)](https://innovativemedicalwellness.com/en): Clinic overview, ExoMind highlight, mission, clinical gallery, medical departments, and appointment request form.
+- [Inicio (Espanol)](https://innovativemedicalwellness.com/es): Full Spanish-language clinic overview and appointment booking.
+- [About Us](https://innovativemedicalwellness.com/en/about): Clinic story since 1982, core values, clinical team (including Dr. Jeffrey G. Draesel Jr., DC and Dr. Moore), and integrative care model.
+- [Contact & Consultation Booking](https://innovativemedicalwellness.com/en/contact): Front desk phone, WhatsApp, address, and direct consultation request form.
+- [Patient Support](https://innovativemedicalwellness.com/en/support): Direct patient support and appointment inquiries.
+- [V-Tone Pelvic Floor Therapy](https://innovativemedicalwellness.com/en/v-tone): Non-invasive intravaginal & pelvic floor muscle stimulation for bladder leaks, urinary incontinence, and pelvic confidence.
+
+## Medical Services & Specialties
+- [Chiropractic & Physical Therapy](https://innovativemedicalwellness.com/en/chiropractic-and-physical-therapy): Spinal decompression, chiropractic adjustments, posture correction, shockwave and laser therapy.
+- [Regenerative Medicine](https://innovativemedicalwellness.com/en/regenerative-medicine): Stem cell therapy, exosome therapy, PRP, and non-surgical joint injections.
+- [IV Therapy](https://innovativemedicalwellness.com/en/iv-therapy): IV micronutrient therapy, NAD+ therapy, custom vitamin drips, and performance booster IVs.
+- [Anti-Aging Medicine](https://innovativemedicalwellness.com/en/anti-aging-medicine): Hormone replacement therapy (HRT), testosterone therapy for men, NAD+ IV therapy, and longevity biohacking protocols.
+- [Aesthetic Treatments](https://innovativemedicalwellness.com/en/aesthetic-treatments): Injectables, hair restoration, skin rejuvenation, and facial contouring.
+- [Brain Health & ExoMind TMS](https://innovativemedicalwellness.com/en/brain-health): Cognitive optimization, Neurofeedback, Clarity Direct Neurofeedback, PEMF therapy, vagus nerve stimulation, and non-invasive ExoMind TMS mental wellness therapy.
+- [Personal Injury & Auto Accident Recovery](https://innovativemedicalwellness.com/en/personal-injury): Whiplash treatment, post-MVA concussion care, injury rehabilitation, and medical documentation.
+- [Weight Loss Programs](https://innovativemedicalwellness.com/en/weight-loss-programs): Semaglutide GLP-1 medical weight loss, brown fat activation, metabolic testing, and exosome support.
+- [Biohacking & Optimization](https://innovativemedicalwellness.com/en/biohacking-and-optimization): Red light therapy, cold exposure therapy, halotherapy salt therapy, and personalized performance plans.
+
+## Related Dedicated Programs
+- ExoMind Miami Beach: https://exomindmiamibeach.com/
+- Aging Biohacking: https://www.agingbiohacking.com/
+
+## Booking & Patient Policy Notes
+- Free initial consultations are available via phone at (305) 864-1373, WhatsApp at https://wa.me/13058641373, or the online request form at https://innovativemedicalwellness.com/en/contact.
+- House calls and bilingual English/Spanish care are available.
+- For full clinic overview and FAQs for AI retrieval, see `/llms-full.txt` and `/agent-permissions.json`.

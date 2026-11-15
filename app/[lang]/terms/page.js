@@ -2,6 +2,29 @@
 
 import React from 'react';
 import styles from './page.module.scss';
+
+const BASE_URL = 'https://innovativemedicalwellness.com';
+
+export async function generateMetadata({ params }) {
+    const par = await params;
+    const LANG = par?.lang === 'es' ? 'es' : 'en';
+    const isEs = LANG === 'es';
+    const title = isEs ? 'Políticas del Sitio y Términos de Uso' : 'Website Policy & Terms of Use';
+    const description = 'Website privacy policy, terms of use, and legal disclosures for Innovative Medical Wellness LLC in North Miami Beach, Florida.';
+
+    return {
+        title,
+        description,
+        alternates: {
+            canonical: `${BASE_URL}/${LANG}/terms`,
+            languages: {
+                'en-US': `${BASE_URL}/en/terms`,
+                'es-ES': `${BASE_URL}/es/terms`,
+                'x-default': `${BASE_URL}/en/terms`,
+            },
+        },
+    };
+}
 const terms = [
     {
         h: "Introduction",
@@ -33,7 +56,7 @@ const terms = [
     },
     {
         h: "7. Governing Law",
-        p: "These terms and conditions are governed by and construed in accordance with the laws of [Your Country/State], and you irrevocably submit to the exclusive jurisdiction of the courts in that location."
+        p: "These terms and conditions are governed by and construed in accordance with the laws of the State of Florida, United States, and you irrevocably submit to the exclusive jurisdiction of the courts in Miami-Dade County, Florida."
     },
     {
         h: "8. Termination",

@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /private/
-Allow: /
-
-Sitemap: https://www.innovativemedicalwellness.com/sitemap.xml

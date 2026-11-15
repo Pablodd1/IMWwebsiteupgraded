@@ -85,34 +85,27 @@
   position: relative;
   z-index: 2;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  //   border: 1px solid red;
   width: 100%;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
   @media (max-width: 1024px) {
-    justify-content: center;
-    margin-top: 40px;
+    margin-top: 24px;
   }
 }
 
 .image {
-  position: absolute;
-  //   border: 1px solid black;
-  top: 40%;
-  right: 30px;
-  transform: translateY(-50%);
+  position: relative;
   width: 100%;
+  max-width: 520px;
   height: auto;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 
   @media (max-width: 1024px) {
-    position: relative;
-    top: unset;
-    right: unset;
-    transform: none;
-    width: 80%;
+    width: 90%;
     max-width: 460px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

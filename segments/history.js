@@ -9,7 +9,7 @@ const History =async ({LANG}) => {
       <h2>{data.h2}</h2>
       <p>{data.p}</p>
       <ul>
-        {data.ul.map(x=><li key={x} ><strong>{x.pre}</strong>{x.p}</li>)}
+        {data.ul.map((x, i) => <li key={x.pre || i}><strong>{x.pre}</strong>{x.p}</li>)}
       </ul>
     </section>
   );
