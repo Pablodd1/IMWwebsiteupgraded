@@ -1,13 +1,8 @@
 // segments/VTone/IntroForm.jsx
 import styles from "./IntroForm.module.scss";
-import SubmitForm from "../submitForm";
 
 export default function VToneIntroForm({ content }) {
   const { title, subtitle, description, consultationForm } = content;
-
-  const contactUS = {
-    form: consultationForm,
-  };
 
   return (
     <section className={styles.wrap}>
@@ -38,10 +33,34 @@ export default function VToneIntroForm({ content }) {
             </span>
           </header>
 
-          <SubmitForm
-            styles={{ form: styles.form, input: styles.input }}
-            contactUS={contactUS}
-          />
+          {/* ────────────────────────────────────────────────────────────
+              HIGHLEVEL FORM EMBED ZONE — INACTIVE PLACEHOLDER
+              Replace everything between HL-START and HL-END with the
+              dedicated HighLevel form embed code when it is ready.
+              The live page (master branch) keeps its current form.
+              ──────────────────────────────────────────────────────────── */}
+          {/* HL-START */}
+          <div
+            className={styles.hlPlaceholder}
+            data-hl-form="callback"
+            aria-hidden="true"
+          >
+            <span className={styles.hlPlaceholderTag}>
+              Form area — placeholder
+            </span>
+            <p className={styles.hlPlaceholderText}>
+              HighLevel callback form will be embedded in this space.
+            </p>
+            <button
+              type="button"
+              disabled
+              className={styles.hlPlaceholderBtn}
+              tabIndex={-1}
+            >
+              {consultationForm.btn || "Request a callback"}
+            </button>
+          </div>
+          {/* HL-END */}
 
           <p className={styles.consent}>{consultationForm.consentText}</p>
         </aside>
