@@ -8,10 +8,14 @@ export default function MarketingAndAnalyticsScripts() {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID?.trim();
   const gaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim();
+  const umamiId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID?.trim();
+  const umamiSrc =
+    process.env.NEXT_PUBLIC_UMAMI_SRC?.trim() || 'https://cloud.umami.is/script.js';
 
   const validGtm = isSafeId(gtmId, /^GTM-[A-Z0-9]+$/i) ? gtmId : null;
   const validGa = isSafeId(gaId, /^G-[A-Z0-9]+$/i) ? gaId : null;
   const validPixel = isSafeId(pixelId, /^\d+$/) ? pixelId : null;
+  const validUmamiId = isSafeId(umamiId, /^[0-9a-f-]{8,64}$/i) ? umamiId : null;
 
   return (
     <>
@@ -40,6 +44,14 @@ gtag('config', '${validGa}', { anonymize_ip: true });`}
         </>
       )}
 
+      {validUmamiId && (
+        <Script
+          src={umamiSrc}
+          data-website-id={validUmamiId}
+          strategy="afterInteractive"
+        />
+      )}
+
       {validPixel && (
         <Script id="meta-pixel-init" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s)
@@ -50,6 +62,8 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+fbq('set', 'autoConfig', false, '${validPixel}');
+fbq('dataProcessingOptions', ['LDU'], 0, 0);
 fbq('init', '${validPixel}');
 fbq('track', 'PageView');`}
         </Script>

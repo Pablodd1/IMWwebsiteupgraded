@@ -19,7 +19,6 @@ export default function robots() {
           '/api/',
           '/server/',
           '/forms/',
-          '/_next/',
           '/404',
           '/500',
         ],
