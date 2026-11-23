@@ -1,0 +1,65 @@
+{
+  "_help": "Approved service descriptions. Keep wording factual. No cure claims, no guaranteed results, no prices unless the clinic provides them.",
+  "_complianceReview": "Before launch, have the clinic confirm FDA wording (FDA-cleared vs approved) for Exomind and V-Tone, and the safety/contraindication text.",
+  "services": [
+    {
+      "id": "exomind",
+      "name": "Exomind",
+      "keywords": ["exomind", "exotms", "tms", "brain", "mood", "focus", "brain fog", "anxiety", "magnetic"],
+      "summary": "Exomind is a non-invasive brain stimulation treatment that uses magnetic pulses (ExoTMS). It is offered to support mood, focus and emotional balance.",
+      "details": "Sessions are about 30 minutes with no downtime. A typical plan is about 6 sessions over 3-6 weeks; the provider confirms the plan at consultation. Not suitable for people with metal implants in the head or who are pregnant.",
+      "link": "https://exomindmiamibeach.com/"
+    },
+    {
+      "id": "aging-biohacking",
+      "name": "Aging Biohacking",
+      "keywords": ["aging", "biohacking", "longevity", "vitality"],
+      "summary": "Personalized longevity and performance programs. Specific protocols are set by the clinic's providers.",
+      "link": "https://www.agingbiohacking.com/"
+    },
+    {
+      "id": "vtone",
+      "name": "V-Tone",
+      "keywords": ["vtone", "v-tone", "pelvic", "incontinence", "bladder"],
+      "summary": "V-Tone is a non-invasive electrical muscle stimulation treatment used to strengthen pelvic floor muscles.",
+      "details": "Sessions are about 30 minutes; a series is typically recommended. The provider determines if it is appropriate.",
+      "link": "https://innovativemedicalwellness.com/en/v-tone"
+    },
+    {
+      "id": "iv-therapy",
+      "name": "IV Therapy",
+      "keywords": ["iv", "nad", "vitamin", "drip", "micronutrient", "booster"],
+      "summary": "IV micronutrient therapy, NAD+ IV therapy, custom blends and performance booster IVs."
+    },
+    {
+      "id": "regenerative",
+      "name": "Regenerative Medicine",
+      "keywords": ["regenerative", "joint", "injection", "neurofeedback", "cold", "salt", "pemf"],
+      "summary": "Joint and musculoskeletal injections, Clarity Direct neurofeedback, cold exposure therapy and salt therapy."
+    },
+    {
+      "id": "hormone",
+      "name": "Hormone Therapy",
+      "keywords": ["hormone", "hrt", "testosterone"],
+      "summary": "Hormone replacement therapy, including testosterone therapy for men, personalized and monitored by the clinic's providers."
+    },
+    {
+      "id": "weight-loss",
+      "name": "Weight Loss Programs",
+      "keywords": ["weight", "semaglutide", "glp-1", "metabolic", "brown fat"],
+      "summary": "Programs that may include semaglutide injections, brown fat activation, IV exosome therapy and metabolic testing, tailored by a provider."
+    },
+    {
+      "id": "chiropractic",
+      "name": "Chiropractic & Physical Therapy",
+      "keywords": ["chiropractic", "spinal", "decompression", "posture", "shockwave", "laser", "back", "neck"],
+      "summary": "Spinal decompression, chiropractic adjustments, posture correction therapy, and shockwave and laser therapy."
+    },
+    {
+      "id": "membership",
+      "name": "Membership plans",
+      "keywords": ["membership", "plan", "join"],
+      "summary": "Membership plans give preferred rates on services. Details and pricing are provided by the office; offer a call back."
+    }
+  ]
+}

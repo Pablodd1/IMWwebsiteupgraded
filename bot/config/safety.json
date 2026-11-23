@@ -1,0 +1,16 @@
+{
+  "_help": "Deterministic safety layer used by chat and SMS (before the model runs). Regex strings are case-insensitive.",
+  "emergencyPatterns": [
+    "\\b(chest pain|can'?t breathe|cannot breathe|trouble breathing|difficulty breathing|shortness of breath)\\b",
+    "\\b(stroke|heart attack|seizure|unconscious|passed out|overdos(e|ed)|bleeding (heavily|a lot)|severe bleeding)\\b",
+    "\\b(allergic reaction|anaphyla\\w*|swelling (of|in) (my )?(throat|face|tongue))\\b",
+    "\\b(suicid\\w*|kill myself|end my life|want to die|hurt myself|self[- ]harm)\\b",
+    "\\b(me duele el pecho|no puedo respirar|infarto|derrame|sobredosis|quiero morir|suicid\\w*|hacerme da[ñn]o)\\b",
+    "\\b911\\b"
+  ],
+  "emergencyReply": {
+    "en": "I'm concerned about what you've shared. If this is an emergency, please hang up and call 911 right now. If you're having thoughts of harming yourself, call or text 988 (Suicide & Crisis Lifeline) any time. I'm an AI assistant and can't help with emergencies. Please reach out to emergency services now.",
+    "es": "Me preocupa lo que me cuenta. Si es una emergencia, cuelgue y llame al 911 ahora mismo. Si tiene pensamientos de hacerse daño, llame o envíe un mensaje de texto al 988 (línea de crisis, disponible en español). Soy una asistente de IA y no puedo ayudar en emergencias. Por favor contacte a los servicios de emergencia ahora."
+  },
+  "stopWords": ["stop", "unsubscribe", "cancel", "end", "quit", "baja", "parar"]
+}
