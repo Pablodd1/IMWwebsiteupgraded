@@ -10,3 +10,6 @@
 
 ## Developer Actions Needed
 - To activate privacy-first HIPAA-safe analytics, create a website in Railway Umami (`https://umami-production-92f6d421.up.railway.app`) and set `NEXT_PUBLIC_UMAMI_SCRIPT_URL=https://umami-production-92f6d421.up.railway.app/script.js` and `NEXT_PUBLIC_UMAMI_WEBSITE_ID=<id>` in Vercel.
+
+## Front desk assistant rebuild (see AGENTS.md and docs/BOT_GUIDE.md)
+The chat widget was rebuilt as a multi-channel assistant (website chat, SMS, Twilio phone via Grok voice, embeddable script). Start with `AGENTS.md`.

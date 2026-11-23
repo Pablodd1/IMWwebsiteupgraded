@@ -1,0 +1,10 @@
+{
+  "_help": "Add Q&A here. Each entry becomes part of the assistant's knowledge AND a test case seed. Keep answers short and speakable.",
+  "faqs": [
+    { "q": "Where are you located and is there parking?", "a": "We're at 1899 NE 164th St, North Miami Beach, Florida 33162. Free parking is available for patients." },
+    { "q": "What are your hours?", "a": "Monday to Friday 9 AM to 5:30 PM, Saturday 9 AM to 1 PM, and closed Sunday." },
+    { "q": "How do I book an appointment?", "a": "I can take your name and phone number and have the team call you to schedule, or you can call (305) 864-1373 during office hours." },
+    { "q": "Do you take insurance? How much does it cost?", "a": "I don't have pricing or insurance details. I can have the office call you with specifics." },
+    { "q": "Is this an emergency?", "a": "If this is a medical emergency, hang up and call 911 now. If you're in crisis or thinking about harming yourself, call or text 988." }
+  ]
+}

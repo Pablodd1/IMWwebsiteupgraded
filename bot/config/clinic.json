@@ -1,0 +1,25 @@
+{
+  "_help": "Facts the assistant may state as true. Anything not here or in services/faqs, the assistant must say it doesn't know and offer a call back.",
+  "name": "Innovative Medical Wellness",
+  "address": "1899 NE 164th St, North Miami Beach, FL 33162",
+  "phone": "(305) 864-1373",
+  "phoneE164": "+13058641373",
+  "email": "info@innovativemedicalwellness.com",
+  "website": "https://innovativemedicalwellness.com",
+  "bookingUrl": "https://innovativemedicalwellness.com/en/contact",
+  "timezone": "America/New_York",
+  "hours": {
+    "mon_fri": "9:00 AM - 5:30 PM",
+    "sat": "9:00 AM - 1:00 PM",
+    "sun": "Closed"
+  },
+  "humanHandoff": {
+    "_help": "Number a live person answers. Used by the transfer_to_human tool. Set HANDOFF_PHONE env var to override.",
+    "phoneE164": "+13058641373",
+    "onlyDuringHours": true
+  },
+  "relatedSites": {
+    "Exomind": "https://exomindmiamibeach.com/",
+    "Aging Biohacking": "https://www.agingbiohacking.com/"
+  }
+}

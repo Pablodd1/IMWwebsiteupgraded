@@ -1,410 +1,369 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './frontDeskChatbot.module.scss';
 
-const DAILY_TIPS = [
-  "Stay hydrated! Drink at least 8 glasses of water daily for optimal health.",
-  "Quality sleep is essential. Aim for 7-9 hours of restful sleep each night.",
-  "Movement matters! Even a 20-minute walk can boost your mood and energy.",
-  "Deep breathing exercises can help reduce stress and improve focus.",
-  "Good nutrition fuels your body. Eat plenty of fruits and vegetables!",
-  "Sunlight exposure in the morning helps regulate your circadian rhythm.",
-  "Posture check! Sitting up straight can improve energy and reduce fatigue."
-];
+// Visible text. Keep the greeting in sync with bot/config/persona.json (greeting.chat).
+const T = {
+  en: {
+    greeting: "Hi! I'm Mia, the virtual front desk assistant for Innovative Medical Wellness. How can I help you today?",
+    title: 'Front Desk AI', ask: 'Ask about our services or book a visit', placeholder: 'Type a message...',
+    listening: 'Listening...', thinking: 'Thinking...', speaking: 'AI speaking...', more: 'More',
+    book: '📅 Book', call: '📞 Call me', rate: 'How was your experience?', thanks: 'Thanks for the feedback!',
+    unsupportedMic: 'Voice input is not supported in this browser.', micDenied: 'Microphone access was blocked. Check your browser permissions.',
+    apptTitle: 'Request an appointment', cbTitle: 'Request a call back', name: 'Your name', phone: 'Your phone', service: 'Select service',
+    when: 'Preferred day/time (optional)', cancel: 'Cancel', submit: 'Send request', sending: 'Sending...',
+    privacy: 'Please do not include medical details. The office will call you to confirm.',
+    sent: "Thank you! Your request was sent to our office. They'll call you to confirm.",
+    sendFail: "Sorry, I couldn't send that. Please call us at (305) 864-1373.",
+    err: "I'm having trouble connecting. Please call us at (305) 864-1373.",
+    ai: 'AI assistant. Not for medical emergencies. In an emergency call 911.', tel: 'Call the clinic',
+    quick: [{ t: 'Services', q: 'What services do you offer?' }, { t: 'Exomind', q: 'Tell me about Exomind' }, { t: 'Hours', q: 'What are your hours?' }],
+  },
+  es: {
+    greeting: '¡Hola! Soy Mia, la asistente virtual de recepción de Innovative Medical Wellness. ¿En qué puedo ayudarte hoy?',
+    title: 'Asistente IA', ask: 'Pregunta por servicios o agenda una visita', placeholder: 'Escribe un mensaje...',
+    listening: 'Escuchando...', thinking: 'Pensando...', speaking: 'IA hablando...', more: 'Más',
+    book: '📅 Cita', call: '📞 Llámame', rate: '¿Qué tal fue tu experiencia?', thanks: '¡Gracias por tu opinión!',
+    unsupportedMic: 'La entrada de voz no es compatible con este navegador.', micDenied: 'Se bloqueó el micrófono. Revisa los permisos del navegador.',
+    apptTitle: 'Solicitar una cita', cbTitle: 'Solicitar una llamada', name: 'Tu nombre', phone: 'Tu teléfono', service: 'Selecciona servicio',
+    when: 'Día/hora preferida (opcional)', cancel: 'Cancelar', submit: 'Enviar solicitud', sending: 'Enviando...',
+    privacy: 'Por favor no incluyas detalles médicos. La oficina te llamará para confirmar.',
+    sent: '¡Gracias! Tu solicitud fue enviada a la oficina. Te llamarán para confirmar.',
+    sendFail: 'Lo siento, no pude enviarla. Por favor llama al (305) 864-1373.',
+    err: 'Tengo problemas para conectar. Por favor llama al (305) 864-1373.',
+    ai: 'Asistente de IA. No para emergencias médicas. En una emergencia llame al 911.', tel: 'Llamar a la clínica',
+    quick: [{ t: 'Servicios', q: '¿Qué servicios ofrecen?' }, { t: 'Exomind', q: 'Cuéntame sobre Exomind' }, { t: 'Horario', q: '¿Cuál es el horario?' }],
+  },
+};
+const SERVICES = ['Exomind', 'V-Tone', 'IV Therapy', 'Biohacking', 'Regenerative Medicine', 'Hormone Therapy', 'Weight Loss', 'Chiropractic', 'Other'];
+const PHONE_TEL = 'tel:+13058641373';
 
-export default function FrontDeskChatbot({ clinicName = 'Innovative Medical Wellness', LANG = 'en' }) {
+// Render text with safe clickable https links (no HTML injection).
+function renderText(text) {
+  return String(text).split(/(https?:\/\/[^\s)]+)/g).map((part, i) =>
+    /^https:\/\//.test(part) ? (
+      <a key={i} href={part} target="_blank" rel="noopener noreferrer">{part.replace(/^https:\/\/(www\.)?/, '')}</a>
+    ) : (
+      part
+    )
+  );
+}
+
+export default function FrontDeskChatbot({ LANG = 'en', apiUrl = '/api/chat', leadUrl = '/api/lead' }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [lang, setLang] = useState(LANG === 'es' ? 'es' : 'en');
+  const t = T[lang];
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [speaking, setSpeaking] = useState(false);
-  const [status, setStatus] = useState('');
-  const [chatLang, setChatLang] = useState('en');
+  const [micSupported, setMicSupported] = useState(false);
+  const [notice, setNotice] = useState('');
   const [showActions, setShowActions] = useState(false);
-  const [rating, setRating] = useState(0);
   const [showRating, setShowRating] = useState(false);
-  const [appointmentForm, setAppointmentForm] = useState({ name: '', phone: '', service: '', message: '' });
-  const [showAppointment, setShowAppointment] = useState(false);
-  const [callBackForm, setCallBackForm] = useState({ name: '', phone: '', message: '' });
-  const [showCallBack, setShowCallBack] = useState(false);
-  const messagesEndRef = useRef(null);
+  const [form, setForm] = useState(null); // null | 'appointment' | 'callback'
+  const [formData, setFormData] = useState({ name: '', phone: '', service: '', time: '' });
+  const [formBusy, setFormBusy] = useState(false);
+
+  // Refs always hold the LATEST values, so speech callbacks never use stale state.
+  const messagesRef = useRef([]);
+  const voiceRef = useRef(false);
+  const langRef = useRef(lang);
+  const loadingRef = useRef(false);
+  const sendRef = useRef(null);
   const recognitionRef = useRef(null);
-  const synthRef = useRef(null);
+  const endRef = useRef(null);
+  const inputRef = useRef(null);
+  const voicesRef = useRef([]);
+  messagesRef.current = messages;
+  voiceRef.current = voiceEnabled;
+  langRef.current = lang;
 
-  const getDailyTip = () => DAILY_TIPS[Math.floor(Math.random() * DAILY_TIPS.length)];
+  const pushMessage = useCallback((m) => {
+    const next = [...messagesRef.current, m];
+    messagesRef.current = next;
+    setMessages(next);
+  }, []);
 
+  // Greeting: set on first open, and re-translate it if the only message is the greeting.
   useEffect(() => {
-    if (isOpen && messages.length === 0) {
-      const tip = getDailyTip();
-      setMessages([{
-        role: 'assistant',
-        content: chatLang === 'es' 
-          ? `¡Hola! Soy tu asistente virtual de Innovative Medical Wellness. ${tip}\n\n¿Cómo puedo ayudarte hoy?`
-          : `Hi! I'm your virtual front desk assistant for ${clinicName}. ${tip}\n\nHow can I help you today?`
-      }]);
-    }
-  }, [isOpen, messages.length, clinicName, chatLang]);
+    if (!isOpen) return;
+    setMessages((prev) => {
+      if (prev.length === 0 || (prev.length === 1 && prev[0].greeting)) return [{ role: 'assistant', content: t.greeting, greeting: true }];
+      return prev;
+    });
+  }, [isOpen, lang, t.greeting]);
 
+  useEffect(() => { endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' }); }, [messages, isLoading]);
+  useEffect(() => { if (isOpen) inputRef.current?.focus(); }, [isOpen]);
+
+  // Voices load asynchronously in Chrome/Safari.
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+    if (typeof window === 'undefined' || !window.speechSynthesis) return;
+    const load = () => { voicesRef.current = window.speechSynthesis.getVoices(); };
+    load();
+    window.speechSynthesis.addEventListener?.('voiceschanged', load);
+    return () => window.speechSynthesis.removeEventListener?.('voiceschanged', load);
+  }, []);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      synthRef.current = window.speechSynthesis;
-      
-      if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        const recognition = new SpeechRecognition();
-        recognition.continuous = false;
-        recognition.interimResults = true;
-        recognition.lang = chatLang === 'es' ? 'es-ES' : 'en-US';
-        
-        recognition.onresult = (event) => {
-          let final = '';
-          for (let i = event.resultIndex; i < event.results.length; i++) {
-            if (event.results[i].isFinal) {
-              final += event.results[i][0].transcript;
-            }
-          }
-          if (final) {
-            setInput(final);
-            handleSend(final);
-            setIsListening(false);
-          }
-        };
-        
-        recognition.onerror = (e) => {
-          console.error('Speech error:', e);
-          setIsListening(false);
-          setStatus('');
-        };
-        recognition.onend = () => {
-          setIsListening(false);
-          setStatus('');
-        };
-        recognitionRef.current = recognition;
-      }
-    }
-  }, [chatLang]);
+  const stopAudio = useCallback(() => {
+    try { window.speechSynthesis?.cancel(); } catch {}
+    try { recognitionRef.current?.abort(); } catch {}
+    setSpeaking(false);
+    setIsListening(false);
+  }, []);
 
-  const speak = (text) => {
-    if (!voiceEnabled || !synthRef.current) return;
-    synthRef.current.cancel();
-    const clean = text.replace(/[#*_\[\]]/g, '').replace(/https?:\/\/[^\s]+/g, 'website');
-    const utterance = new SpeechSynthesisUtterance(clean);
-    utterance.rate = 0.9;
-    utterance.lang = chatLang === 'es' ? 'es-ES' : 'en-US';
-    utterance.onstart = () => setSpeaking(true);
-    utterance.onend = () => setSpeaking(false);
-    utterance.onerror = () => setSpeaking(false);
-    synthRef.current.speak(utterance);
-  };
+  const speak = useCallback((text) => {
+    if (!voiceRef.current || typeof window === 'undefined' || !window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const clean = String(text).replace(/https?:\/\/\S+/g, 'our website').replace(/[#*_`>~[\]]/g, '').replace(/\s+/g, ' ');
+    const u = new SpeechSynthesisUtterance(clean);
+    const code = langRef.current === 'es' ? 'es-US' : 'en-US';
+    u.lang = code;
+    u.rate = 1.0;
+    u.pitch = 1.1;
+    const prefix = code.slice(0, 2);
+    const candidates = voicesRef.current.filter((v) => v.lang?.toLowerCase().startsWith(prefix));
+    const female = candidates.find((v) => /female|samantha|zira|aria|jenny|paulina|monica|google (us|español)/i.test(v.name));
+    u.voice = female || candidates[0] || null;
+    u.onstart = () => setSpeaking(true);
+    u.onend = () => setSpeaking(false);
+    u.onerror = () => setSpeaking(false);
+    window.speechSynthesis.speak(u);
+  }, []);
 
-  const handleSend = async (text, forceLang = null) => {
-    const langToUse = forceLang || chatLang;
-    const trimmed = text || input.trim();
-    if (!trimmed) return;
-
-    const userMsg = { role: 'user', content: trimmed };
-    setMessages(prev => [...prev, userMsg]);
+  const sendMessage = useCallback(async (raw) => {
+    const text = String(raw ?? '').trim();
+    if (!text || loadingRef.current) return;
+    loadingRef.current = true;
+    pushMessage({ role: 'user', content: text });
     setInput('');
-    setIsLoading(true);
-    setStatus('Thinking...');
     setShowActions(false);
-
+    setIsLoading(true);
+    setNotice(T[langRef.current].thinking);
     try {
-      const res = await fetch('/api/chat', {
+      const history = messagesRef.current.map(({ role, content }) => ({ role, content })).slice(-18);
+      const res = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: [...messages, userMsg], lang: langToUse })
+        body: JSON.stringify({ messages: history, lang: langRef.current }),
       });
-
-      if (!res.ok) throw new Error('Failed');
-
-      const data = await res.json();
-      const reply = data.content || "I'm sorry, something went wrong.";
-      
-      setMessages(prev => [...prev, { role: 'assistant', content: reply }]);
-      setStatus('');
-      if (voiceEnabled) speak(reply);
-      
-      // Show rating after assistant responds
-      setTimeout(() => setShowRating(true), 1000);
-    } catch (err) {
-      console.error('Chat error:', err);
-      setMessages(prev => [...prev, { 
-        role: 'assistant', 
-        content: langToUse === 'es' 
-          ? "Lo siento, tengo problemas para conectar. Por favor llama al (305) 864-1373."
-          : "I apologize, I'm having trouble connecting. Please call us at (305) 864-1373."
-      }]);
-      setStatus('');
+      const data = await res.json().catch(() => ({}));
+      const reply = data.content || T[langRef.current].err;
+      pushMessage({ role: 'assistant', content: reply });
+      speak(reply);
+      if (res.ok && !data.emergency) setTimeout(() => setShowRating(true), 800);
+    } catch {
+      pushMessage({ role: 'assistant', content: T[langRef.current].err });
     } finally {
+      loadingRef.current = false;
       setIsLoading(false);
+      setNotice('');
     }
+  }, [apiUrl, pushMessage, speak]);
+  sendRef.current = sendMessage;
+
+  // Speech recognition: one instance per language, cleaned up properly.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    setMicSupported(Boolean(SR));
+    if (!SR) return;
+    const rec = new SR();
+    rec.continuous = false;
+    rec.interimResults = true;
+    rec.lang = lang === 'es' ? 'es-US' : 'en-US';
+    rec.onresult = (e) => {
+      let interim = '';
+      let final = '';
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        (e.results[i].isFinal ? (final += e.results[i][0].transcript) : (interim += e.results[i][0].transcript));
+      }
+      if (final) { setIsListening(false); sendRef.current?.(final); } else setInput(interim);
+    };
+    rec.onerror = (e) => {
+      setIsListening(false);
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') setNotice(T[langRef.current].micDenied);
+    };
+    rec.onend = () => setIsListening(false);
+    recognitionRef.current = rec;
+    return () => { try { rec.abort(); } catch {} recognitionRef.current = null; };
+  }, [lang]);
+
+  const toggleMic = () => {
+    const rec = recognitionRef.current;
+    if (!rec) return setNotice(t.unsupportedMic);
+    if (isListening) return rec.stop();
+    window.speechSynthesis?.cancel();
+    setNotice('');
+    try { rec.start(); setIsListening(true); } catch { /* already started */ }
   };
 
   const toggleVoice = () => {
+    if (voiceEnabled) { window.speechSynthesis?.cancel(); setSpeaking(false); }
     setVoiceEnabled(!voiceEnabled);
-    if (voiceEnabled && synthRef.current) {
-      synthRef.current.cancel();
-      setSpeaking(false);
-    }
   };
 
-  const toggleMic = () => {
-    if (!recognitionRef.current) {
-      alert(chatLang === 'es' ? 'Reconocimiento de voz no soportado. Usa Chrome o Edge.' : 'Speech recognition not supported. Use Chrome or Edge.');
-      return;
-    }
-    if (isListening) {
-      recognitionRef.current.stop();
-    } else {
-      setStatus(chatLang === 'es' ? 'Escuchando...' : 'Listening...');
-      recognitionRef.current.start();
-      setIsListening(true);
-    }
-  };
+  const close = useCallback(() => { stopAudio(); setIsOpen(false); }, [stopAudio]);
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e) => e.key === 'Escape' && close();
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [isOpen, close]);
+  useEffect(() => stopAudio, [stopAudio]);
 
-  const handleAppointmentSubmit = async (e) => {
+  const submitLead = async (e) => {
     e.preventDefault();
-    const msg = `Appointment Request:\nName: ${appointmentForm.name}\nPhone: ${appointmentForm.phone}\nService: ${appointmentForm.service}\nMessage: ${appointmentForm.message}`;
-    setShowAppointment(false);
-    setAppointmentForm({ name: '', phone: '', service: '', message: '' });
-    await handleSend(msg);
+    setFormBusy(true);
+    try {
+      const res = await fetch(leadUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ kind: form, name: formData.name, phone: formData.phone, service: formData.service || 'Not specified', preferred_time: formData.time, lang, channel: 'form' }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error('lead failed');
+      pushMessage({ role: 'assistant', content: t.sent });
+      speak(t.sent);
+      setForm(null);
+      setFormData({ name: '', phone: '', service: '', time: '' });
+    } catch {
+      pushMessage({ role: 'assistant', content: t.sendFail });
+      setForm(null);
+    } finally {
+      setFormBusy(false);
+    }
   };
 
-  const handleCallBackSubmit = async (e) => {
-    e.preventDefault();
-    const msg = `Call Back Request:\nName: ${callBackForm.name}\nPhone: ${callBackForm.phone}\nMessage: ${callBackForm.message}`;
-    setShowCallBack(false);
-    setCallBackForm({ name: '', phone: '', message: '' });
-    await handleSend(msg);
-  };
-
-  const handleRating = (score) => {
-    setRating(score);
-    const feedback = score >= 4 ? 'Great' : score >= 3 ? 'Good' : 'Needs improvement';
-    handleSend(`User feedback: ${feedback} (${score}/5 stars)`);
+  const rate = (score) => {
     setShowRating(false);
-    setRating(0);
+    try { window.umami?.track?.('chat_rating', { score }); } catch {}
+    pushMessage({ role: 'assistant', content: t.thanks });
   };
 
-  const toggleLang = () => {
-    const newLang = chatLang === 'en' ? 'es' : 'en';
-    setChatLang(newLang);
-    // Send a system message to switch language
-    const msg = { role: 'user', content: `[Switch language to ${newLang === 'en' ? 'English' : 'Spanish'}]` };
-    handleSend(msg.content, newLang);
-  };
-
-  const quickQuestions = chatLang === 'es' ? [
-    { text: 'Servicios', q: '¿Qué servicios ofrecen?' },
-    { text: 'Exomind', q: 'Cuéntame sobre Exomind' },
-    { text: 'Contacto', q: '¿Cómo puedo contactarlos?' }
-  ] : [
-    { text: 'Services', q: 'What services do you offer?' },
-    { text: 'Exomind', q: 'Tell me about Exomind brain therapy' },
-    { text: 'Contact', q: 'How can I contact you?' }
-  ];
-
-  const actionButtons = chatLang === 'es' ? [
-    { text: '📅 Cita', label: 'Request Appointment', action: () => setShowAppointment(true) },
-    { text: '📞 Llamada', label: 'Request Call Back', action: () => setShowCallBack(true) },
-    { text: '💡 Consejo', label: 'Health Tip', action: () => handleSend(chatLang === 'es' ? 'Dame un consejo de salud' : 'Give me a health tip') }
-  ] : [
-    { text: '📅 Book', label: 'Request Appointment', action: () => setShowAppointment(true) },
-    { text: '📞 Call', label: 'Request Call Back', action: () => setShowCallBack(true) },
-    { text: '💡 Tip', label: 'Health Tip', action: () => handleSend('Give me a health tip') }
-  ];
+  const toggleLang = () => setLang(lang === 'en' ? 'es' : 'en');
+  const busy = isLoading || Boolean(form);
+  const status = isListening ? t.listening : speaking ? t.speaking : notice || t.ask;
 
   return (
     <div className={styles.chatbot}>
-      <button className={`${styles.toggle} ${speaking ? styles.speaking : ''}`} onClick={() => setIsOpen(!isOpen)}>
+      <button
+        type="button"
+        className={`${styles.toggle} ${speaking ? styles.speaking : ''}`}
+        onClick={() => (isOpen ? close() : setIsOpen(true))}
+        aria-label={isOpen ? 'Close chat' : 'Open chat with the front desk assistant'}
+        aria-expanded={isOpen}
+        aria-controls="imw-chat-panel"
+      >
         {isOpen ? '✕' : speaking ? '🔊' : '💬'}
       </button>
 
       {isOpen && (
-        <section className={styles.panel}>
+        <section id="imw-chat-panel" className={styles.panel} role="dialog" aria-label={t.title}>
           <header className={styles.header}>
             <div>
-              <p className={styles.title}>
-                {speaking ? '🔊' : isListening ? '👂' : '🏥'} {chatLang === 'es' ? 'Asistente IA' : 'Front Desk AI'}
-              </p>
-              <p className={styles.subtitle}>{status || (chatLang === 'es' ? 'Pregúntame cualquier cosa' : 'Ask me anything')}</p>
+              <p className={styles.title}>{speaking ? '🔊' : isListening ? '👂' : '🏥'} {t.title}</p>
+              <p className={styles.subtitle} aria-live="polite">{status}</p>
             </div>
             <div className={styles.headerActions}>
-              <button className={styles.langBtn} onClick={toggleLang} title="Switch Language">
-                {chatLang === 'en' ? 'ES' : 'EN'}
+              <a className={styles.langBtn} href={PHONE_TEL} aria-label={t.tel} title={t.tel}>📞</a>
+              <button type="button" className={styles.langBtn} onClick={toggleLang} aria-label={lang === 'en' ? 'Cambiar a español' : 'Switch to English'}>
+                {lang === 'en' ? 'ES' : 'EN'}
               </button>
-              <label className={styles.voice}>
-                <input type="checkbox" checked={voiceEnabled} onChange={toggleVoice} />
-                🔊
-              </label>
+              <button type="button" className={styles.langBtn} onClick={toggleVoice} aria-pressed={voiceEnabled} aria-label={voiceEnabled ? 'Turn off spoken replies' : 'Turn on spoken replies'}>
+                {voiceEnabled ? '🔊' : '🔇'}
+              </button>
             </div>
           </header>
 
-          <div className={styles.messages}>
+          <div className={styles.messages} role="log" aria-live="polite" aria-relevant="additions">
             {messages.map((m, i) => (
               <div key={i} className={m.role === 'user' ? styles.userMsg : styles.botMsg}>
-                <p className={m.role === 'user' ? styles.user : styles.bot}>{m.content}</p>
+                <p className={m.role === 'user' ? styles.user : styles.bot}>{m.role === 'user' ? m.content : renderText(m.content)}</p>
               </div>
             ))}
             {(isLoading || isListening) && (
-              <p className={styles.bot}>
-                <span className={styles.wave}>•••</span>
-              </p>
+              <p className={styles.bot} aria-label={isListening ? t.listening : t.thinking}><span className={styles.wave}>•••</span></p>
             )}
-            
-            {/* Rating */}
             {showRating && !isLoading && (
               <div className={styles.ratingContainer}>
-                <p className={styles.ratingText}>{chatLang === 'es' ? '¿Qué tal fue tu experiencia?' : 'How was your experience?'}</p>
+                <p className={styles.ratingText}>{t.rate}</p>
                 <div className={styles.ratingStars}>
-                  {[1,2,3,4,5].map(s => (
-                    <button key={s} onClick={() => handleRating(s)} className={rating >= s ? styles.starActive : ''}>⭐</button>
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <button key={s} type="button" onClick={() => rate(s)} aria-label={`${s} / 5`}>⭐</button>
                   ))}
                 </div>
               </div>
             )}
-            <div ref={messagesEndRef} />
+            <div ref={endRef} />
           </div>
 
-          {/* Quick Actions */}
           <div className={styles.quickLinks}>
-            {quickQuestions.map(q => (
-              <button key={q.text} onClick={() => handleSend(q.q)} disabled={isLoading}>{q.text}</button>
+            {t.quick.map((q) => (
+              <button key={q.t} type="button" onClick={() => sendMessage(q.q)} disabled={busy}>{q.t}</button>
             ))}
-            <button onClick={() => setShowActions(!showActions)} className={styles.actionToggle}>
-              {showActions ? '✕' : '+'} {chatLang === 'es' ? 'Más' : 'More'}
+            <button type="button" onClick={() => setShowActions(!showActions)} className={styles.actionToggle} aria-expanded={showActions}>
+              {showActions ? '✕' : '+'} {t.more}
             </button>
           </div>
 
-          {/* Action Buttons */}
           {showActions && (
             <div className={styles.actionButtons}>
-              {actionButtons.map(btn => (
-                <button key={btn.text} onClick={btn.action} className={styles.actionBtn}>
-                  {btn.text}
-                </button>
-              ))}
+              <button type="button" className={styles.actionBtn} onClick={() => { setForm('appointment'); setShowActions(false); }}>{t.book}</button>
+              <button type="button" className={styles.actionBtn} onClick={() => { setForm('callback'); setShowActions(false); }}>{t.call}</button>
             </div>
           )}
 
-          {/* Appointment Form Modal */}
-          {showAppointment && (
+          {form && (
             <div className={styles.formModal}>
-              <form onSubmit={handleAppointmentSubmit}>
-                <h4>{chatLang === 'es' ? 'Solicitar Cita' : 'Request Appointment'}</h4>
-                <input 
-                  type="text" 
-                  placeholder={chatLang === 'es' ? 'Tu nombre' : 'Your Name'} 
-                  value={appointmentForm.name}
-                  onChange={e => setAppointmentForm({...appointmentForm, name: e.target.value})}
-                  required 
-                />
-                <input 
-                  type="tel" 
-                  placeholder={chatLang === 'es' ? 'Tu teléfono' : 'Your Phone'} 
-                  value={appointmentForm.phone}
-                  onChange={e => setAppointmentForm({...appointmentForm, phone: e.target.value})}
-                  required 
-                />
-                <select 
-                  value={appointmentForm.service}
-                  onChange={e => setAppointmentForm({...appointmentForm, service: e.target.value})}
-                  required
-                >
-                  <option value="">{chatLang === 'es' ? 'Selecciona servicio' : 'Select Service'}</option>
-                  <option value="Exomind">Exomind</option>
-                  <option value="V-Tone">V-Tone</option>
-                  <option value="IV Therapy">IV Therapy</option>
-                  <option value="Biohacking">Biohacking</option>
-                  <option value="Other">Other</option>
+              <form onSubmit={submitLead}>
+                <h4>{form === 'appointment' ? t.apptTitle : t.cbTitle}</h4>
+                <input type="text" autoComplete="name" placeholder={t.name} aria-label={t.name} maxLength={80} required
+                  value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+                <input type="tel" autoComplete="tel" placeholder={t.phone} aria-label={t.phone} maxLength={20} required
+                  value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
+                <select aria-label={t.service} required value={formData.service} onChange={(e) => setFormData({ ...formData, service: e.target.value })}>
+                  <option value="">{t.service}</option>
+                  {SERVICES.map((s) => <option key={s} value={s}>{s}</option>)}
                 </select>
-                <textarea 
-                  placeholder={chatLang === 'es' ? 'Mensaje opcional' : 'Optional Message'}
-                  value={appointmentForm.message}
-                  onChange={e => setAppointmentForm({...appointmentForm, message: e.target.value})}
-                />
+                <input type="text" placeholder={t.when} aria-label={t.when} maxLength={120}
+                  value={formData.time} onChange={(e) => setFormData({ ...formData, time: e.target.value })} />
+                <p className={styles.notice}>{t.privacy}</p>
                 <div className={styles.formButtons}>
-                  <button type="button" onClick={() => setShowAppointment(false)} className={styles.cancelBtn}>
-                    {chatLang === 'es' ? 'Cancelar' : 'Cancel'}
-                  </button>
-                  <button type="submit" className={styles.submitBtn}>
-                    {chatLang === 'es' ? 'Enviar' : 'Submit'}
-                  </button>
+                  <button type="button" onClick={() => setForm(null)} className={styles.cancelBtn}>{t.cancel}</button>
+                  <button type="submit" className={styles.submitBtn} disabled={formBusy}>{formBusy ? t.sending : t.submit}</button>
                 </div>
               </form>
             </div>
           )}
 
-          {/* Call Back Form Modal */}
-          {showCallBack && (
-            <div className={styles.formModal}>
-              <form onSubmit={handleCallBackSubmit}>
-                <h4>{chatLang === 'es' ? 'Solicitar Llamada' : 'Request Call Back'}</h4>
-                <input 
-                  type="text" 
-                  placeholder={chatLang === 'es' ? 'Tu nombre' : 'Your Name'} 
-                  value={callBackForm.name}
-                  onChange={e => setCallBackForm({...callBackForm, name: e.target.value})}
-                  required 
-                />
-                <input 
-                  type="tel" 
-                  placeholder={chatLang === 'es' ? 'Tu teléfono' : 'Your Phone'} 
-                  value={callBackForm.phone}
-                  onChange={e => setCallBackForm({...callBackForm, phone: e.target.value})}
-                  required 
-                />
-                <textarea 
-                  placeholder={chatLang === 'es' ? '¿Sobre qué necesitas información?' : 'What do you need info about?'}
-                  value={callBackForm.message}
-                  onChange={e => setCallBackForm({...callBackForm, message: e.target.value})}
-                />
-                <div className={styles.formButtons}>
-                  <button type="button" onClick={() => setShowCallBack(false)} className={styles.cancelBtn}>
-                    {chatLang === 'es' ? 'Cancelar' : 'Cancel'}
-                  </button>
-                  <button type="submit" className={styles.submitBtn}>
-                    {chatLang === 'es' ? 'Llamarme' : 'Call Me'}
-                  </button>
-                </div>
-              </form>
-            </div>
-          )}
-
-          <form className={styles.form} onSubmit={(e) => { e.preventDefault(); handleSend(); }}>
+          <form className={styles.form} onSubmit={(e) => { e.preventDefault(); sendMessage(input); }}>
             <div className={`${styles.inputWrapper} ${isListening ? styles.listening : ''} ${speaking ? styles.speaking : ''}`}>
               <input
+                ref={inputRef}
                 type="text"
                 value={input}
+                maxLength={1000}
+                aria-label={t.placeholder}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder={isListening ? (chatLang === 'es' ? 'Escuchando...' : 'Listening...') : speaking ? (chatLang === 'es' ? 'Hablando IA...' : 'AI Speaking...') : (chatLang === 'es' ? 'Escribe un mensaje...' : 'Type a message...')}
-                disabled={isLoading || showAppointment || showCallBack}
+                placeholder={isListening ? t.listening : t.placeholder}
+                disabled={busy}
               />
             </div>
-            <button 
-              type="button" 
-              onClick={toggleMic} 
-              disabled={isLoading || showAppointment || showCallBack}
-              className={`${styles.micBtn} ${isListening ? styles.micActive : ''}`}
-            >
-              {isListening ? '⬛' : '🎤'}
-            </button>
-            <button 
-              type="submit" 
-              disabled={!input.trim() || isLoading || showAppointment || showCallBack}
-              className={styles.sendBtn}
-            >
-              ➤
-            </button>
+            {micSupported && (
+              <button type="button" onClick={toggleMic} disabled={busy}
+                className={`${styles.micBtn} ${isListening ? styles.micActive : ''}`}
+                aria-pressed={isListening} aria-label={isListening ? 'Stop listening' : 'Speak your message'}>
+                {isListening ? '⬛' : '🎤'}
+              </button>
+            )}
+            <button type="submit" disabled={!input.trim() || busy} className={styles.sendBtn} aria-label="Send message">➤</button>
           </form>
+          <p className={styles.disclaimer}>{t.ai}</p>
         </section>
       )}
     </div>
