@@ -52,7 +52,9 @@ export async function runTool(name, args, ctx = {}) {
     if (name === 'submit_lead') {
       const r = await deliverLead({ ...args, lang: ctx.lang, channel: ctx.channel });
       return r.ok
-        ? { ok: true, message: 'Request sent to the office. They will call to confirm.' }
+        ? { ok: true, intakeLinkTexted: Boolean(r.intakeLinkSent), message: r.intakeLinkSent
+            ? 'Request sent to the office. They will call to confirm. The new-patient intake form link was texted to the patient.'
+            : 'Request sent to the office. They will call to confirm. Do NOT say a link was texted.' }
         : { ok: false, message: 'Could not send. Ask them to call (305) 864-1373 directly.' };
     }
     if (name === 'transfer_to_human') {

@@ -1,0 +1,18 @@
+# Changes to these paths need approval from the code owner(s) below (Jasmel) before merging.
+# They control medical-claims wording, patient-data flows, safety behavior and vendor connections.
+# TODO(owner): replace @Pablodd1 with Jasmel's own GitHub username if he has a separate account, and in
+# GitHub -> Settings -> Branches -> protect `master` -> enable "Require review from Code Owners".
+# (A PR author cannot approve their own PR, so the owner account and the author must differ for this to bite.)
+/AGENTS.md                       @Pablodd1
+/.github/CODEOWNERS              @Pablodd1
+/bot/src/claims.js               @Pablodd1
+/bot/src/safety.js               @Pablodd1
+/bot/src/respond.js              @Pablodd1
+/bot/src/tools.js                @Pablodd1
+/bot/src/leads.js                @Pablodd1
+/bot/src/xai.js                  @Pablodd1
+/bot/config/                     @Pablodd1
+/bot/test/                       @Pablodd1
+/voice-bridge/                   @Pablodd1
+/app/api/                        @Pablodd1
+/docs/BOT_GUIDE.md               @Pablodd1
