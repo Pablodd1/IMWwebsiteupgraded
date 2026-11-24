@@ -3,8 +3,17 @@ import { buildInstructions } from './prompt.js';
 import { isEmergency, emergencyReply } from './safety.js';
 import { chatCompletion } from './xai.js';
 import { chatTools, runTool } from './tools.js';
+import { checkClaims, claimFallback } from './claims.js';
 
 const TEXT_TOOLS = ['submit_lead', 'lookup_service_info'];
+
+// Every reply passes the claims guard. Only rule ids are logged, never message text.
+function guard(content, lang, leadSubmitted) {
+  const { ok, hits } = checkClaims(content);
+  if (ok) return { content, leadSubmitted };
+  console.warn('[claims-guard] blocked reply; rules:', hits.join(','));
+  return { content: claimFallback(lang), leadSubmitted, claimBlocked: true };
+}
 
 export async function respond({ messages, channel = 'chat', lang = 'en' }) {
   const last = messages[messages.length - 1]?.content || '';
@@ -16,7 +25,7 @@ export async function respond({ messages, channel = 'chat', lang = 'en' }) {
 
   for (let i = 0; i < 4; i++) {
     const msg = await chatCompletion({ messages: convo, tools });
-    if (!msg.tool_calls?.length) return { content: (msg.content || '').trim(), leadSubmitted };
+    if (!msg.tool_calls?.length) return guard((msg.content || '').trim(), lang, leadSubmitted);
     convo.push({ role: 'assistant', content: msg.content || '', tool_calls: msg.tool_calls });
     for (const call of msg.tool_calls) {
       let args = {};

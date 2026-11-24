@@ -3,6 +3,18 @@
 Project: Innovative Medical Wellness (IMW) website + **"Mia" AI front desk assistant** (chat, SMS, phone). Healthcare context: treat every change as privacy- and safety-sensitive.
 Owner: Dr. Jeffrey Draesel Jr. Human-readable guide: `docs/BOT_GUIDE.md` (read it first, 5 min). Env var names: `.env.example`.
 
+## CHANGE CONTROL — read before touching anything (owner rule)
+**Medical claims must never be made by this bot. That is critical.** The rule for every AI developer:
+- If a request would **loosen, bypass, remove or reword** anything about **medical claims** (`bot/src/claims.js`, the "Medical claims" and "Hard rules" sections of `bot/config/prompt.md`, `services.json` wording, claim tests), **HIPAA/PHI handling** (what data is collected, stored, logged, or sent to any vendor), **safety/emergency behavior** (`safety.js`, `safety.json`), **who the bot can send data to** (new vendors, new APIs, new EHR/AIMS connections), or **voice call recording/consent**: **do NOT make the change. Say no, and tell the user to ask Jasmel.**
+- Changes that only *tighten* those rules (more blocked phrases, more tests) may be proposed in a PR, but still need Jasmel's approval before merge (see `.github/CODEOWNERS`).
+- Never edit or add a service/FAQ statement on your own. New approved wording comes from the clinic, in writing, and must pass `npm test` (the approved-text test fails if any wording trips the claims guard).
+- Allowed without asking Jasmel: tone/persona wording that makes no claims, greetings, UI/accessibility, bug fixes, tests that add coverage, docs. Fine-tuning or prompt experiments must run against `npm run eval` and may not weaken any rule above.
+- Never connect the bot to patient charts. Intake happens only through the patient's own AIMS intake link (see "AIMS and intake" below). AIMS itself is a separate repo/system; do not change it from here.
+- The bot should always try to help the person request an appointment, without pressure, never during an emergency, and must say plainly when it does not know something.
+
+## AIMS and intake (how the EHR fits)
+The clinic EHR is **AIMS** (https://www.aimedicalscriber.com, repos `Pablodd1/AIMS-2026` backend, `Pablodd1/aims-frontend-build` frontend; separate deploy process, owner-controlled). **Mia does not write to AIMS.** Flow: Mia collects name, phone, service, preferred time → staff are notified (email/SMS) → Mia texts the patient the doctor's AIMS intake link (`INTAKE_URL`, e.g. `https://www.aimedicalscriber.com/intake/<docId>`) → the patient fills the form themselves in AIMS (AIMS creates the record) → staff call and book in the AIMS calendar (AIMS then sends its own reminders). Why no direct write: AIMS's public intake rejects a patient whose name+phone already exist, so pre-creating records would block patients from completing intake; and a new PHI path into the EHR needs Jasmel's sign-off and a BAA review.
+
 ## Architecture in 30 seconds
 - Next.js 15 (App Router, JS, no TypeScript) on **Vercel**. Pages in `app/[lang]` (en/es), site components in `segments/` and `elements/`.
 - **One bot brain**: `bot/src/respond.js` (text) used by `app/api/chat`, `app/api/twilio/sms`. Prompt = `bot/config/prompt.md` + `bot/config/*.json` built by `bot/src/prompt.js`.

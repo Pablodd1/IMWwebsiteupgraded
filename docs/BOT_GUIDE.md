@@ -110,6 +110,15 @@ Recommended order (cheapest and safest first). Facts about a clinic change (hour
 - [ ] Rotate credentials that were committed to git (Brevo password, `ENCRYPTION_KEY`) and purge them from history if the repo is or was public.
 - [ ] SMS: Twilio handles STOP/HELP automatically. US A2P 10DLC registration is required for business texting; register the brand/campaign.
 
+## 6b. Medical-claims guard, booking and AIMS intake
+
+- **Claims guard** (`bot/src/claims.js`): every chat/SMS reply is checked in code before it is shown. Any claim-like phrase (cure, treat, heal, prevent, relief, safe, FDA, proven, percentages, timelines, dosages, "you have…", and Spanish equivalents, plus spaced-out/obfuscated spellings) replaces the reply with a safe fallback that offers an appointment. It is intentionally strict. `npm test` also checks that all approved clinic text passes the guard.
+- **What it cannot do:** the live **phone** voice speaks directly from Grok, so there is no code point to screen a sentence before it is spoken. Phone safety rests on the prompt, approved-text-only knowledge, tests, and review of calls. The stricter design (transcribe the caller → text model → claims guard → speak) removes that gap at the cost of extra delay. **Decision for the owner.**
+- No AI can be mathematically guaranteed never to say something wrong; the layers (approved wording, prompt, guard, tests, review) make it very unlikely and make any miss detectable.
+- **Change control:** `.github/CODEOWNERS` + `AGENTS.md` say any change touching claims, HIPAA/PHI, safety or vendor data flows is refused and escalated to Jasmel. Turn on "Require review from Code Owners" in GitHub branch protection for this to be enforced.
+- **Booking:** the prompt makes Mia offer an appointment after every answer (never during emergencies, never pressuring).
+- **Intake:** after an appointment request reaches staff, the patient is texted `INTAKE_URL` (their doctor's AIMS intake link). Not sent for call-back requests, if the link is missing/not https, or if staff could not be notified. Staff call and book in the AIMS calendar.
+
 ## 7. Adding a channel or a tool
 
 - **New text channel** (WhatsApp, Instagram, GoHighLevel): create a route that verifies the sender, maps the incoming text to `respond({ messages, channel: 'chat'|'sms', lang })`, and returns the reply. About 30 lines; copy `app/api/twilio/sms/route.js`.
