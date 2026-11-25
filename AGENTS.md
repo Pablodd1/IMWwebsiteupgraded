@@ -60,7 +60,7 @@ Plain-Node code (`bot/`, `voice-bridge/`) is ESM (`"type":"module"` in their pac
 
 **NOT verified with real services — do these first:**
 1. Real call test: Twilio number → Vercel webhook → Railway bridge → Grok. Confirm event names (`response.output_audio.delta`, `input_audio_buffer.speech_started` barge-in, `response.function_call_arguments.done`) against xAI docs `https://docs.x.ai/developers/model-capabilities/audio/voice-agent`; the bridge logs `xai error …` on mismatch.
-2. Confirm chat model id (`XAI_CHAT_MODEL`, default `grok-4.7`) exists on the account; confirm `GET https://api.x.ai/v1/tts/voices` and choose the final female voice for `persona.json` (`eve` is a placeholder).
+2. Confirm chat model id (`XAI_CHAT_MODEL`, default `grok-4.7`) exists on the account; confirm `GET https://api.x.ai/v1/tts/voices` and choose the final female voice for `persona.json` (`luna` is set; confirm it appears in the list and sounds right on a real call).
 3. Real email delivery through `/api/lead` (Brevo) and optional staff SMS.
 4. Run `npm run eval` with a real key and fix failures (prompt/config), not the tests.
 5. Browser check of the widget (open/close, Esc, mic permissions, ES/EN, forms, mobile ≤ 480 px).

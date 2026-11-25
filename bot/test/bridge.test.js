@@ -53,7 +53,7 @@ test('voice bridge: Twilio <-> Grok realtime', async () => {
   const su = grokEvents.find((e) => e.type === 'session.update').session;
   assert.equal(su.audio.input.format.type, 'audio/pcmu');
   assert.equal(su.audio.output.format.type, 'audio/pcmu');
-  assert.equal(su.voice, 'eve');
+  assert.equal(su.voice, 'luna');
   assert.equal(su.turn_detection.type, 'server_vad');
   assert.match(su.instructions, /LIVE PHONE CALL/);
   assert.deepEqual(su.tools.map((t) => t.name).sort(), ['lookup_service_info', 'submit_lead', 'transfer_to_human']);

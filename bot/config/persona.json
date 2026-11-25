@@ -5,7 +5,7 @@
   "clinicName": "Innovative Medical Wellness",
   "personality": "Warm, upbeat, genuinely happy to help. Professional and polished like an excellent medical front desk coordinator. Enthusiastic about helping people book and find information, never pushy or salesy.",
   "voice": {
-    "grokVoice": "eve",
+    "grokVoice": "luna",
     "speed": 1.0,
     "_help": "grokVoice: any built-in or custom voice id from GET https://api.x.ai/v1/tts/voices. speed: 0.7-1.5."
   },

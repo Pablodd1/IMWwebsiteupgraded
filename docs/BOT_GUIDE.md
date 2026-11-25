@@ -80,7 +80,7 @@ How a call flows: Twilio → `/api/twilio/voice` (verifies Twilio's signature, r
 
 ## 4. Voice: "professional, excited female"
 
-- `persona.json → voice.grokVoice` picks the voice (default `eve`). List voices with `curl -H "Authorization: Bearer $XAI_API_KEY" https://api.x.ai/v1/tts/voices`, audition a few, and set the one you like. Speed: `voice.speed` (0.7–1.5).
+- `persona.json → voice.grokVoice` picks the voice (currently `luna`; xAI default is `eve`). List voices with `curl -H "Authorization: Bearer $XAI_API_KEY" https://api.x.ai/v1/tts/voices`, audition a few, and set the one you like. Speed: `voice.speed` (0.7–1.5).
 - Energy is controlled by `prompt.md → Personality and voice` and the channel rules in `bot/src/prompt.js`. Make it more/less upbeat by editing those sentences, then call and listen.
 - **Custom voice (closest thing to "training" the voice):** xAI supports custom voices; see the "Custom Voices" guide in xAI's voice docs. Once created, put its `voice_id` in `grokVoice`. Only use a voice you have the rights/consent to clone.
 - Low latency vs. quality: `XAI_VOICE_REASONING=none` (fast, default here) or `high` (smarter, slower).
